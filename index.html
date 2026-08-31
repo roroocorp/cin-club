@@ -1,68 +1,103 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
   <title>Mon Cinéma</title>
 
   <style>
+
+    /* =========================
+       STYLE GÉNÉRAL
+    ========================= */
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       background: #080808;
       color: white;
-      font-family: Arial, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
-    /* MENU */
+
+    /* =========================
+       MENU
+    ========================= */
 
     header {
       height: 70px;
       background: #0d0d0d;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
+
       padding: 0 6%;
+
       border-bottom: 1px solid #222;
     }
 
     .logo {
+      color: #e50914;
+
       font-size: 25px;
       font-weight: bold;
-      color: #e50914;
+
+      letter-spacing: 2px;
     }
 
     nav a {
       color: white;
       text-decoration: none;
+
       margin-left: 25px;
+
+      font-size: 15px;
     }
 
     nav a:hover {
       color: #e50914;
     }
 
-    /* ACCUEIL */
+
+    /* =========================
+       GRANDE PAGE D'ACCUEIL
+    ========================= */
 
     .hero {
-      min-height: 500px;
+
+      min-height: 520px;
+
       display: flex;
       align-items: center;
+
       padding: 60px 7%;
 
       background:
         linear-gradient(
           90deg,
-          #080808,
-          rgba(8,8,8,.75),
-          rgba(8,8,8,.2)
+          #080808 0%,
+          rgba(8,8,8,0.85) 40%,
+          rgba(8,8,8,0.2) 100%
         ),
-        linear-gradient(135deg, #292929, #111);
+        linear-gradient(
+          135deg,
+          #292929,
+          #111111
+        );
     }
 
     .hero-content {
@@ -71,117 +106,190 @@
 
     .hero small {
       color: #aaa;
+
+      font-size: 13px;
+
       letter-spacing: 3px;
     }
 
     .hero h1 {
+
       font-size: 60px;
+
       margin: 20px 0;
     }
 
     .hero p {
+
       color: #ccc;
+
       font-size: 18px;
+
       line-height: 1.6;
     }
 
     .button {
+
       display: inline-block;
+
       margin-top: 25px;
+
       padding: 14px 25px;
+
       background: #e50914;
+
       color: white;
+
       border-radius: 5px;
+
       text-decoration: none;
+
       font-weight: bold;
     }
 
-    /* FILMS */
+    .button:hover {
+      background: #b20710;
+    }
+
+
+    /* =========================
+       SECTION FILMS
+    ========================= */
 
     .section {
-      padding: 45px 7%;
+
+      padding: 50px 7%;
     }
 
     .section h2 {
+
       font-size: 30px;
+
       margin-bottom: 25px;
     }
 
+
+    /* =========================
+       CARTES DES FILMS
+    ========================= */
+
     .films {
+
       display: grid;
+
       grid-template-columns:
-        repeat(auto-fit, minmax(250px, 1fr));
+        repeat(
+          auto-fit,
+          minmax(250px, 1fr)
+        );
+
       gap: 25px;
     }
 
     .film {
+
       background: #151515;
+
       border-radius: 10px;
+
       overflow: hidden;
-      transition: .3s;
+
+      transition: 0.3s;
     }
 
     .film:hover {
+
       transform: translateY(-5px);
     }
 
-    /* MINIATURE YOUTUBE */
+
+    /* =========================
+       MINIATURE YOUTUBE
+    ========================= */
 
     .thumbnail {
+
       position: relative;
+
       width: 100%;
+
       aspect-ratio: 16 / 9;
+
       overflow: hidden;
+
       background: #222;
     }
 
     .thumbnail img {
+
       width: 100%;
+
       height: 100%;
+
       object-fit: cover;
+
+      display: block;
     }
 
     .play {
+
       position: absolute;
+
       left: 50%;
       top: 50%;
 
-      transform: translate(-50%, -50%);
+      transform:
+        translate(-50%, -50%);
 
       width: 65px;
       height: 65px;
 
       border-radius: 50%;
 
-      background: rgba(229, 9, 20, .95);
+      background: #e50914;
 
       display: flex;
+
       align-items: center;
       justify-content: center;
 
       font-size: 25px;
     }
 
+
+    /* =========================
+       INFORMATIONS DU FILM
+    ========================= */
+
     .info {
+
       padding: 18px;
     }
 
     .info h3 {
+
       margin-bottom: 8px;
+
+      font-size: 20px;
     }
 
     .info p {
+
       color: #999;
+
       line-height: 1.5;
     }
 
     .watch {
+
       border: none;
+
       margin-top: 15px;
 
       padding: 11px 18px;
 
       background: #e50914;
+
       color: white;
 
       border-radius: 5px;
@@ -192,128 +300,214 @@
     }
 
     .watch:hover {
+
       background: #b20710;
     }
 
-    /* FENÊTRE YOUTUBE */
+
+    /* =========================
+       FENÊTRE VIDÉO
+    ========================= */
 
     .modal {
+
       display: none;
 
       position: fixed;
+
       z-index: 100;
 
       inset: 0;
 
-      background: rgba(0,0,0,.95);
+      background: rgba(0,0,0,0.95);
 
       align-items: center;
+
       justify-content: center;
 
       padding: 20px;
     }
 
     .modal.open {
+
       display: flex;
     }
 
     .video-box {
+
       width: min(1000px, 100%);
+
       position: relative;
     }
 
     .video-box iframe {
+
       width: 100%;
+
       aspect-ratio: 16 / 9;
-      border: 0;
+
+      border: none;
+
       border-radius: 8px;
     }
 
     .close {
+
       position: absolute;
 
       right: 0;
-      top: -50px;
+
+      top: -55px;
 
       background: transparent;
+
       color: white;
 
       border: none;
 
-      font-size: 38px;
+      font-size: 40px;
 
       cursor: pointer;
     }
 
-    /* FOOTER */
+
+    /* =========================
+       PIED DE PAGE
+    ========================= */
 
     footer {
+
       text-align: center;
+
       color: #777;
+
       padding: 40px;
+
       border-top: 1px solid #222;
     }
+
+
+    /* =========================
+       VERSION TÉLÉPHONE
+    ========================= */
 
     @media (max-width: 600px) {
 
       header {
+
         padding: 0 20px;
       }
 
+      .logo {
+
+        font-size: 19px;
+      }
+
       nav a {
+
         margin-left: 10px;
+
+        font-size: 13px;
       }
 
       .hero {
+
+        min-height: 500px;
+
         padding: 40px 25px;
       }
 
       .hero h1 {
+
         font-size: 42px;
       }
 
+      .hero p {
+
+        font-size: 16px;
+      }
+
       .section {
+
         padding: 35px 20px;
       }
 
     }
+
   </style>
+
 </head>
+
 
 <body>
 
-  <!-- MENU -->
+
+  <!-- =========================
+       MENU
+  ========================= -->
 
   <header>
 
     <div class="logo">
+
       🎬 MON CINÉMA
+
     </div>
 
+
     <nav>
-      <a href="#">Accueil</a>
-      <a href="#films">Films</a>
+
+      <a href="#">
+        Accueil
+      </a>
+
+      <a href="#films">
+        Films
+      </a>
+
+      <a href="#contact">
+        Contact
+      </a>
+
     </nav>
 
   </header>
 
 
-  <!-- ACCUEIL -->
+
+  <!-- =========================
+       ACCUEIL
+  ========================= -->
 
   <section class="hero">
 
     <div class="hero-content">
 
-      <small>BIENVENUE SUR MON CINÉMA</small>
+      <small>
+        BIENVENUE SUR MON CINÉMA
+      </small>
 
-      <h1>Mes films.</h1>
+
+      <h1>
+        Mes films.
+      </h1>
+
 
       <p>
-        Retrouvez ici mes vidéos et mes créations.
+
+        Découvrez mes créations,
+        mes vidéos et mes projets
+        directement depuis mon cinéma.
+
       </p>
 
-      <a class="button" href="#films">
+
+      <a
+        class="button"
+        href="#films">
+
         🎬 Découvrir
+
       </a>
 
     </div>
@@ -321,24 +515,85 @@
   </section>
 
 
-  <!-- LISTE DES VIDÉOS -->
 
-  <section class="section" id="films">
+  <!-- =========================
+       MES FILMS
+  ========================= -->
 
-    <h2>🎞️ Mes vidéos</h2>
+  <section
+    class="section"
+    id="films">
+
+    <h2>
+      🎞️ Mes films
+    </h2>
+
 
     <div class="films">
 
 
-      <!-- VIDÉO 1 -->
+      <!-- =====================
+           TON FILM YOUTUBE
+      ====================== -->
 
       <article class="film">
+
 
         <div class="thumbnail">
 
           <img
-            src="https://img.youtube.com/vi/ID_VIDEO_1/maxresdefault.jpg"
-            alt="Miniature du film 1">
+            src="https://img.youtube.com/vi/3wSUg_Bc7OM/maxresdefault.jpg"
+            alt="Miniature de mon film">
+
+
+          <div class="play">
+
+            ▶
+
+          </div>
+
+        </div>
+
+
+        <div class="info">
+
+
+          <h3>
+            Mon premier film
+          </h3>
+
+
+          <p>
+
+            Découvrez mon premier
+            film et mes créations.
+
+          </p>
+
+
+          <button
+            class="watch"
+            onclick="watch('3wSUg_Bc7OM')">
+
+            ▶ Regarder
+
+          </button>
+
+
+        </div>
+
+
+      </article>
+
+
+
+      <!-- =====================
+           DEUXIÈME FILM
+      ====================== -->
+
+      <article class="film">
+
+        <div class="thumbnail">
 
           <div class="play">
             ▶
@@ -346,36 +601,31 @@
 
         </div>
 
+
         <div class="info">
 
-          <h3>Mon film 1</h3>
+          <h3>
+            Bientôt disponible
+          </h3>
 
           <p>
-            Découvrez mon premier film.
+            Mon prochain film
+            arrivera bientôt.
           </p>
-
-          <button
-            class="watch"
-            onclick="watch('ID_VIDEO_1')">
-
-            ▶ Regarder
-
-          </button>
 
         </div>
 
       </article>
 
 
-      <!-- VIDÉO 2 -->
+
+      <!-- =====================
+           TROISIÈME FILM
+      ====================== -->
 
       <article class="film">
 
         <div class="thumbnail">
-
-          <img
-            src="https://img.youtube.com/vi/ID_VIDEO_2/maxresdefault.jpg"
-            alt="Miniature du film 2">
 
           <div class="play">
             ▶
@@ -383,58 +633,17 @@
 
         </div>
 
-        <div class="info">
-
-          <h3>Mon film 2</h3>
-
-          <p>
-            Découvrez mon deuxième film.
-          </p>
-
-          <button
-            class="watch"
-            onclick="watch('ID_VIDEO_2')">
-
-            ▶ Regarder
-
-          </button>
-
-        </div>
-
-      </article>
-
-
-      <!-- VIDÉO 3 -->
-
-      <article class="film">
-
-        <div class="thumbnail">
-
-          <img
-            src="https://img.youtube.com/vi/ID_VIDEO_3/maxresdefault.jpg"
-            alt="Miniature du film 3">
-
-          <div class="play">
-            ▶
-          </div>
-
-        </div>
 
         <div class="info">
 
-          <h3>Mon film 3</h3>
+          <h3>
+            Bientôt disponible
+          </h3>
 
           <p>
-            Découvrez mon troisième film.
+            Une nouvelle création
+            arrivera prochainement.
           </p>
-
-          <button
-            class="watch"
-            onclick="watch('ID_VIDEO_3')">
-
-            ▶ Regarder
-
-          </button>
 
         </div>
 
@@ -446,26 +655,67 @@
   </section>
 
 
-  <!-- LECTEUR -->
 
-  <div class="modal" id="modal">
+  <!-- =========================
+       CONTACT
+  ========================= -->
+
+  <section
+    class="section"
+    id="contact">
+
+    <h2>
+      📩 Contact
+    </h2>
+
+    <p style="color:#999;">
+
+      Bienvenue sur mon site !
+
+    </p>
+
+  </section>
+
+
+
+  <!-- =========================
+       LECTEUR YOUTUBE
+  ========================= -->
+
+  <div
+    class="modal"
+    id="modal">
+
 
     <div class="video-box">
 
-      <button class="close" onclick="closeVideo()">
+
+      <button
+        class="close"
+        onclick="closeVideo()">
+
         ×
+
       </button>
+
 
       <iframe
         id="youtube"
         allow="autoplay; encrypted-media"
         allowfullscreen>
+
       </iframe>
+
 
     </div>
 
   </div>
 
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
 
   <footer>
 
@@ -474,16 +724,23 @@
   </footer>
 
 
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================= -->
+
   <script>
 
     function watch(id) {
 
       document.getElementById("youtube").src =
-        "https://www.youtube.com/embed/" +
-        id +
-        "?autoplay=1";
+        "https://www.youtube.com/embed/"
+        + id
+        + "?autoplay=1";
 
-      document.getElementById("modal")
+
+      document
+        .getElementById("modal")
         .classList.add("open");
 
     }
@@ -491,23 +748,34 @@
 
     function closeVideo() {
 
-      document.getElementById("youtube").src = "";
+      document
+        .getElementById("youtube")
+        .src = "";
 
-      document.getElementById("modal")
+
+      document
+        .getElementById("modal")
         .classList.remove("open");
 
     }
 
 
-    document.addEventListener("keydown", function(event) {
+    document.addEventListener(
+      "keydown",
+      function(event) {
 
-      if (event.key === "Escape") {
-        closeVideo();
+        if (event.key === "Escape") {
+
+          closeVideo();
+
+        }
+
       }
-
-    });
+    );
 
   </script>
 
+
 </body>
+
 </html>
