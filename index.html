@@ -1,214 +1,833 @@
-<!DOCTYPE html><html lang="fr">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mon Cinéma</title><style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+<!DOCTYPE html><html lang="fr"><head>  <meta charset="UTF-8">  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>Mon Cinéma</title>  <style>
 
-html {
-  scroll-behavior: smooth;
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-body {
-  background: #080808;
-  color: white;
-  font-family: Arial, Helvetica, sans-serif;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-header {
-  height: 70px;
-  background: #0d0d0d;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 6%;
-  border-bottom: 1px solid #222;
-}
+    body {
+      background: #080808;
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+    }
 
-.logo {
-  color: #e50914;
-  font-size: 25px;
-  font-weight: bold;
-  letter-spacing: 2px;
-}
+    /* MENU */
 
-nav a {
-  color: white;
-  text-decoration: none;
-  margin-left: 25px;
-  font-size: 15px;
-}
+    header {
+      height: 70px;
+      background: #0d0d0d;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 6%;
+      border-bottom: 1px solid #222;
+    }
 
-nav a:hover {
-  color: #e50914;
-}
+    .logo {
+      color: #e50914;
+      font-size: 25px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
 
-.hero {
-  min-height: 520px;
-  display: flex;
-  align-items: center;
-  padding: 60px 7%;
-  background:
-    linear-gradient(
-      90deg,
-      #080808 0%,
-      rgba(8,8,8,0.85) 40%,
-      rgba(8,8,8,0.2) 100%
-    ),
-    linear-gradient(
-      135deg,
-      #292929,
-      #111111
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 15px;
+    }
+
+    nav a:hover {
+      color: #e50914;
+    }
+
+    /* ACCUEIL */
+
+    .hero {
+      min-height: 520px;
+      display: flex;
+      align-items: center;
+      padding: 60px 7%;
+
+      background:
+        linear-gradient(
+          90deg,
+          #080808 0%,
+          rgba(8,8,8,0.85) 40%,
+          rgba(8,8,8,0.2) 100%
+        ),
+        linear-gradient(
+          135deg,
+          #292929,
+          #111111
+        );
+    }
+
+    .hero-content {
+      max-width: 650px;
+    }
+
+    .hero small {
+      color: #aaa;
+      font-size: 13px;
+      letter-spacing: 3px;
+    }
+
+    .hero h1 {
+      font-size: 60px;
+      margin: 20px 0;
+    }
+
+    .hero p {
+      color: #ccc;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 14px 25px;
+      background: #e50914;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .button:hover {
+      background: #b20710;
+    }
+
+    /* SECTION FILMS */
+
+    .section {
+      padding: 50px 7%;
+    }
+
+    .section h2 {
+      font-size: 30px;
+      margin-bottom: 25px;
+    }
+
+    /* 12 CARTES */
+
+    .films {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+    }
+
+    .film {
+      background: #151515;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: 0.3s;
+    }
+
+    .film:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    /* MINIATURE */
+
+    .thumbnail {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      background: #222;
+    }
+
+    .thumbnail img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #292929, #111111);
+      color: #777;
+      font-size: 45px;
+    }
+
+    .play {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+
+      width: 60px;
+      height: 60px;
+
+      border-radius: 50%;
+      background: #e50914;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 23px;
+    }
+
+    /* INFORMATIONS */
+
+    .info {
+      padding: 18px;
+    }
+
+    .info h3 {
+      margin-bottom: 8px;
+      font-size: 19px;
+    }
+
+    .info p {
+      color: #999;
+      line-height: 1.5;
+      font-size: 14px;
+    }
+
+    .watch {
+      border: none;
+      margin-top: 15px;
+      padding: 10px 16px;
+
+      background: #e50914;
+      color: white;
+
+      border-radius: 5px;
+
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .watch:hover {
+      background: #b20710;
+    }
+
+    /* FENÊTRE VIDÉO */
+
+    .modal {
+      display: none;
+
+      position: fixed;
+      z-index: 100;
+
+      inset: 0;
+
+      background: rgba(0,0,0,0.95);
+
+      align-items: center;
+      justify-content: center;
+
+      padding: 20px;
+    }
+
+    .modal.open {
+      display: flex;
+    }
+
+    .video-box {
+      width: min(1000px, 100%);
+      position: relative;
+    }
+
+    .video-box iframe {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+
+      border: none;
+      border-radius: 8px;
+    }
+
+    .close {
+      position: absolute;
+
+      right: 0;
+      top: -55px;
+
+      background: transparent;
+      color: white;
+
+      border: none;
+
+      font-size: 40px;
+
+      cursor: pointer;
+    }
+
+    /* PIED DE PAGE */
+
+    footer {
+      text-align: center;
+
+      color: #777;
+
+      padding: 40px;
+
+      border-top: 1px solid #222;
+    }
+
+    /* TÉLÉPHONE */
+
+    @media (max-width: 900px) {
+
+      .films {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+    }
+
+    @media (max-width: 600px) {
+
+      header {
+        padding: 0 20px;
+      }
+
+      .logo {
+        font-size: 19px;
+      }
+
+      nav a {
+        margin-left: 10px;
+        font-size: 13px;
+      }
+
+      .hero {
+        min-height: 500px;
+        padding: 40px 25px;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .section {
+        padding: 35px 20px;
+      }
+
+      .films {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+  </style></head><body>  <!-- MENU -->  <header><div class="logo">
+  🎬 MON CINÉMA
+</div>
+
+<nav>
+
+  <a href="#">
+    Accueil
+  </a>
+
+  <a href="#films">
+    Films
+  </a>
+
+  <a href="#contact">
+    Contact
+  </a>
+
+</nav>
+
+  </header>  <!-- ACCUEIL -->  <section class="hero"><div class="hero-content">
+
+  <small>
+    BIENVENUE SUR MON CINÉMA
+  </small>
+
+  <h1>
+    Mes films.
+  </h1>
+
+  <p>
+    Découvrez mes créations,
+    mes vidéos et mes projets
+    directement depuis mon cinéma.
+  </p>
+
+  <a class="button" href="#films">
+    🎬 Découvrir
+  </a>
+
+</div>
+
+  </section>  <!-- FILMS -->  <section class="section" id="films"><h2>
+  🎞️ Mes films
+</h2>
+
+<div class="films">
+
+
+  <!-- FILM 1 -->
+
+  <article class="film">
+
+    <div class="thumbnail">
+
+      <img
+        src="https://img.youtube.com/vi/3wSUg_Bc7OM/maxresdefault.jpg"
+        alt="Mon premier film">
+
+      <div class="play">
+        ▶
+      </div>
+
+    </div>
+
+    <div class="info">
+
+      <h3>
+        Mon premier film
+      </h3>
+
+      <p>
+        Découvrez mon premier film et mes créations.
+      </p>
+
+      <button
+        class="watch"
+        onclick="watch('3wSUg_Bc7OM')">
+
+        ▶ Regarder
+
+      </button>
+
+    </div>
+
+  </article>
+
+
+  <!-- FILM 2 -->
+
+  <article class="film">
+
+    <div class="thumbnail">
+
+      <div class="placeholder">
+        🎬
+      </div>
+
+    </div>
+
+    <div class="info">
+
+      <h3>
+        Mon film 2
+      </h3>
+
+      <p>
+        Une nouvelle création à découvrir.
+      </p>
+
+      <button class="watch">
+        Bientôt
+      </button>
+
+    </div>
+
+  </article>
+
+
+  <!-- FILM 3 -->
+
+  <article class="film">
+
+    <div class="thumbnail">
+
+      <div class="placeholder">
+        🎥
+      </div>
+
+    </div>
+
+    <div class="info">
+
+      <h3>
+        Mon film 3
+      </h3>
+
+      <p>
+        Un nouveau projet arrive bientôt.
+      </p>
+
+      <button class="watch">
+        Bientôt
+      </button>
+
+    </div>
+
+  </article>
+
+
+  <!-- FILM 4 -->
+
+  <article class="film">
+
+    <div class="thumbnail">
+
+      <div class="placeholder">
+        🍿
+      </div>
+
+    </div>
+
+    <div class="info">
+
+      <h3>
+        Mon film 4
+      </h3>
+
+      <p>
+        Une nouvelle aventure cinématographique.
+      </p>
+
+      <button class="watch">
+        Bientôt
+      </button>
+
+    </div>
+
+  </article>
+
+
+  <!-- FILM 5 -->
+
+  <article class="film">
+
+    <div class="thumbnail">
+
+      <div class="placeholder">
+        🎞️
+      </div>
+
+    </div>
+
+    <div class="info">
+
+      <h3>
+        Mon film 5
+      </h3>
+
+      <p>
+        Une nouvelle histoire sera bientôt disponible.
+      </p>
+
+      <button class="watch">
+        Bientôt
+      </button>
+
+    </div>
+
+  </article>
+
+
+  <!-- FILM 6 -->
+
+  <article class="film">
+
+    <div class="thumbnail">
+
+      <div class="placeholder">
+        🎬
+      </div>
+
+    </div>
+
+    <div class="info">
+
+      <h3>
+        Mon film 6
+      </h3>
+
+      <p>
+        Découvrez bientôt cette nouvelle création.
+      </p>
+
+      <button class="watch">
+        Bientôt
+      </button>
+
+    </div>
+
+  </article>
+
+
+  <!-- FILM 7 -->
+
+  <article class="film">
+
+    <div class="thumbnail">
+
+      <div class="placeholder">
+        🎥
+      </div>
+
+    </div>
+
+    <div class="info">
+
+      <h3>
+        Mon film 7
+      </h3>
+
+      <p>
+        Un nouveau film est en préparation.
+      </p>
+
+      <button class="watch">
+        Bientôt
+      </button>
+
+    </div>
+
+  </article>
+
+
+  <!-- FILM 8 -->
+
+  <article class="film">
+
+    <div class="thumbnail">
+
+      <div class="placeholder">
+        🍿
+      </div>
+
+    </div>
+
+    <div class="info">
+
+      <h3>
+        Mon film 8
+      </h3>
+
+      <p>
+        Une nouvelle production arrive.
+      </p>
+
+      <button class="watch">
+        Bientôt
+      </button>
+
+    </div>
+
+  </article>
+
+
+  <!-- FILM 9 -->
+
+  <article class="film">
+
+    <div class="thumbnail">
+
+      <div class="placeholder">
+        🎞️
+      </div>
+
+    </div>
+
+    <div class="info">
+
+      <h3>
+        Mon film 9
+      </h3>
+
+      <p>
+        Une nouvelle création prochainement.
+      </p>
+
+      <button class="watch">
+        Bientôt
+      </button>
+
+    </div>
+
+  </article>
+
+
+  <!-- FILM 10 -->
+
+  <article class="film">
+
+    <div class="thumbnail">
+
+      <div class="placeholder">
+        🎬
+      </div>
+
+    </div>
+
+    <div class="info">
+
+      <h3>
+        Mon film 10
+      </h3>
+
+      <p>
+        Mon prochain projet cinématographique.
+      </p>
+
+      <button class="watch">
+        Bientôt
+      </button>
+
+    </div>
+
+  </article>
+
+
+  <!-- FILM 11 -->
+
+  <article class="film">
+
+    <div class="thumbnail">
+
+      <div class="placeholder">
+        🎥
+      </div>
+
+    </div>
+
+    <div class="info">
+
+      <h3>
+        Mon film 11
+      </h3>
+
+      <p>
+        Une nouvelle vidéo sera disponible bientôt.
+      </p>
+
+      <button class="watch">
+        Bientôt
+      </button>
+
+    </div>
+
+  </article>
+
+
+  <!-- FILM 12 -->
+
+  <article class="film">
+
+    <div class="thumbnail">
+
+      <div class="placeholder">
+        🍿
+      </div>
+
+    </div>
+
+    <div class="info">
+
+      <h3>
+        Mon film 12
+      </h3>
+
+      <p>
+        Le dernier film de ma collection.
+      </p>
+
+      <button class="watch">
+        Bientôt
+      </button>
+
+    </div>
+
+  </article>
+
+
+</div>
+
+  </section>  <!-- CONTACT -->  <section class="section" id="contact"><h2>
+  📩 Contact
+</h2>
+
+<p style="color:#999;">
+  Bienvenue sur mon site !
+</p>
+
+  </section>  <!-- LECTEUR YOUTUBE -->  <div class="modal" id="modal"><div class="video-box">
+
+  <button
+    class="close"
+    onclick="closeVideo()">
+
+    ×
+
+  </button>
+
+  <iframe
+    id="youtube"
+    allow="autoplay; encrypted-media"
+    allowfullscreen>
+  </iframe>
+
+</div>
+
+  </div>  <!-- FOOTER -->  <footer>© 2026 Mon Cinéma
+
+  </footer>  <!-- JAVASCRIPT -->  <script>
+
+    function watch(id) {
+
+      document.getElementById("youtube").src =
+        "https://www.youtube.com/embed/"
+        + id
+        + "?autoplay=1";
+
+      document
+        .getElementById("modal")
+        .classList.add("open");
+
+    }
+
+
+    function closeVideo() {
+
+      document
+        .getElementById("youtube")
+        .src = "";
+
+      document
+        .getElementById("modal")
+        .classList.remove("open");
+
+    }
+
+
+    document.addEventListener(
+      "keydown",
+      function(event) {
+
+        if (event.key === "Escape") {
+
+          closeVideo();
+
+        }
+
+      }
     );
-}
 
-.hero-content {
-  max-width: 650px;
-}
-
-.hero small {
-  color: #aaa;
-  font-size: 13px;
-  letter-spacing: 3px;
-}
-
-.hero h1 {
-  font-size: 60px;
-  margin: 20px 0;
-}
-
-.hero p {
-  color: #ccc;
-  font-size: 18px;
-  line-height: 1.6;
-}
-
-.button {
-  display: inline-block;
-  margin-top: 25px;
-  padding: 14px 25px;
-  background: #e50914;
-  color: white;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.button:hover {
-  background: #b20710;
-}
-
-.section {
-  padding: 50px 7%;
-}
-
-.section h2 {
-  font-size: 30px;
-  margin-bottom: 25px;
-}
-
-.films {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
-}
-
-.film {
-  background: #151515;
-  border-radius: 10px;
-  overflow: hidden;
-  transition: 0.3s;
-}
-
-.film:hover {
-  transform: translateY(-5px);
-}
-
-.thumbnail {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-  background: #222;
-}
-
-.thumbnail img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.play {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 65px;
-  height: 65px;
-  border-radius: 50%;
-  background: #e50914;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 25px;
-}
-
-.info {
-  padding: 18px;
-}
-
-.info h3 {
-  margin-bottom: 8px;
-  font-size: 20px;
-}
-
-.info p {
-  color: #999;
-  line-height: 1.5;
-}
-
-.watch {
-  border: none;
-  margin-top: 15px;
-  padding: 11px 18px;
-  background: #e50914;
-  color: white;
-  border-radius: 5px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.watch:hover {
-  background: #b20710;
-}
-
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 100;
-  inset: 0;
-  background: rgba(0,0,0,0.95);
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-}
-
-.modal.open {
-  display: flex;
-}
-
-.video-box {
-  width: min(1000px, 100%);
-  position: relative;
-}
-
-.video-box iframe {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border: none;
-  border-radius: 8px
+  </script></body></html>
+```
