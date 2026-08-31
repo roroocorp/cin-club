@@ -1,4 +1,7 @@
-<!DOCTYPE html><html lang="fr"><head>  <meta charset="UTF-8">  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>Lecture - Mon Cinéma</title>  <style>
+<!DOCTYPE html><html lang="fr"><head>  <meta charset="UTF-8"><meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+  <title>Lecture - Mon Cinéma</title>  <style>
 
     * {
       margin: 0;
@@ -16,10 +19,13 @@
       font-family: Arial, Helvetica, sans-serif;
     }
 
-    /* MENU */
+    /* =========================
+       MENU
+    ========================= */
 
     header {
       height: 70px;
+
       background: #0d0d0d;
 
       display: flex;
@@ -29,33 +35,56 @@
       padding: 0 6%;
 
       border-bottom: 1px solid #222;
+
+      position: sticky;
+      top: 0;
+
+      z-index: 50;
     }
 
     .logo {
       color: #e50914;
+
       font-size: 25px;
+
       font-weight: bold;
+
       letter-spacing: 2px;
     }
 
     .back {
       color: white;
+
       text-decoration: none;
-      font-size: 15px;
+
+      padding: 10px 18px;
+
+      border: 1px solid #333;
+
+      border-radius: 5px;
+
+      transition: 0.3s;
     }
 
     .back:hover {
-      color: #e50914;
+      background: #e50914;
+
+      border-color: #e50914;
     }
 
-    /* CONTENU */
+    /* =========================
+       PAGE
+    ========================= */
 
     .video-page {
-      width: min(1100px, 90%);
-      margin: 50px auto 100px;
+      width: min(1100px, 92%);
+
+      margin: 45px auto 100px;
     }
 
-    /* AFFICHAGE DU FILM */
+    /* =========================
+       CARTE DU FILM
+    ========================= */
 
     .movie-card {
       position: relative;
@@ -80,7 +109,9 @@
       position: absolute;
 
       left: 0;
+
       top: 20px;
+
       bottom: 20px;
 
       width: 5px;
@@ -97,6 +128,7 @@
 
     .movie-poster {
       width: 100%;
+
       max-height: 500px;
 
       object-fit: cover;
@@ -110,24 +142,31 @@
 
     .movie-info h1 {
       font-size: 32px;
+
       margin-bottom: 10px;
     }
 
     .movie-info p {
       color: #999;
+
       line-height: 1.6;
     }
 
-    /* VIDEO */
+    /* =========================
+       VIDEO
+    ========================= */
 
     .video-title {
       font-size: 28px;
+
       margin-bottom: 20px;
     }
 
     .video-container {
       position: relative;
+
       width: 100%;
+
       aspect-ratio: 16 / 9;
 
       background: black;
@@ -137,22 +176,26 @@
       overflow: hidden;
 
       box-shadow:
-        0 0 20px rgba(255,0,0,0.15);
+        0 0 25px rgba(255,0,0,0.15);
     }
 
     .video-container iframe {
       width: 100%;
+
       height: 100%;
 
       border: none;
     }
 
-    /* BOUTON RETOUR */
+    /* =========================
+       RETOUR EN HAUT
+    ========================= */
 
     .return {
-      display: block;
+      display: flex;
 
       width: 65px;
+
       height: 65px;
 
       margin: 70px auto 0;
@@ -165,9 +208,8 @@
 
       text-decoration: none;
 
-      display: flex;
-
       align-items: center;
+
       justify-content: center;
 
       font-size: 30px;
@@ -189,7 +231,9 @@
         0 0 35px rgba(229,9,20,0.7);
     }
 
-    /* FOOTER */
+    /* =========================
+       FOOTER
+    ========================= */
 
     footer {
       text-align: center;
@@ -201,7 +245,9 @@
       border-top: 1px solid #222;
     }
 
-    /* TELEPHONE */
+    /* =========================
+       TELEPHONE
+    ========================= */
 
     @media (max-width: 600px) {
 
@@ -213,9 +259,20 @@
         font-size: 18px;
       }
 
+      .back {
+        font-size: 13px;
+
+        padding: 8px 12px;
+      }
+
       .video-page {
         width: 94%;
+
         margin-top: 30px;
+      }
+
+      .movie-info {
+        padding: 20px;
       }
 
       .movie-info h1 {
@@ -228,7 +285,9 @@
 
     }
 
-  </style></head><body>  <!-- MENU -->  <header><div class="logo">
+  </style></head><body id="top">  <!-- =========================
+       MENU
+  ========================= -->  <header><div class="logo">
   🎬 MON CINÉMA
 </div>
 
@@ -240,7 +299,9 @@
 
 </a>
 
-  </header>  <!-- PAGE VIDEO -->  <main class="video-page"><!-- CARTE DU FILM -->
+  </header>  <!-- =========================
+       PAGE DE LECTURE
+  ========================= -->  <main class="video-page"><!-- CARTE DU FILM -->
 
 <div class="movie-card">
 
@@ -256,7 +317,7 @@
       Mon film
     </h1>
 
-    <p>
+    <p id="movieDescription">
       Regardez le film directement depuis Mon Cinéma.
     </p>
 
@@ -265,7 +326,7 @@
 </div>
 
 
-<!-- VIDEO -->
+<!-- LECTEUR -->
 
 <h2 class="video-title">
   ▶ Regarder le film
@@ -274,8 +335,10 @@
 <div class="video-container">
 
   <iframe
-    id="video"
-    allow="autoplay; encrypted-media; fullscreen"
+    id="youtube"
+    src=""
+    title="Lecteur vidéo YouTube"
+    allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
     allowfullscreen>
   </iframe>
 
@@ -285,41 +348,125 @@
 <!-- RETOUR EN HAUT -->
 
 <a
-  href="#top"
   class="return"
+  href="#top"
   title="Retour en haut">
 
   ↑
 
 </a>
 
-  </main>  <!-- FOOTER -->  <footer>© 2026 Mon Cinéma
+  </main>  <!-- =========================
+       FOOTER
+  ========================= -->  <footer>© 2026 Mon Cinéma
 
-  </footer>  <script>
+  </footer>  <!-- =========================
+       JAVASCRIPT
+  ========================= -->  <script>
+
+    /* Récupère l'identifiant de la vidéo */
 
     const params =
-      new URLSearchParams(window.location.search);
+      new URLSearchParams(
+        window.location.search
+      );
 
     const id =
-      params.get("id") || "3wSUg_Bc7OM";
+      params.get("id");
 
 
-    document.getElementById("poster").src =
-      "https://img.youtube.com/vi/"
-      + id
-      + "/maxresdefault.jpg";
+    /* Si aucune vidéo n'est indiquée */
+
+    if (!id) {
+
+      document.getElementById(
+        "movieTitle"
+      ).textContent =
+        "Aucun film sélectionné";
+
+    }
 
 
-    document.getElementById("video").src =
-      "https://www.youtube.com/embed/"
-      + id
-      + "?autoplay=1";
+    /* MINIATURE */
+
+    if (id) {
+
+      document.getElementById(
+        "poster"
+      ).src =
+        "https://img.youtube.com/vi/"
+        + id
+        + "/maxresdefault.jpg";
+
+    }
 
 
-    if (id === "3wSUg_Bc7OM") {
+    /* VIDEO YOUTUBE */
 
-      document.getElementById("movieTitle").textContent =
-        "Mon premier film";
+    if (id) {
+
+      document.getElementById(
+        "youtube"
+      ).src =
+        "https://www.youtube.com/embed/"
+        + id
+        + "?autoplay=1";
+
+    }
+
+
+    /* TITRES */
+
+    const titles = {
+
+      "3wSUg_Bc7OM":
+        "Mon premier film",
+
+      "1MoeXM9HISY":
+        "Mon film 2",
+
+      "A2HM48PwsXQ":
+        "Mon film 3"
+
+    };
+
+
+    /* DESCRIPTIONS */
+
+    const descriptions = {
+
+      "3wSUg_Bc7OM":
+        "Découvrez mon premier film et mes créations.",
+
+      "1MoeXM9HISY":
+        "Découvrez mon deuxième film.",
+
+      "A2HM48PwsXQ":
+        "Découvrez mon troisième film."
+
+    };
+
+
+    /* AFFICHER LE BON TITRE */
+
+    if (titles[id]) {
+
+      document.getElementById(
+        "movieTitle"
+      ).textContent =
+        titles[id];
+
+    }
+
+
+    /* AFFICHER LA BONNE DESCRIPTION */
+
+    if (descriptions[id]) {
+
+      document.getElementById(
+        "movieDescription"
+      ).textContent =
+        descriptions[id];
 
     }
 
