@@ -1,16 +1,5 @@
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-
-  <meta charset="UTF-8">
-
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
-
-  <title>Lecture - Mon Cinéma</title>
-
-  <style>
+<!DOCTYPE html><html lang="fr"><head>  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>Lecture - Mon Cinéma</title>  <style>
 
     * {
       margin: 0;
@@ -28,50 +17,32 @@
       font-family: Arial, Helvetica, sans-serif;
     }
 
-    /* =========================
-       MENU
-    ========================= */
-
     header {
       height: 70px;
-
       background: #0d0d0d;
-
       display: flex;
       align-items: center;
       justify-content: space-between;
-
       padding: 0 6%;
-
       border-bottom: 1px solid #222;
-
       position: sticky;
       top: 0;
-
       z-index: 50;
     }
 
     .logo {
       color: #e50914;
-
       font-size: 25px;
-
       font-weight: bold;
-
       letter-spacing: 2px;
     }
 
     .back {
       color: white;
-
       text-decoration: none;
-
       padding: 10px 18px;
-
       border: 1px solid #333;
-
       border-radius: 5px;
-
       transition: 0.3s;
     }
 
@@ -80,609 +51,344 @@
       border-color: #e50914;
     }
 
-    /* =========================
-       PAGE
-    ========================= */
-
     .video-page {
       width: min(1100px, 92%);
-
       margin: 45px auto 100px;
     }
 
-    /* =========================
-       CARTE DU FILM
-    ========================= */
-
     .movie-card {
-
       position: relative;
-
       background: #151515;
-
       border-radius: 12px;
-
       overflow: hidden;
-
       margin-bottom: 35px;
-
-      box-shadow:
-        0 0 25px rgba(255,0,0,0.12);
+      box-shadow: 0 0 25px rgba(255,0,0,0.12);
     }
 
-    /* LED ROUGE */
-
     .movie-card::before {
-
       content: "";
-
       position: absolute;
-
       left: 0;
-
       top: 20px;
-
       bottom: 20px;
-
       width: 5px;
-
       background: #ff0000;
-
       box-shadow:
         0 0 5px #ff0000,
         0 0 15px #ff0000,
         0 0 30px rgba(255,0,0,0.8);
-
       z-index: 5;
     }
 
     .movie-poster {
-
       width: 100%;
-
       max-height: 500px;
-
       object-fit: cover;
-
       display: block;
     }
 
     .movie-info {
-
       padding: 25px;
     }
 
     .movie-info h1 {
-
       font-size: 32px;
-
       margin-bottom: 10px;
     }
 
     .movie-info p {
-
       color: #999;
-
       line-height: 1.6;
     }
 
-    /* =========================
-       LECTEUR
-    ========================= */
-
     .video-title {
-
       font-size: 28px;
-
       margin-bottom: 20px;
     }
 
     .video-container {
-
       position: relative;
-
       width: 100%;
-
       aspect-ratio: 16 / 9;
-
       background: #000;
-
       border-radius: 10px;
-
       overflow: hidden;
-
-      box-shadow:
-        0 0 25px rgba(255,0,0,0.15);
+      box-shadow: 0 0 25px rgba(255,0,0,0.15);
     }
 
     .video-container iframe {
-
       width: 100%;
-
       height: 100%;
-
       border: none;
-
       display: block;
     }
 
-    /* =========================
-       RETOUR EN HAUT
-    ========================= */
-
     .return {
-
       display: flex;
-
       width: 65px;
-
       height: 65px;
-
       margin: 70px auto 0;
-
       border-radius: 50%;
-
       background: #e50914;
-
       color: white;
-
       text-decoration: none;
-
       align-items: center;
-
       justify-content: center;
-
       font-size: 30px;
-
       box-shadow:
         0 0 10px #e50914,
         0 0 25px rgba(229,9,20,0.5);
-
       transition: 0.3s;
     }
 
     .return:hover {
-
       background: #b20710;
-
       transform: translateY(-5px);
-
       box-shadow:
         0 0 15px #e50914,
         0 0 35px rgba(229,9,20,0.7);
     }
 
-    /* =========================
-       FOOTER
-    ========================= */
-
     footer {
-
       text-align: center;
-
       color: #777;
-
       padding: 40px;
-
       border-top: 1px solid #222;
     }
-
-    /* =========================
-       TELEPHONE
-    ========================= */
 
     @media (max-width: 600px) {
 
       header {
-
         padding: 0 20px;
       }
 
       .logo {
-
         font-size: 18px;
       }
 
       .back {
-
         font-size: 13px;
-
         padding: 8px 12px;
       }
 
       .video-page {
-
         width: 94%;
-
         margin-top: 30px;
       }
 
       .movie-info {
-
         padding: 20px;
       }
 
       .movie-info h1 {
-
         font-size: 25px;
       }
 
       .video-title {
-
         font-size: 23px;
       }
 
     }
 
-  </style>
-
-</head>
-
-
-<body id="top">
-
-
-  <!-- =========================
-       MENU
-  ========================= -->
-
-  <header>
-
-    <div class="logo">
-
-      🎬 MON CINÉMA
-
-    </div>
-
-
-    <a
-      class="back"
-      href="index.html">
-
-      ← Retour aux films
-
-    </a>
-
-  </header>
-
-
-  <!-- =========================
-       PAGE DE LECTURE
-  ========================= -->
-
-  <main class="video-page">
-
-
-    <!-- CARTE DU FILM -->
-
-    <div class="movie-card">
-
-
-      <img
-        class="movie-poster"
-        id="poster"
-        src=""
-        alt="Affiche du film">
-
-
-      <div class="movie-info">
-
-
-        <h1 id="movieTitle">
-
-          Mon film
-
-        </h1>
-
-
-        <p id="movieDescription">
-
-          Regardez le film directement
-          depuis Mon Cinéma.
-
-        </p>
-
-
-      </div>
-
-    </div>
-
-
-    <!-- =========================
-         LECTEUR
-    ========================= -->
-
-    <h2 class="video-title">
-
-      ▶ Regarder le film
-
-    </h2>
-
-
-    <div class="video-container">
-
-
-      <iframe
-        id="player"
-        src=""
-        title="Lecteur vidéo"
-        allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
-        allowfullscreen>
-      </iframe>
-
-
-    </div>
-
-
-    <!-- =========================
-         RETOUR EN HAUT
-    ========================= -->
-
-    <a
-      class="return"
-      href="#top"
-      title="Retour en haut">
-
-      ↑
-
-    </a>
-
-
-  </main>
-
-
-  <!-- =========================
-       FOOTER
-  ========================= -->
-
-  <footer>
-
-    © 2026 Mon Cinéma
-
-  </footer>
-
-
-  <!-- =========================
-       JAVASCRIPT
-  ========================= -->
-
-  <script>
-
-    /* =========================
-       RÉCUPÉRER L'ID
-    ========================= */
-
-    const params =
-      new URLSearchParams(
-        window.location.search
-      );
-
-    const id =
-      params.get("id");
-
-
-    /* =========================
-       LISTE DES FILMS
-    ========================= */
-
-    const movies = {
-
-
-      /* =====================
-         FILM 1
-      ====================== */
-
-      "3wSUg_Bc7OM": {
-
-        title:
-          "Mon premier film",
-
-        description:
-          "Découvrez mon premier film et mes créations.",
-
-        poster:
-          "https://img.youtube.com/vi/3wSUg_Bc7OM/maxresdefault.jpg",
-
-        video:
-          "https://www.youtube.com/embed/3wSUg_Bc7OM?autoplay=1"
-
-      },
-
-
-      /* =====================
-         FILM 2
-      ====================== */
-
-      "1MoeXM9HISY": {
-
-        title:
-          "Mon film 2",
-
-        description:
-          "Découvrez mon deuxième film.",
-
-        poster:
-          "https://img.youtube.com/vi/1MoeXM9HISY/maxresdefault.jpg",
-
-        video:
-          "https://www.youtube.com/embed/1MoeXM9HISY?autoplay=1"
-
-      },
-
-
-      /* =====================
-         FILM 3
-      ====================== */
-
-      "A2HM48PwsXQ": {
-
-        title:
-          "Mon film 3",
-
-        description:
-          "Découvrez mon troisième film.",
-
-        poster:
-          "https://img.youtube.com/vi/A2HM48PwsXQ/maxresdefault.jpg",
-
-        video:
-          "https://www.youtube.com/embed/A2HM48PwsXQ?autoplay=1"
-
-      },
-
-
-      /* =====================
-         FILM 4 - ARTE
-      ====================== */
-
-      "arte": {
-
-        title:
-          "Dans le grand tourbillon de la vie",
-
-        description:
-          "Découvrez cette vidéo directement dans Mon Cinéma.",
-
-        poster:
-          "",
-
-        video:
-          "https://www.arte.tv/embeds/fr/083851-000-A?autoplay=true&mute=0"
-
-      },
-
-
-      /* =====================
-         FILM 5 - ARTE
-      ====================== */
-
-      "arte5": {
-
-        title:
-          "Tout pour ma fille",
-
-        description:
-          "Découvrez cette vidéo directement dans Mon Cinéma.",
-
-        poster:
-          "",
-
-        video:
-          "https://www.arte.tv/embeds/fr/061649-000-A?autoplay=true&mute=0"
-
-      },
-
-
-      /* =====================
-         FILM 6 - ARTE
-      ====================== */
-
-      "arte6": {
-
-        title:
-          "Ondine",
-
-        description:
-          "Découvrez cette vidéo directement dans Mon Cinéma.",
-
-        poster:
-          "",
-
-        video:
-          "https://www.arte.tv/embeds/fr/091156-000-A?autoplay=true&mute=0"
-
-      }
-
-    };
-
-
-    /* =========================
-       CHARGER LE FILM
-    ========================= */
-
-    const movie =
-      movies[id];
-
-
-    if (movie) {
-
-
-      /* TITRE */
-
-      document.getElementById(
-        "movieTitle"
-      ).textContent =
-        movie.title;
-
-
-      /* DESCRIPTION */
-
-      document.getElementById(
-        "movieDescription"
-      ).textContent =
-        movie.description;
-
-
-      /* LECTEUR */
-
-      document.getElementById(
-        "player"
-      ).src =
-        movie.video;
-
-
-      /* =====================
-         AFFICHES YOUTUBE
-      ====================== */
-
-      if (movie.poster) {
-
-        document.getElementById(
-          "poster"
-        ).src =
-          movie.poster;
-
-      }
-
-
-      /* =====================
-         ARTE
-      ====================== */
-
-      else {
-
-        document.getElementById(
-          "poster"
-        ).style.display =
-          "none";
-
-      }
+  </style></head><body id="top"><header>  <div class="logo">
+    🎬 MON CINÉMA
+  </div>  <a class="back" href="index.html">
+    ← Retour aux films
+  </a></header><main class="video-page">  <div class="movie-card"><img
+  class="movie-poster"
+  id="poster"
+  src=""
+  alt="Affiche du film">
+
+<div class="movie-info">
+
+  <h1 id="movieTitle">
+    Mon film
+  </h1>
+
+  <p id="movieDescription">
+    Regardez le film directement depuis Mon Cinéma.
+  </p>
+
+</div>
+
+  </div>  <h2 class="video-title">
+    ▶ Regarder le film
+  </h2>  <div class="video-container"><iframe
+  id="player"
+  src=""
+  title="Lecteur vidéo"
+  allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+  allowfullscreen>
+</iframe>
+
+  </div><a
+class="return"
+href="#top"
+title="Retour en haut">
+↑
+</a>
+
+</main><footer>
+  © 2026 Mon Cinéma
+</footer><script>
+
+  const params =
+    new URLSearchParams(window.location.search);
+
+  const id =
+    params.get("id");
+
+  const movies = {
+
+    /* FILM 1 */
+    "3wSUg_Bc7OM": {
+      title: "Mon premier film",
+      description: "Découvrez mon premier film et mes créations.",
+      poster: "https://img.youtube.com/vi/3wSUg_Bc7OM/maxresdefault.jpg",
+      video: "https://www.youtube.com/embed/3wSUg_Bc7OM?autoplay=1"
+    },
+
+    /* FILM 2 */
+    "1MoeXM9HISY": {
+      title: "Mon film 2",
+      description: "Découvrez mon deuxième film.",
+      poster: "https://img.youtube.com/vi/1MoeXM9HISY/maxresdefault.jpg",
+      video: "https://www.youtube.com/embed/1MoeXM9HISY?autoplay=1"
+    },
+
+    /* FILM 3 */
+    "A2HM48PwsXQ": {
+      title: "Mon film 3",
+      description: "Découvrez mon troisième film.",
+      poster: "https://img.youtube.com/vi/A2HM48PwsXQ/maxresdefault.jpg",
+      video: "https://www.youtube.com/embed/A2HM48PwsXQ?autoplay=1"
+    },
+
+    /* FILM 4 */
+    "arte": {
+      title: "Dans le grand tourbillon de la vie",
+      description: "Découvrez cette vidéo directement dans Mon Cinéma.",
+      poster: "",
+      video: "https://www.arte.tv/embeds/fr/083851-000-A?autoplay=true&mute=0"
+    },
+
+    /* FILM 5 */
+    "arte5": {
+      title: "Tout pour ma fille",
+      description: "Découvrez cette vidéo directement dans Mon Cinéma.",
+      poster: "",
+      video: "https://www.arte.tv/embeds/fr/061649-000-A?autoplay=true&mute=0"
+    },
+
+    /* FILM 6 */
+    "arte6": {
+      title: "Ondine",
+      description: "Découvrez cette vidéo directement dans Mon Cinéma.",
+      poster: "",
+      video: "https://www.arte.tv/embeds/fr/091156-000-A?autoplay=true&mute=0"
+    },
+
+    /* FILM 9 */
+    "arte9": {
+      title: "Entretien avec Christian Petzold",
+      description: "Découvrez cette vidéo directement dans Mon Cinéma.",
+      poster: "",
+      video: "https://www.arte.tv/embeds/fr/093576-000-A?autoplay=true&mute=0"
+    },
+
+    /* FILM 10 */
+    "arte10": {
+      title: "Fantômes",
+      description: "Découvrez cette vidéo directement dans Mon Cinéma.",
+      poster: "",
+      video: "https://www.arte.tv/embeds/fr/031088-000-A?autoplay=true&mute=0"
+    },
+
+    /* FILM 11 */
+    "arte11": {
+      title: "Phoenix",
+      description: "Découvrez cette vidéo directement dans Mon Cinéma.",
+      poster: "",
+      video: "https://www.arte.tv/embeds/fr/050833-000-A?autoplay=true&mute=0"
+    },
+
+    /* FILM 12 */
+    "arte12": {
+      title: "Contrôle d'identité",
+      description: "Découvrez cette vidéo directement dans Mon Cinéma.",
+      poster: "",
+      video: "https://www.arte.tv/embeds/fr/021939-000-A?autoplay=true&mute=0"
+    },
+
+    /* FILM 13 */
+    "arte13": {
+      title: "Yella",
+      description: "Découvrez cette vidéo directement dans Mon Cinéma.",
+      poster: "",
+      video: "https://www.arte.tv/embeds/fr/035749-000-A?autoplay=true&mute=0"
+    },
+
+    /* FILM 14 */
+    "arte14": {
+      title: "Transit",
+      description: "Découvrez cette vidéo directement dans Mon Cinéma.",
+      poster: "",
+      video: "https://www.arte.tv/embeds/fr/075743-000-A?autoplay=true&mute=0"
+    },
+
+    /* FILM 15 */
+    "arte15": {
+      title: "La firme",
+      description: "Découvrez cette vidéo directement dans Mon Cinéma.",
+      poster: "",
+      video: "https://www.arte.tv/embeds/fr/045719-000-A?autoplay=true&mute=0"
+    },
+
+    /* FILM 16 */
+    "arte16": {
+      title: "The Yards",
+      description: "Découvrez cette vidéo directement dans Mon Cinéma.",
+      poster: "",
+      video: "https://www.arte.tv/embeds/fr/130331-000-A?autoplay=true&mute=0"
+    }
+
+  };
+
+  const movie = movies[id];
+
+  if (movie) {
+
+    document.getElementById("movieTitle").textContent =
+      movie.title;
+
+    document.getElementById("movieDescription").textContent =
+      movie.description;
+
+    document.getElementById("player").src =
+      movie.video;
+
+    if (movie.poster) {
+
+      document.getElementById("poster").src =
+        movie.poster;
+
+    } else {
+
+      document.getElementById("poster").style.display =
+        "none";
 
     }
 
+  } else {
 
-    /* =========================
-       FILM INCONNU
-    ========================= */
+    document.getElementById("movieTitle").textContent =
+      "Film introuvable";
 
-    else {
+    document.getElementById("movieDescription").textContent =
+      "Ce film n'existe pas.";
 
-      document.getElementById(
-        "movieTitle"
-      ).textContent =
-        "Film introuvable";
+  }
 
-
-      document.getElementById(
-        "movieDescription"
-      ).textContent =
-        "Ce film n'existe pas.";
-
-    }
-
-  </script>
-
-
-</body>
-
+</script></body>
 </html>
