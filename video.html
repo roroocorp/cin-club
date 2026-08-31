@@ -1,7 +1,16 @@
-<!DOCTYPE html><html lang="fr"><head>  <meta charset="UTF-8"><meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html>
+<html lang="fr">
 
-  <title>Lecture - Mon Cinéma</title>  <style>
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>Lecture - Mon Cinéma</title>
+
+  <style>
 
     * {
       margin: 0;
@@ -68,7 +77,6 @@ content="width=device-width, initial-scale=1.0">
 
     .back:hover {
       background: #e50914;
-
       border-color: #e50914;
     }
 
@@ -87,6 +95,7 @@ content="width=device-width, initial-scale=1.0">
     ========================= */
 
     .movie-card {
+
       position: relative;
 
       background: #151515;
@@ -104,6 +113,7 @@ content="width=device-width, initial-scale=1.0">
     /* LED ROUGE */
 
     .movie-card::before {
+
       content: "";
 
       position: absolute;
@@ -127,6 +137,7 @@ content="width=device-width, initial-scale=1.0">
     }
 
     .movie-poster {
+
       width: 100%;
 
       max-height: 500px;
@@ -137,39 +148,44 @@ content="width=device-width, initial-scale=1.0">
     }
 
     .movie-info {
+
       padding: 25px;
     }
 
     .movie-info h1 {
+
       font-size: 32px;
 
       margin-bottom: 10px;
     }
 
     .movie-info p {
+
       color: #999;
 
       line-height: 1.6;
     }
 
     /* =========================
-       VIDEO
+       LECTEUR
     ========================= */
 
     .video-title {
+
       font-size: 28px;
 
       margin-bottom: 20px;
     }
 
     .video-container {
+
       position: relative;
 
       width: 100%;
 
       aspect-ratio: 16 / 9;
 
-      background: black;
+      background: #000;
 
       border-radius: 10px;
 
@@ -180,11 +196,14 @@ content="width=device-width, initial-scale=1.0">
     }
 
     .video-container iframe {
+
       width: 100%;
 
       height: 100%;
 
       border: none;
+
+      display: block;
     }
 
     /* =========================
@@ -192,6 +211,7 @@ content="width=device-width, initial-scale=1.0">
     ========================= */
 
     .return {
+
       display: flex;
 
       width: 65px;
@@ -222,6 +242,7 @@ content="width=device-width, initial-scale=1.0">
     }
 
     .return:hover {
+
       background: #b20710;
 
       transform: translateY(-5px);
@@ -236,6 +257,7 @@ content="width=device-width, initial-scale=1.0">
     ========================= */
 
     footer {
+
       text-align: center;
 
       color: #777;
@@ -252,223 +274,376 @@ content="width=device-width, initial-scale=1.0">
     @media (max-width: 600px) {
 
       header {
+
         padding: 0 20px;
       }
 
       .logo {
+
         font-size: 18px;
       }
 
       .back {
+
         font-size: 13px;
 
         padding: 8px 12px;
       }
 
       .video-page {
+
         width: 94%;
 
         margin-top: 30px;
       }
 
       .movie-info {
+
         padding: 20px;
       }
 
       .movie-info h1 {
+
         font-size: 25px;
       }
 
       .video-title {
+
         font-size: 23px;
       }
 
     }
 
-  </style></head><body id="top">  <!-- =========================
+  </style>
+
+</head>
+
+
+<body id="top">
+
+
+  <!-- =========================
        MENU
-  ========================= -->  <header><div class="logo">
-  🎬 MON CINÉMA
-</div>
+  ========================= -->
 
-<a
-  class="back"
-  href="index.html">
+  <header>
 
-  ← Retour aux films
+    <div class="logo">
 
-</a>
+      🎬 MON CINÉMA
 
-  </header>  <!-- =========================
+    </div>
+
+
+    <a
+      class="back"
+      href="index.html">
+
+      ← Retour aux films
+
+    </a>
+
+  </header>
+
+
+  <!-- =========================
        PAGE DE LECTURE
-  ========================= -->  <main class="video-page"><!-- CARTE DU FILM -->
+  ========================= -->
 
-<div class="movie-card">
-
-  <img
-    class="movie-poster"
-    id="poster"
-    src=""
-    alt="Affiche du film">
-
-  <div class="movie-info">
-
-    <h1 id="movieTitle">
-      Mon film
-    </h1>
-
-    <p id="movieDescription">
-      Regardez le film directement depuis Mon Cinéma.
-    </p>
-
-  </div>
-
-</div>
+  <main class="video-page">
 
 
-<!-- LECTEUR -->
+    <!-- =========================
+         CARTE DU FILM
+    ========================= -->
 
-<h2 class="video-title">
-  ▶ Regarder le film
-</h2>
-
-<div class="video-container">
-
-  <iframe
-    id="youtube"
-    src=""
-    title="Lecteur vidéo YouTube"
-    allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
-    allowfullscreen>
-  </iframe>
-
-</div>
+    <div class="movie-card">
 
 
-<!-- RETOUR EN HAUT -->
+      <img
+        class="movie-poster"
+        id="poster"
+        src=""
+        alt="Affiche du film">
 
-<a
-  class="return"
-  href="#top"
-  title="Retour en haut">
 
-  ↑
+      <div class="movie-info">
 
-</a>
 
-  </main>  <!-- =========================
+        <h1 id="movieTitle">
+
+          Mon film
+
+        </h1>
+
+
+        <p id="movieDescription">
+
+          Regardez le film directement
+          depuis Mon Cinéma.
+
+        </p>
+
+
+      </div>
+
+    </div>
+
+
+    <!-- =========================
+         LECTEUR
+    ========================= -->
+
+    <h2 class="video-title">
+
+      ▶ Regarder le film
+
+    </h2>
+
+
+    <div class="video-container">
+
+
+      <iframe
+        id="player"
+        src=""
+        title="Lecteur vidéo"
+        allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+
+
+    </div>
+
+
+    <!-- =========================
+         RETOUR EN HAUT
+    ========================= -->
+
+    <a
+      class="return"
+      href="#top"
+      title="Retour en haut">
+
+      ↑
+
+    </a>
+
+
+  </main>
+
+
+  <!-- =========================
        FOOTER
-  ========================= -->  <footer>© 2026 Mon Cinéma
+  ========================= -->
 
-  </footer>  <!-- =========================
+  <footer>
+
+    © 2026 Mon Cinéma
+
+  </footer>
+
+
+  <!-- =========================
        JAVASCRIPT
-  ========================= -->  <script>
+  ========================= -->
 
-    /* Récupère l'identifiant de la vidéo */
+  <script>
+
+    /* =========================
+       RÉCUPÉRER L'ID
+    ========================= */
 
     const params =
       new URLSearchParams(
         window.location.search
       );
 
+
     const id =
       params.get("id");
 
 
-    /* Si aucune vidéo n'est indiquée */
+    /* =========================
+       LISTE DES FILMS
+    ========================= */
 
-    if (!id) {
-
-      document.getElementById(
-        "movieTitle"
-      ).textContent =
-        "Aucun film sélectionné";
-
-    }
+    const movies = {
 
 
-    /* MINIATURE */
+      /* =====================
+         FILM 1
+      ====================== */
 
-    if (id) {
+      "3wSUg_Bc7OM": {
 
-      document.getElementById(
-        "poster"
-      ).src =
-        "https://img.youtube.com/vi/"
-        + id
-        + "/maxresdefault.jpg";
+        title:
+          "Mon premier film",
 
-    }
+        description:
+          "Découvrez mon premier film et mes créations.",
 
+        poster:
+          "https://img.youtube.com/vi/3wSUg_Bc7OM/maxresdefault.jpg",
 
-    /* VIDEO YOUTUBE */
+        video:
+          "https://www.youtube.com/embed/3wSUg_Bc7OM?autoplay=1"
 
-    if (id) {
-
-      document.getElementById(
-        "youtube"
-      ).src =
-        "https://www.youtube.com/embed/"
-        + id
-        + "?autoplay=1";
-
-    }
+      },
 
 
-    /* TITRES */
+      /* =====================
+         FILM 2
+      ====================== */
 
-    const titles = {
+      "1MoeXM9HISY": {
 
-      "3wSUg_Bc7OM":
-        "Mon premier film",
+        title:
+          "Mon film 2",
 
-      "1MoeXM9HISY":
-        "Mon film 2",
+        description:
+          "Découvrez mon deuxième film.",
 
-      "A2HM48PwsXQ":
-        "Mon film 3"
+        poster:
+          "https://img.youtube.com/vi/1MoeXM9HISY/maxresdefault.jpg",
+
+        video:
+          "https://www.youtube.com/embed/1MoeXM9HISY?autoplay=1"
+
+      },
+
+
+      /* =====================
+         FILM 3
+      ====================== */
+
+      "A2HM48PwsXQ": {
+
+        title:
+          "Mon film 3",
+
+        description:
+          "Découvrez mon troisième film.",
+
+        poster:
+          "https://img.youtube.com/vi/A2HM48PwsXQ/maxresdefault.jpg",
+
+        video:
+          "https://www.youtube.com/embed/A2HM48PwsXQ?autoplay=1"
+
+      },
+
+
+      /* =====================
+         FILM 4 - ARTE
+      ====================== */
+
+      "arte": {
+
+        title:
+          "Dans le grand tourbillon de la vie",
+
+        description:
+          "Découvrez cette vidéo directement dans Mon Cinéma.",
+
+        poster:
+          "",
+
+        video:
+          "https://www.arte.tv/embeds/fr/083851-000-A?autoplay=true&mute=0"
+
+      }
 
     };
 
 
-    /* DESCRIPTIONS */
+    /* =========================
+       CHARGER LE FILM
+    ========================= */
 
-    const descriptions = {
-
-      "3wSUg_Bc7OM":
-        "Découvrez mon premier film et mes créations.",
-
-      "1MoeXM9HISY":
-        "Découvrez mon deuxième film.",
-
-      "A2HM48PwsXQ":
-        "Découvrez mon troisième film."
-
-    };
+    const movie =
+      movies[id];
 
 
-    /* AFFICHER LE BON TITRE */
+    if (movie) {
 
-    if (titles[id]) {
+
+      /* TITRE */
 
       document.getElementById(
         "movieTitle"
       ).textContent =
-        titles[id];
-
-    }
+        movie.title;
 
 
-    /* AFFICHER LA BONNE DESCRIPTION */
-
-    if (descriptions[id]) {
+      /* DESCRIPTION */
 
       document.getElementById(
         "movieDescription"
       ).textContent =
-        descriptions[id];
+        movie.description;
+
+
+      /* LECTEUR */
+
+      document.getElementById(
+        "player"
+      ).src =
+        movie.video;
+
+
+      /* =====================
+         AFFICHES YOUTUBE
+      ====================== */
+
+      if (movie.poster) {
+
+        document.getElementById(
+          "poster"
+        ).src =
+          movie.poster;
+
+      }
+
+
+      /* =====================
+         ARTE
+      ====================== */
+
+      else {
+
+        document.getElementById(
+          "poster"
+        ).style.display =
+          "none";
+
+      }
 
     }
 
-  </script></body></html>
-```
+
+    /* =========================
+       FILM INCONNU
+    ========================= */
+
+    else {
+
+      document.getElementById(
+        "movieTitle"
+      ).textContent =
+        "Film introuvable";
+
+
+      document.getElementById(
+        "movieDescription"
+      ).textContent =
+        "Ce film n'existe pas.";
+
+    }
+
+  </script>
+
+
+</body>
+
+</html>
