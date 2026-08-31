@@ -1,901 +1,907 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MON CINÉMA</title>
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Mon Cinéma</title><style>
 
-<style>
+/* =========================
+   STYLE GÉNÉRAL
+========================= */
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-    background: #000;
-    color: #fff;
-    font-family: Arial, Helvetica, sans-serif;
+  background: #080808;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
 }
+
 
 /* =========================
    MENU
 ========================= */
 
 header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 75px;
-    z-index: 50;
+  height: 70px;
+  background: #0d0d0d;
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-    padding: 0 5%;
+  padding: 0 6%;
 
-    background: linear-gradient(
-        to bottom,
-        rgba(0,0,0,0.95),
-        rgba(0,0,0,0.45)
-    );
+  border-bottom: 1px solid #222;
+
+  position: sticky;
+  top: 0;
+  z-index: 50;
 }
 
 .logo {
-    color: #e50914;
-    font-size: 30px;
-    font-weight: 900;
-    letter-spacing: 2px;
-}
+  color: #e50914;
 
-nav {
-    display: flex;
-    gap: 30px;
+  font-size: 25px;
+  font-weight: bold;
+
+  letter-spacing: 2px;
 }
 
 nav a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: bold;
+  color: white;
+
+  text-decoration: none;
+
+  margin-left: 25px;
+
+  font-size: 15px;
+
+  transition: 0.3s;
 }
 
 nav a:hover {
-    color: #e50914;
+  color: #e50914;
 }
 
+
 /* =========================
-   GRANDE BANNIÈRE
+   ACCUEIL
 ========================= */
 
 .hero {
-    min-height: 720px;
 
-    display: flex;
-    align-items: center;
+  min-height: 560px;
 
-    padding: 100px 7% 70px;
+  display: flex;
 
-    position: relative;
+  align-items: center;
 
-    background:
-        linear-gradient(
-            90deg,
-            #000 0%,
-            rgba(0,0,0,0.88) 30%,
-            rgba(0,0,0,0.45) 65%,
-            rgba(0,0,0,0.1) 100%
-        ),
-        linear-gradient(
-            135deg,
-            #292929,
-            #111,
-            #000
-        );
-}
+  padding: 60px 7%;
 
-.hero::after {
-    content: "";
-
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-
-    height: 180px;
-
-    background: linear-gradient(
-        transparent,
-        #000
+  background:
+    linear-gradient(
+      90deg,
+      #080808 0%,
+      rgba(8,8,8,0.9) 40%,
+      rgba(8,8,8,0.25) 100%
+    ),
+    linear-gradient(
+      135deg,
+      #292929,
+      #111111
     );
 }
 
 .hero-content {
-    max-width: 650px;
-    position: relative;
-    z-index: 2;
+  max-width: 650px;
 }
 
 .hero small {
-    color: #ddd;
-    font-size: 14px;
-    letter-spacing: 4px;
-    font-weight: bold;
+  color: #aaa;
+
+  font-size: 13px;
+
+  letter-spacing: 3px;
 }
 
 .hero h1 {
-    font-size: clamp(50px, 7vw, 90px);
-    margin: 20px 0;
 
-    font-weight: 900;
+  font-size: 60px;
+
+  margin: 20px 0;
 }
 
 .hero p {
-    color: #ddd;
-    font-size: 19px;
-    line-height: 1.6;
-    max-width: 600px;
+
+  color: #ccc;
+
+  font-size: 18px;
+
+  line-height: 1.6;
 }
 
-.hero-buttons {
-    display: flex;
-    gap: 12px;
-    margin-top: 30px;
+.button {
+
+  display: inline-block;
+
+  margin-top: 25px;
+
+  padding: 14px 25px;
+
+  background: #e50914;
+
+  color: white;
+
+  border-radius: 6px;
+
+  text-decoration: none;
+
+  font-weight: bold;
+
+  transition: 0.3s;
 }
 
-.hero-button {
-    padding: 15px 28px;
+.button:hover {
 
-    border: none;
-    border-radius: 5px;
+  background: #b20710;
 
-    font-size: 16px;
-    font-weight: bold;
-
-    cursor: pointer;
+  transform: scale(1.05);
 }
 
-.play-button {
-    background: #fff;
-    color: #000;
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section {
+
+  padding: 60px 7%;
 }
 
-.play-button:hover {
-    background: #ddd;
+.section h2 {
+
+  font-size: 30px;
+
+  margin-bottom: 30px;
 }
 
-.info-button {
-    background: rgba(100,100,100,0.75);
-    color: #fff;
-}
-
-.info-button:hover {
-    background: rgba(130,130,130,0.8);
-}
 
 /* =========================
    FILMS
 ========================= */
 
-.section {
-    padding: 45px 5% 80px;
-    background: #000;
-}
-
-.section h2 {
-    font-size: 28px;
-    margin-bottom: 25px;
-}
-
 .films {
-    display: grid;
 
-    grid-template-columns:
-        repeat(
-            auto-fit,
-            minmax(280px, 1fr)
-        );
+  display: grid;
 
-    gap: 25px;
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(250px, 1fr)
+    );
+
+  gap: 25px;
 }
-
-/* =========================
-   CARTE FILM
-========================= */
 
 .film {
-    background: #181818;
 
-    border-radius: 7px;
+  background: #151515;
 
-    overflow: hidden;
+  border-radius: 12px;
 
-    transition:
-        transform 0.3s,
-        box-shadow 0.3s;
+  overflow: hidden;
 
-    cursor: pointer;
+  transition: 0.3s;
+
+  border: 1px solid #222;
 }
 
 .film:hover {
-    transform: scale(1.04);
 
-    box-shadow:
-        0 15px 40px rgba(0,0,0,0.8);
+  transform: translateY(-8px);
+
+  border-color: #e50914;
+
+  box-shadow:
+    0 10px 35px rgba(229,9,20,0.2);
 }
 
+
+/* =========================
+   MINIATURE
+========================= */
+
 .thumbnail {
-    position: relative;
 
-    width: 100%;
+  position: relative;
 
-    aspect-ratio: 16 / 9;
+  width: 100%;
 
-    overflow: hidden;
+  aspect-ratio: 16 / 9;
 
-    background: #252525;
+  overflow: hidden;
+
+  background: #222;
 }
 
 .thumbnail img {
-    width: 100%;
-    height: 100%;
 
-    object-fit: cover;
+  width: 100%;
 
-    display: block;
+  height: 100%;
 
-    transition: transform 0.4s;
+  object-fit: cover;
+
+  display: block;
+
+  transition: 0.4s;
 }
 
 .film:hover .thumbnail img {
-    transform: scale(1.06);
+
+  transform: scale(1.06);
 }
 
-.play-circle {
-    position: absolute;
 
-    left: 50%;
-    top: 50%;
+/* =========================
+   BOUTON PLAY
+========================= */
 
-    transform:
-        translate(-50%, -50%);
+.play {
 
-    width: 70px;
-    height: 70px;
+  position: absolute;
 
-    border-radius: 50%;
+  left: 50%;
+  top: 50%;
 
-    background: #e50914;
+  transform:
+    translate(-50%, -50%);
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 65px;
+  height: 65px;
 
-    font-size: 28px;
+  border-radius: 50%;
 
-    box-shadow:
-        0 5px 20px rgba(0,0,0,0.6);
+  background: #e50914;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 25px;
+
+  box-shadow:
+    0 0 0 8px rgba(229,9,20,0.2);
+
+  transition: 0.3s;
 }
+
+.film:hover .play {
+
+  transform:
+    translate(-50%, -50%)
+    scale(1.1);
+
+  box-shadow:
+    0 0 0 12px rgba(229,9,20,0.15);
+}
+
+
+/* =========================
+   INFORMATIONS
+========================= */
 
 .info {
-    padding: 20px;
+
+  padding: 20px;
 }
 
 .info h3 {
-    font-size: 21px;
-    margin-bottom: 10px;
+
+  margin-bottom: 8px;
+
+  font-size: 20px;
 }
 
 .info p {
-    color: #999;
-    line-height: 1.5;
-    min-height: 45px;
+
+  color: #999;
+
+  line-height: 1.5;
 }
 
+
+/* =========================
+   BOUTON REGARDER
+========================= */
+
 .watch {
-    margin-top: 18px;
 
-    border: none;
+  border: none;
 
-    padding: 12px 20px;
+  margin-top: 15px;
 
-    background: #e50914;
+  padding: 11px 18px;
 
-    color: #fff;
+  background: #e50914;
 
-    border-radius: 4px;
+  color: white;
 
-    font-size: 14px;
-    font-weight: bold;
+  border-radius: 6px;
 
-    cursor: pointer;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.3s;
 }
 
 .watch:hover {
-    background: #f40612;
+
+  background: #b20710;
+
+  transform: scale(1.04);
 }
+
 
 /* =========================
-   FILMS BIENTÔT DISPONIBLES
-========================= */
-
-.coming-soon {
-    position: relative;
-
-    width: 100%;
-    height: 100%;
-
-    min-height: 170px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    background:
-        linear-gradient(
-            135deg,
-            #242424,
-            #111
-        );
-}
-
-.coming-soon span {
-    color: #888;
-
-    font-size: 18px;
-
-    font-weight: bold;
-}
-
-/* =========================
-   LECTEUR PLEIN ÉCRAN
+   FENÊTRE VIDÉO
 ========================= */
 
 .modal {
-    position: fixed;
 
-    inset: 0;
+  display: none;
 
-    z-index: 9999;
+  position: fixed;
 
-    display: none;
+  z-index: 100;
 
-    align-items: center;
-    justify-content: center;
+  inset: 0;
 
-    padding: 35px;
+  background:
+    rgba(0,0,0,0.94);
 
-    background:
-        rgba(0,0,0,0.97);
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 30px;
 }
 
 .modal.open {
-    display: flex;
+
+  display: flex;
+
+  animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .video-box {
-    position: relative;
 
-    width: min(1400px, 96vw);
+  width: min(1000px, 100%);
 
-    max-height: 90vh;
+  position: relative;
+
+  animation: videoIn 0.3s ease;
+}
+
+@keyframes videoIn {
+
+  from {
+    transform: scale(0.92);
+  }
+
+  to {
+    transform: scale(1);
+  }
 }
 
 .video-box iframe {
-    display: block;
 
-    width: 100%;
+  width: 100%;
 
-    aspect-ratio: 16 / 9;
+  aspect-ratio: 16 / 9;
 
-    border: none;
+  border: none;
 
-    border-radius: 8px;
+  border-radius: 12px;
 
-    background: #000;
+  box-shadow:
+    0 20px 70px rgba(0,0,0,0.8);
 }
 
+
 /* =========================
-   GRANDE CROIX
+   CROIX POUR FERMER
 ========================= */
 
 .close {
-    position: fixed;
 
-    top: 25px;
-    right: 30px;
+  position: absolute;
 
-    width: 55px;
-    height: 55px;
+  right: -5px;
 
-    border: none;
+  top: -60px;
 
-    border-radius: 50%;
+  width: 48px;
 
-    background: #fff;
+  height: 48px;
 
-    color: #000;
+  border-radius: 50%;
 
-    font-size: 38px;
+  border: 1px solid #555;
 
-    line-height: 50px;
+  background: #181818;
 
-    cursor: pointer;
+  color: white;
 
-    z-index: 10000;
+  font-size: 30px;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  transition: 0.3s;
+
+  line-height: 1;
 }
 
 .close:hover {
-    background: #e50914;
-    color: #fff;
 
-    transform: rotate(90deg);
+  background: #e50914;
+
+  border-color: #e50914;
+
+  transform: rotate(90deg) scale(1.08);
 }
 
-.modal-title {
-    color: #fff;
 
-    font-size: 20px;
+/* =========================
+   BOUTON RETOUR EN HAUT
+========================= */
 
-    font-weight: bold;
+.top-button {
 
-    margin-top: 15px;
+  position: fixed;
+
+  right: 25px;
+
+  bottom: 25px;
+
+  width: 50px;
+
+  height: 50px;
+
+  border-radius: 50%;
+
+  background: #e50914;
+
+  color: white;
+
+  border: none;
+
+  font-size: 22px;
+
+  cursor: pointer;
+
+  z-index: 40;
+
+  box-shadow:
+    0 5px 20px rgba(0,0,0,0.5);
+
+  transition: 0.3s;
 }
+
+.top-button:hover {
+
+  background: #b20710;
+
+  transform: translateY(-5px);
+}
+
 
 /* =========================
    CONTACT
 ========================= */
 
-.contact {
-    padding: 70px 5%;
+.contact-text {
 
-    background: #111;
+  color: #999;
+
+  line-height: 1.6;
 }
 
-.contact h2 {
-    font-size: 30px;
-    margin-bottom: 15px;
-}
-
-.contact p {
-    color: #888;
-}
 
 /* =========================
    FOOTER
 ========================= */
 
 footer {
-    text-align: center;
 
-    padding: 40px;
+  text-align: center;
 
-    background: #000;
+  color: #777;
 
-    color: #666;
+  padding: 40px;
 
-    border-top: 1px solid #222;
+  border-top: 1px solid #222;
 }
+
 
 /* =========================
    TÉLÉPHONE
 ========================= */
 
-@media (max-width: 700px) {
+@media (max-width: 600px) {
 
-    header {
-        height: 65px;
-        padding: 0 20px;
-    }
+  header {
 
-    .logo {
-        font-size: 21px;
-    }
+    height: auto;
 
-    nav {
-        gap: 12px;
-    }
+    min-height: 70px;
 
-    nav a {
-        font-size: 12px;
-    }
+    padding: 15px 20px;
 
-    .hero {
-        min-height: 620px;
-        padding: 100px 25px 60px;
-    }
+    flex-direction: column;
 
-    .hero h1 {
-        font-size: 48px;
-    }
+    gap: 12px;
+  }
 
-    .hero p {
-        font-size: 16px;
-    }
+  .logo {
 
-    .section {
-        padding: 35px 20px 60px;
-    }
+    font-size: 19px;
+  }
 
-    .films {
-        grid-template-columns: 1fr;
-    }
+  nav a {
 
-    .modal {
-        padding: 15px;
-    }
+    margin-left: 8px;
 
-    .close {
-        top: 15px;
-        right: 15px;
+    font-size: 13px;
+  }
 
-        width: 50px;
-        height: 50px;
+  .hero {
 
-        font-size: 32px;
-    }
+    min-height: 500px;
+
+    padding: 40px 25px;
+  }
+
+  .hero h1 {
+
+    font-size: 42px;
+  }
+
+  .hero p {
+
+    font-size: 16px;
+  }
+
+  .section {
+
+    padding: 40px 20px;
+  }
+
+  .section h2 {
+
+    font-size: 26px;
+  }
+
+  .modal {
+
+    padding: 15px;
+  }
+
+  .close {
+
+    right: 0;
+
+    top: -55px;
+
+    width: 42px;
+
+    height: 42px;
+
+    font-size: 26px;
+  }
+
 }
 
-</style>
-</head>
 
-<body>
+/* =========================
+   ACCESSIBILITÉ
+========================= */
 
-<!-- =========================
+button:focus,
+a:focus {
+
+  outline: 2px solid #e50914;
+
+  outline-offset: 3px;
+}
+
+</style></head><body id="top"><!-- =========================
      MENU
-========================= -->
+========================= --><header>  <div class="logo">
+    🎬 MON CINÉMA
+  </div>  <nav><a href="#top">
+  Accueil
+</a>
 
-<header>
+<a href="#films">
+  Films
+</a>
 
-    <div class="logo">
-        MON CINÉMA
-    </div>
+<a href="#contact">
+  Contact
+</a>
 
-    <nav>
-        <a href="#accueil">Accueil</a>
-        <a href="#films">Films</a>
-        <a href="#contact">Contact</a>
-    </nav>
+  </nav></header><!-- =========================
+     ACCUEIL
+========================= --><section class="hero">  <div class="hero-content"><small>
+  BIENVENUE SUR MON CINÉMA
+</small>
 
-</header>
+<h1>
+  Mes films.
+</h1>
 
+<p>
+  Découvrez mes créations,
+  mes vidéos et mes projets
+  directement depuis mon cinéma.
+</p>
 
-<!-- =========================
-     GRANDE PAGE D'ACCUEIL
-========================= -->
+<a
+  class="button"
+  href="#films">
 
-<section class="hero" id="accueil">
+  🎬 Découvrir
 
-    <div class="hero-content">
+</a>
 
-        <small>
-            BIENVENUE SUR MON CINÉMA
-        </small>
-
-        <h1>
-            Mes films.
-        </h1>
-
-        <p>
-            Découvrez mes films, mes vidéos et mes créations
-            dans une expérience cinéma inspirée des grandes
-            plateformes de streaming.
-        </p>
-
-        <div class="hero-buttons">
-
-            <button
-                class="hero-button play-button"
-                onclick="watch('1PgnIcNB6TU')">
-
-                ▶ Regarder
-
-            </button>
-
-            <a
-                href="#films"
-                class="hero-button info-button"
-                style="text-decoration:none;">
-
-                ⓘ Plus d'infos
-
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
+  </div></section><!-- =========================
      MES FILMS
-========================= -->
+========================= --><section
+  class="section"
+  id="films">  <h2>
+    🎞️ Mes films
+  </h2>  <div class="films"><!-- =====================
+     NOUVEAU FILM
+====================== -->
 
-<section
-    class="section"
-    id="films">
+<article class="film">
 
-    <h2>
-        🎬 Mes films
-    </h2>
+  <div class="thumbnail">
 
-    <div class="films">
+    <img
+      src="https://img.youtube.com/vi/2qYaJZVCC3Y/maxresdefault.jpg"
+      alt="Miniature du nouveau film">
 
-
-        <!-- =====================
-             FILM 1
-        ====================== -->
-
-        <article class="film">
-
-            <div
-                class="thumbnail"
-                onclick="watch('1PgnIcNB6TU')">
-
-                <img
-                    src="https://img.youtube.com/vi/1PgnIcNB6TU/maxresdefault.jpg"
-                    alt="Mon premier film">
-
-                <div class="play-circle">
-                    ▶
-                </div>
-
-            </div>
-
-            <div class="info">
-
-                <h3>
-                    Mon premier film
-                </h3>
-
-                <p>
-                    Découvrez mon premier film
-                    et mes créations.
-                </p>
-
-                <button
-                    class="watch"
-                    onclick="watch('1PgnIcNB6TU')">
-
-                    ▶ Regarder
-
-                </button>
-
-            </div>
-
-        </article>
-
-
-        <!-- =====================
-             FILM 2
-        ====================== -->
-
-        <article class="film">
-
-            <div class="thumbnail">
-
-                <div class="coming-soon">
-                    <span>
-                        🎬 Bientôt disponible
-                    </span>
-                </div>
-
-            </div>
-
-            <div class="info">
-
-                <h3>
-                    Mon deuxième film
-                </h3>
-
-                <p>
-                    Une nouvelle création
-                    arrivera bientôt.
-                </p>
-
-            </div>
-
-        </article>
-
-
-        <!-- =====================
-             FILM 3
-        ====================== -->
-
-        <article class="film">
-
-            <div class="thumbnail">
-
-                <div class="coming-soon">
-                    <span>
-                        🎥 Bientôt disponible
-                    </span>
-                </div>
-
-            </div>
-
-            <div class="info">
-
-                <h3>
-                    Mon troisième film
-                </h3>
-
-                <p>
-                    Un nouveau projet
-                    sera disponible prochainement.
-                </p>
-
-            </div>
-
-        </article>
-
+    <div class="play">
+      ▶
     </div>
 
-</section>
+  </div>
 
+  <div class="info">
 
-<!-- =========================
-     CONTACT
-========================= -->
-
-<section
-    class="contact"
-    id="contact">
-
-    <h2>
-        📩 Contact
-    </h2>
+    <h3>
+      Mon nouveau film
+    </h3>
 
     <p>
-        Bienvenue sur mon cinéma !
+      Découvrez ma nouvelle création.
     </p>
 
-</section>
-
-
-<!-- =========================
-     LECTEUR VIDÉO
-========================= -->
-
-<div
-    class="modal"
-    id="modal">
-
     <button
-        class="close"
-        onclick="closeVideo()"
-        aria-label="Fermer">
+      class="watch"
+      onclick="watch('2qYaJZVCC3Y')">
 
-        ×
+      ▶ Regarder
 
     </button>
 
-    <div class="video-box">
+  </div>
 
-        <iframe
-            id="youtube"
-            allow="autoplay; encrypted-media; picture-in-picture"
-            allowfullscreen>
-        </iframe>
+</article>
 
-        <div
-            class="modal-title"
-            id="modalTitle">
-        </div>
 
+<!-- =====================
+     ANCIEN FILM
+====================== -->
+
+<article class="film">
+
+  <div class="thumbnail">
+
+    <img
+      src="https://img.youtube.com/vi/3wSUg_Bc7OM/maxresdefault.jpg"
+      alt="Miniature de mon premier film">
+
+    <div class="play">
+      ▶
     </div>
 
-</div>
+  </div>
+
+  <div class="info">
+
+    <h3>
+      Mon premier film
+    </h3>
+
+    <p>
+      Découvrez mon premier film et mes créations.
+    </p>
+
+    <button
+      class="watch"
+      onclick="watch('3wSUg_Bc7OM')">
+
+      ▶ Regarder
+
+    </button>
+
+  </div>
+
+</article>
 
 
-<!-- =========================
+<!-- =====================
+     FILM À VENIR
+====================== -->
+
+<article class="film">
+
+  <div class="thumbnail">
+
+    <div class="play">
+      ▶
+    </div>
+
+  </div>
+
+  <div class="info">
+
+    <h3>
+      Bientôt disponible
+    </h3>
+
+    <p>
+      Mon prochain film arrivera bientôt.
+    </p>
+
+  </div>
+
+</article>
+
+  </div></section><!-- =========================
+     CONTACT
+========================= --><section
+  class="section"
+  id="contact">  <h2>
+    📩 Contact
+  </h2>  <p class="contact-text">
+    Bienvenue sur mon site !
+  </p></section><!-- =========================
+     LECTEUR VIDÉO
+========================= --><div
+  class="modal"
+  id="modal">  <div class="video-box"><button
+  class="close"
+  onclick="closeVideo()"
+  aria-label="Fermer la vidéo">
+
+  ×
+
+</button>
+
+<iframe
+  id="youtube"
+  allow="autoplay; encrypted-media"
+  allowfullscreen>
+</iframe>
+
+  </div></div><!-- =========================
+     BOUTON RETOUR EN HAUT
+========================= --><button
+class="top-button"
+onclick="goTop()"
+aria-label="Retour en haut">
+
+↑
+
+</button><!-- =========================
      FOOTER
-========================= -->
+========================= --><footer>© 2026 Mon Cinéma
 
-<footer>
+</footer><!-- =========================
+     JAVASCRIPT
+========================= --><script>
 
-    © 2026 Mon Cinéma
+function watch(id) {
 
-</footer>
+  document.getElementById("youtube").src =
+    "https://www.youtube.com/embed/"
+    + id
+    + "?autoplay=1";
 
-
-<script>
-
-/* =========================
-   OUVRIR UNE VIDÉO
-========================= */
-
-function watch(id, title = "Mon film") {
-
-    const modal =
-        document.getElementById("modal");
-
-    const youtube =
-        document.getElementById("youtube");
-
-    const modalTitle =
-        document.getElementById("modalTitle");
-
-    youtube.src =
-        "https://www.youtube.com/embed/"
-        + id
-        + "?autoplay=1&rel=0";
-
-    modalTitle.textContent = title;
-
-    modal.classList.add("open");
-
-    document.body.style.overflow = "hidden";
+  document
+    .getElementById("modal")
+    .classList.add("open");
 }
 
-
-/* =========================
-   FERMER LA VIDÉO
-========================= */
 
 function closeVideo() {
 
-    const modal =
-        document.getElementById("modal");
+  document
+    .getElementById("youtube")
+    .src = "";
 
-    const youtube =
-        document.getElementById("youtube");
-
-    youtube.src = "";
-
-    modal.classList.remove("open");
-
-    document.body.style.overflow = "auto";
+  document
+    .getElementById("modal")
+    .classList.remove("open");
 }
 
 
-/* =========================
-   TOUCHE ÉCHAP
-========================= */
+function goTop() {
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+
+}
+
 
 document.addEventListener(
-    "keydown",
-    function(event) {
+  "keydown",
+  function(event) {
 
-        if (event.key === "Escape") {
-            closeVideo();
-        }
+    if (event.key === "Escape") {
+
+      closeVideo();
 
     }
+
+  }
 );
 
 
-/* =========================
-   CLIQUER À CÔTÉ DE LA VIDÉO
-========================= */
-
 document
-    .getElementById("modal")
-    .addEventListener(
-        "click",
-        function(event) {
+  .getElementById("modal")
+  .addEventListener(
+    "click",
+    function(event) {
 
-            if (event.target === this) {
-                closeVideo();
-            }
+      if (event.target === this) {
 
-        }
-    );
+        closeVideo();
 
-</script>
+      }
 
-</body>
-</html>
+    }
+  );
+
+</script></body></html>
+```
