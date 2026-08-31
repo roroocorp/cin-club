@@ -1,1 +1,308 @@
-# cin-club
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mon Cinéma</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #080808;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    /* BARRE DU HAUT */
+
+    header {
+      height: 70px;
+      background: #0d0d0d;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 6%;
+      border-bottom: 1px solid #222;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: bold;
+      color: #e50914;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 15px;
+    }
+
+    nav a:hover {
+      color: #e50914;
+    }
+
+    /* GRANDE DEVANTURE */
+
+    .hero {
+      min-height: 520px;
+
+      display: flex;
+      align-items: center;
+
+      padding: 60px 7%;
+
+      background:
+        linear-gradient(
+          90deg,
+          #080808 0%,
+          rgba(8,8,8,0.85) 40%,
+          rgba(8,8,8,0.2) 100%
+        ),
+        linear-gradient(
+          135deg,
+          #252525,
+          #111
+        );
+    }
+
+    .hero-content {
+      max-width: 600px;
+    }
+
+    .hero small {
+      color: #aaa;
+      letter-spacing: 3px;
+    }
+
+    .hero h1 {
+      font-size: 60px;
+      margin: 20px 0;
+    }
+
+    .hero p {
+      color: #ccc;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 25px;
+
+      padding: 14px 25px;
+
+      background: #e50914;
+      color: white;
+
+      border-radius: 5px;
+
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .button:hover {
+      background: #b20710;
+    }
+
+    /* SECTIONS */
+
+    .section {
+      padding: 45px 7%;
+    }
+
+    .section h2 {
+      font-size: 28px;
+      margin-bottom: 25px;
+    }
+
+    /* CARTES */
+
+    .films {
+      display: grid;
+
+      grid-template-columns:
+        repeat(auto-fit, minmax(180px, 1fr));
+
+      gap: 20px;
+    }
+
+    .film {
+      height: 270px;
+
+      background:
+        linear-gradient(
+          145deg,
+          #333,
+          #151515
+        );
+
+      border-radius: 8px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      transition: 0.3s;
+
+      cursor: pointer;
+    }
+
+    .film:hover {
+      transform: scale(1.04);
+    }
+
+    .film span {
+      color: #aaa;
+      font-size: 14px;
+      letter-spacing: 2px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      text-align: center;
+
+      padding: 40px;
+
+      color: #777;
+
+      border-top: 1px solid #222;
+    }
+
+    /* TELEPHONE */
+
+    @media (max-width: 600px) {
+
+      header {
+        padding: 0 20px;
+      }
+
+      nav a {
+        margin-left: 10px;
+      }
+
+      .hero {
+        min-height: 500px;
+        padding: 40px 25px;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .section {
+        padding: 35px 20px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- MENU -->
+
+  <header>
+
+    <div class="logo">
+      🎬 MON CINÉMA
+    </div>
+
+    <nav>
+      <a href="#">Accueil</a>
+      <a href="#films">Films</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+  </header>
+
+
+  <!-- DEVANTURE -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <small>BIENVENUE SUR MON CINÉMA</small>
+
+      <h1>Mes créations.</h1>
+
+      <p>
+        Découvrez ici tous les films que j'ai créés.
+        Le site est actuellement en construction.
+      </p>
+
+      <a class="button" href="#films">
+        Découvrir
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FILMS -->
+
+  <section class="section" id="films">
+
+    <h2>🎞️ Mes films</h2>
+
+    <div class="films">
+
+      <div class="film">
+        <span>FILM 01</span>
+      </div>
+
+      <div class="film">
+        <span>FILM 02</span>
+      </div>
+
+      <div class="film">
+        <span>FILM 03</span>
+      </div>
+
+      <div class="film">
+        <span>FILM 04</span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+
+  <section class="section" id="contact">
+
+    <h2>📩 Contact</h2>
+
+    <p style="color:#aaa;">
+      Une question ? Contacte-moi prochainement ici.
+    </p>
+
+  </section>
+
+
+  <!-- PIED DE PAGE -->
+
+  <footer>
+
+    © 2026 Mon Cinéma — Tous droits réservés.
+
+  </footer>
+
+</body>
+  </html>
