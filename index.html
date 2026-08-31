@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
+<!DOCTYPE html><html lang="fr"><head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Mon Cinéma</title>
-
-  <style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>Mon Cinéma</title>  <style>
 
     * {
       margin: 0;
@@ -15,247 +8,311 @@
       box-sizing: border-box;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
-      background: #080808;
+      background: #141414;
       color: white;
       font-family: Arial, Helvetica, sans-serif;
     }
 
-    /* =====================
-       MENU
-    ===================== */
+    /* MENU */
 
     header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
       height: 70px;
-      background: #0d0d0d;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 6%;
-      border-bottom: 1px solid #222;
+
+      padding: 0 5%;
+
+      background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.95),
+        rgba(0,0,0,0)
+      );
+
+      z-index: 50;
     }
 
     .logo {
       color: #e50914;
-      font-size: 25px;
+      font-size: 28px;
       font-weight: bold;
-      letter-spacing: 2px;
+      letter-spacing: 1px;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      margin-left: 25px;
-      font-size: 15px;
+      font-size: 14px;
     }
 
     nav a:hover {
-      color: #e50914;
+      color: #ccc;
     }
 
-    /* =====================
-       ACCUEIL
-    ===================== */
+    /* GRANDE BANNIÈRE */
 
     .hero {
-      min-height: 520px;
+      height: 650px;
 
       display: flex;
-      align-items: center;
+      align-items: flex-end;
 
-      padding: 60px 7%;
+      padding: 0 6% 90px;
 
       background:
         linear-gradient(
-          90deg,
-          #080808 0%,
-          rgba(8, 8, 8, 0.85) 40%,
-          rgba(8, 8, 8, 0.2) 100%
+          to top,
+          #141414 0%,
+          transparent 40%
         ),
         linear-gradient(
-          135deg,
-          #292929,
-          #111111
-        );
+          to right,
+          #000 0%,
+          rgba(0,0,0,0.65) 45%,
+          rgba(0,0,0,0.1) 100%
+        ),
+        url("https://img.youtube.com/vi/1PgnIcNB6TU/maxresdefault.jpg");
+
+      background-size: cover;
+      background-position: center;
     }
 
     .hero-content {
-      max-width: 650px;
-    }
-
-    .hero small {
-      color: #aaa;
-      font-size: 13px;
-      letter-spacing: 3px;
+      max-width: 600px;
     }
 
     .hero h1 {
-      font-size: 60px;
-      margin: 20px 0;
+      font-size: 55px;
+      margin-bottom: 15px;
     }
 
     .hero p {
-      color: #ccc;
       font-size: 18px;
-      line-height: 1.6;
-    }
-
-    .button {
-      display: inline-block;
-      margin-top: 25px;
-      padding: 14px 25px;
-      background: #e50914;
-      color: white;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .button:hover {
-      background: #b20710;
-    }
-
-    /* =====================
-       SECTION FILMS
-    ===================== */
-
-    .section {
-      padding: 50px 7%;
-    }
-
-    .section h2 {
-      font-size: 30px;
+      line-height: 1.5;
+      color: #ddd;
       margin-bottom: 25px;
     }
 
-    .films {
-      display: grid;
-      grid-template-columns:
-        repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
+    .hero-info {
+      color: #ccc;
+      margin-bottom: 15px;
     }
 
-    /* =====================
-       CARTE FILM
-    ===================== */
-
-    .film {
-      background: #151515;
-      border-radius: 10px;
-      overflow: hidden;
-      transition: 0.3s;
-    }
-
-    .film:hover {
-      transform: translateY(-5px);
-    }
-
-    /* =====================
-       MINIATURE
-    ===================== */
-
-    .thumbnail {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      overflow: hidden;
-      background: #222;
-    }
-
-    .thumbnail img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .play {
-      position: absolute;
-
-      left: 50%;
-      top: 50%;
-
-      transform:
-        translate(-50%, -50%);
-
-      width: 65px;
-      height: 65px;
-
-      border-radius: 50%;
-
-      background: #e50914;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      font-size: 25px;
-    }
-
-    /* =====================
-       INFORMATIONS
-    ===================== */
-
-    .info {
-      padding: 18px;
-    }
-
-    .info h3 {
-      margin-bottom: 8px;
-      font-size: 20px;
-    }
-
-    .info p {
-      color: #999;
-      line-height: 1.5;
-    }
-
-    /* =====================
-       BOUTON REGARDER
-    ===================== */
-
-    .watch {
+    .btn {
       display: inline-block;
 
-      margin-top: 15px;
+      padding: 12px 25px;
 
-      padding: 11px 18px;
+      border: none;
+      border-radius: 4px;
 
-      background: #e50914;
+      font-size: 16px;
+      font-weight: bold;
 
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .btn-play {
+      background: white;
+      color: black;
+    }
+
+    .btn-play:hover {
+      background: #ddd;
+    }
+
+    .btn-info {
+      background: rgba(100,100,100,0.7);
       color: white;
+      margin-left: 10px;
+    }
+
+    .btn-info:hover {
+      background: rgba(120,120,120,0.8);
+    }
+
+    /* SECTIONS */
+
+    .section {
+      padding: 30px 5%;
+    }
+
+    .section h2 {
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+
+    /* FILMS */
+
+    .films {
+      display: flex;
+      gap: 12px;
+
+      overflow-x: auto;
+
+      padding-bottom: 15px;
+    }
+
+    .films::-webkit-scrollbar {
+      height: 7px;
+    }
+
+    .films::-webkit-scrollbar-thumb {
+      background: #555;
+      border-radius: 10px;
+    }
+
+    .film {
+      flex: 0 0 250px;
+
+      position: relative;
 
       border-radius: 5px;
 
-      font-weight: bold;
+      overflow: hidden;
 
-      text-decoration: none;
+      background: #222;
+
+      cursor: pointer;
+
+      transition: transform 0.3s;
+    }
+
+    .film:hover {
+      transform: scale(1.08);
+      z-index: 10;
+    }
+
+    .film img {
+      width: 100%;
+      height: 140px;
+
+      object-fit: cover;
+
+      display: block;
+    }
+
+    .film-info {
+      padding: 12px;
+    }
+
+    .film-info h3 {
+      font-size: 17px;
+      margin-bottom: 7px;
+    }
+
+    .film-info p {
+      font-size: 13px;
+      color: #aaa;
+      line-height: 1.4;
+    }
+
+    .watch {
+      margin-top: 10px;
+
+      padding: 8px 14px;
+
+      background: #e50914;
+      color: white;
+
+      border: none;
+      border-radius: 4px;
+
+      font-weight: bold;
 
       cursor: pointer;
     }
 
     .watch:hover {
-      background: #b20710;
+      background: #f40612;
     }
 
-    /* =====================
-       FOOTER
-    ===================== */
+    /* LECTEUR */
+
+    .modal {
+      position: fixed;
+
+      inset: 0;
+
+      background: rgba(0,0,0,0.92);
+
+      display: none;
+
+      align-items: center;
+      justify-content: center;
+
+      z-index: 100;
+
+      padding: 30px;
+    }
+
+    .modal.open {
+      display: flex;
+    }
+
+    .video-container {
+      width: min(1000px, 100%);
+
+      position: relative;
+    }
+
+    iframe {
+      width: 100%;
+
+      aspect-ratio: 16 / 9;
+
+      border: none;
+
+      border-radius: 5px;
+    }
+
+    .close {
+      position: absolute;
+
+      right: 0;
+      top: -50px;
+
+      width: 40px;
+      height: 40px;
+
+      border: none;
+      border-radius: 50%;
+
+      background: white;
+      color: black;
+
+      font-size: 25px;
+
+      cursor: pointer;
+    }
+
+    /* FOOTER */
 
     footer {
-      text-align: center;
+      padding: 50px 5%;
+
       color: #777;
-      padding: 40px;
+
+      text-align: center;
+
       border-top: 1px solid #222;
+
+      margin-top: 30px;
     }
 
-    /* =====================
-       TÉLÉPHONE
-    ===================== */
+    /* MOBILE */
 
     @media (max-width: 600px) {
 
@@ -264,264 +321,333 @@
       }
 
       .logo {
-        font-size: 19px;
+        font-size: 20px;
+      }
+
+      nav {
+        gap: 12px;
       }
 
       nav a {
-        margin-left: 10px;
-        font-size: 13px;
+        font-size: 12px;
       }
 
       .hero {
-        min-height: 500px;
-        padding: 40px 25px;
+        height: 550px;
+        padding: 0 25px 60px;
       }
 
       .hero h1 {
-        font-size: 42px;
+        font-size: 38px;
       }
 
       .hero p {
-        font-size: 16px;
+        font-size: 15px;
       }
 
-      .section {
-        padding: 35px 20px;
+      .film {
+        flex-basis: 210px;
+      }
+
+      .film img {
+        height: 118px;
       }
 
     }
 
-  </style>
+  </style></head><body>  <!-- MENU -->  <header><div class="logo">
+  MON CINÉMA
+</div>
 
-</head>
+<nav>
+  <a href="#accueil">Accueil</a>
+  <a href="#films">Films</a>
+</nav>
+
+  </header>  <!-- GRANDE IMAGE D'ACCUEIL -->  <section class="hero" id="accueil"><div class="hero-content">
+
+  <div class="hero-info">
+    🎬 MON FILM • 2026
+  </div>
+
+  <h1>
+    Mon premier film
+  </h1>
+
+  <p>
+    Découvrez mes films et mes créations
+    directement sur Mon Cinéma.
+  </p>
+
+  <button
+    class="btn btn-play"
+    onclick="watch('1PgnIcNB6TU')">
+
+    ▶ Regarder
+
+  </button>
+
+  <a
+    href="#films"
+    class="btn btn-info">
+
+    ℹ Plus d'infos
+
+  </a>
+
+</div>
+
+  </section>  <!-- MES FILMS -->  <section class="section" id="films"><h2>
+  🎬 Mes films
+</h2>
+
+<div class="films">
 
 
-<body>
+  <!-- FILM 1 -->
 
+  <article class="film">
 
-  <!-- =====================
-       MENU
-  ===================== -->
+    <img
+      src="https://img.youtube.com/vi/1PgnIcNB6TU/maxresdefault.jpg"
+      alt="Mon premier film">
 
-  <header>
+    <div class="film-info">
 
-    <div class="logo">
-      🎬 MON CINÉMA
-    </div>
-
-    <nav>
-
-      <a href="#">
-        Accueil
-      </a>
-
-      <a href="#films">
-        Films
-      </a>
-
-      <a href="#contact">
-        Contact
-      </a>
-
-    </nav>
-
-  </header>
-
-
-  <!-- =====================
-       GRANDE DEVANTURE
-  ===================== -->
-
-  <section class="hero">
-
-    <div class="hero-content">
-
-      <small>
-        BIENVENUE SUR MON CINÉMA
-      </small>
-
-      <h1>
-        Mes films.
-      </h1>
+      <h3>
+        Mon premier film
+      </h3>
 
       <p>
-        Découvrez mes créations,
-        mes vidéos et mes projets
-        directement depuis mon cinéma.
+        Découvrez ma première création.
       </p>
 
-      <a
-        class="button"
-        href="#films">
+      <button
+        class="watch"
+        onclick="watch('1PgnIcNB6TU')">
 
-        🎬 Découvrir
+        ▶ Regarder
 
-      </a>
-
-    </div>
-
-  </section>
-
-
-  <!-- =====================
-       FILMS
-  ===================== -->
-
-  <section
-    class="section"
-    id="films">
-
-    <h2>
-      🎞️ Mes films
-    </h2>
-
-
-    <div class="films">
-
-
-      <!-- =====================
-           FILM 1
-      ===================== -->
-
-      <article class="film">
-
-        <div class="thumbnail">
-
-          <img
-            src="https://img.youtube.com/vi/3wSUg_Bc7OM/maxresdefault.jpg"
-            alt="Miniature du film">
-
-          <div class="play">
-            ▶
-          </div>
-
-        </div>
-
-
-        <div class="info">
-
-          <h3>
-            Mon premier film
-          </h3>
-
-          <p>
-            Découvrez mon premier film
-            et mes créations.
-          </p>
-
-
-          <a
-            class="watch"
-            href="https://sibruv.com/69ehypd/b/sibruv/60712080#film-player"
-            target="_blank"
-            rel="noopener noreferrer">
-
-            ▶ Regarder
-
-          </a>
-
-        </div>
-
-      </article>
-
-
-      <!-- =====================
-           FILM 2
-      ===================== -->
-
-      <article class="film">
-
-        <div class="thumbnail">
-
-          <div class="play">
-            ▶
-          </div>
-
-        </div>
-
-
-        <div class="info">
-
-          <h3>
-            Bientôt disponible
-          </h3>
-
-          <p>
-            Mon prochain film
-            arrivera bientôt.
-          </p>
-
-        </div>
-
-      </article>
-
-
-      <!-- =====================
-           FILM 3
-      ===================== -->
-
-      <article class="film">
-
-        <div class="thumbnail">
-
-          <div class="play">
-            ▶
-          </div>
-
-        </div>
-
-
-        <div class="info">
-
-          <h3>
-            Bientôt disponible
-          </h3>
-
-          <p>
-            Une nouvelle création
-            arrivera prochainement.
-          </p>
-
-        </div>
-
-      </article>
-
+      </button>
 
     </div>
 
-  </section>
+  </article>
 
 
-  <!-- =====================
-       CONTACT
-  ===================== -->
+  <!-- FILM 2 -->
 
-  <section
-    class="section"
-    id="contact">
+  <article class="film">
 
-    <h2>
-      📩 Contact
-    </h2>
+    <img
+      src="https://img.youtube.com/vi/3wSUg_Bc7OM/maxresdefault.jpg"
+      alt="Mon deuxième film">
 
-    <p style="color:#999;">
-      Bienvenue sur mon site !
-    </p>
+    <div class="film-info">
 
-  </section>
+      <h3>
+        Mon deuxième film
+      </h3>
+
+      <p>
+        Découvrez une autre de mes créations.
+      </p>
+
+      <button
+        class="watch"
+        onclick="watch('3wSUg_Bc7OM')">
+
+        ▶ Regarder
+
+      </button>
+
+    </div>
+
+  </article>
 
 
-  <!-- =====================
-       FOOTER
-  ===================== -->
+  <!-- FILM 3 -->
 
-  <footer>
+  <article class="film">
 
-    © 2026 Mon Cinéma
+    <img
+      src="https://via.placeholder.com/640x360/222222/ffffff?text=BIENTOT"
+      alt="Film bientôt disponible">
 
-  </footer>
+    <div class="film-info">
+
+      <h3>
+        Bientôt disponible
+      </h3>
+
+      <p>
+        Un nouveau film arrivera bientôt.
+      </p>
+
+    </div>
+
+  </article>
 
 
-</body>
+  <!-- FILM 4 -->
 
-</html>
+  <article class="film">
+
+    <img
+      src="https://via.placeholder.com/640x360/222222/ffffff?text=BIENTOT"
+      alt="Film bientôt disponible">
+
+    <div class="film-info">
+
+      <h3>
+        Bientôt disponible
+      </h3>
+
+      <p>
+        Une nouvelle création arrive.
+      </p>
+
+    </div>
+
+  </article>
+
+</div>
+
+  </section>  <!-- AUTRE CATÉGORIE -->  <section class="section"><h2>
+  ⭐ Mes créations
+</h2>
+
+<div class="films">
+
+  <article class="film">
+
+    <img
+      src="https://img.youtube.com/vi/1PgnIcNB6TU/hqdefault.jpg"
+      alt="Création">
+
+    <div class="film-info">
+
+      <h3>
+        À voir
+      </h3>
+
+      <button
+        class="watch"
+        onclick="watch('1PgnIcNB6TU')">
+
+        ▶ Regarder
+
+      </button>
+
+    </div>
+
+  </article>
+
+  <article class="film">
+
+    <img
+      src="https://img.youtube.com/vi/3wSUg_Bc7OM/hqdefault.jpg"
+      alt="Création">
+
+    <div class="film-info">
+
+      <h3>
+        Ma sélection
+      </h3>
+
+      <button
+        class="watch"
+        onclick="watch('3wSUg_Bc7OM')">
+
+        ▶ Regarder
+
+      </button>
+
+    </div>
+
+  </article>
+
+</div>
+
+  </section>  <!-- LECTEUR YOUTUBE -->  <div
+    class="modal"
+    id="modal"><div class="video-container">
+
+  <button
+    class="close"
+    onclick="closeVideo()">
+
+    ×
+
+  </button>
+
+  <iframe
+    id="youtube"
+    allow="autoplay; encrypted-media"
+    allowfullscreen>
+  </iframe>
+
+</div>
+
+  </div>  <!-- PIED DE PAGE -->  <footer>© 2026 Mon Cinéma
+<br><br>
+Tous mes films au même endroit.
+
+  </footer>  <!-- JAVASCRIPT -->  <script>
+
+    function watch(id) {
+
+      const video =
+        document.getElementById("youtube");
+
+      video.src =
+        "https://www.youtube.com/embed/"
+        + id
+        + "?autoplay=1";
+
+      document
+        .getElementById("modal")
+        .classList.add("open");
+    }
+
+
+    function closeVideo() {
+
+      const video =
+        document.getElementById("youtube");
+
+      video.src = "";
+
+      document
+        .getElementById("modal")
+        .classList.remove("open");
+    }
+
+
+    document.addEventListener(
+      "keydown",
+      function(event) {
+
+        if (event.key === "Escape") {
+          closeVideo();
+        }
+
+      }
+    );
+
+
+    document
+      .getElementById("modal")
+      .addEventListener(
+        "click",
+        function(event) {
+
+          if (event.target === this) {
+            closeVideo();
+          }
+
+        }
+      );
+
+  </script></body></html>
+```
