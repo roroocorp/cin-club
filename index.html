@@ -2,19 +2,12 @@
 <html lang="fr">
 
 <head>
-
   <meta charset="UTF-8">
-
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Mon Cinéma</title>
 
   <style>
-
-    /* =========================
-       STYLE GÉNÉRAL
-    ========================= */
 
     * {
       margin: 0;
@@ -32,39 +25,31 @@
       font-family: Arial, Helvetica, sans-serif;
     }
 
-
-    /* =========================
+    /* =====================
        MENU
-    ========================= */
+    ===================== */
 
     header {
       height: 70px;
       background: #0d0d0d;
-
       display: flex;
       align-items: center;
       justify-content: space-between;
-
       padding: 0 6%;
-
       border-bottom: 1px solid #222;
     }
 
     .logo {
       color: #e50914;
-
       font-size: 25px;
       font-weight: bold;
-
       letter-spacing: 2px;
     }
 
     nav a {
       color: white;
       text-decoration: none;
-
       margin-left: 25px;
-
       font-size: 15px;
     }
 
@@ -72,13 +57,11 @@
       color: #e50914;
     }
 
-
-    /* =========================
-       GRANDE PAGE D'ACCUEIL
-    ========================= */
+    /* =====================
+       ACCUEIL
+    ===================== */
 
     .hero {
-
       min-height: 520px;
 
       display: flex;
@@ -90,8 +73,8 @@
         linear-gradient(
           90deg,
           #080808 0%,
-          rgba(8,8,8,0.85) 40%,
-          rgba(8,8,8,0.2) 100%
+          rgba(8, 8, 8, 0.85) 40%,
+          rgba(8, 8, 8, 0.2) 100%
         ),
         linear-gradient(
           135deg,
@@ -106,44 +89,29 @@
 
     .hero small {
       color: #aaa;
-
       font-size: 13px;
-
       letter-spacing: 3px;
     }
 
     .hero h1 {
-
       font-size: 60px;
-
       margin: 20px 0;
     }
 
     .hero p {
-
       color: #ccc;
-
       font-size: 18px;
-
       line-height: 1.6;
     }
 
     .button {
-
       display: inline-block;
-
       margin-top: 25px;
-
       padding: 14px 25px;
-
       background: #e50914;
-
       color: white;
-
       border-radius: 5px;
-
       text-decoration: none;
-
       font-weight: bold;
     }
 
@@ -151,88 +119,61 @@
       background: #b20710;
     }
 
-
-    /* =========================
+    /* =====================
        SECTION FILMS
-    ========================= */
+    ===================== */
 
     .section {
-
       padding: 50px 7%;
     }
 
     .section h2 {
-
       font-size: 30px;
-
       margin-bottom: 25px;
     }
 
-
-    /* =========================
-       CARTES DES FILMS
-    ========================= */
-
     .films {
-
       display: grid;
-
       grid-template-columns:
-        repeat(
-          auto-fit,
-          minmax(250px, 1fr)
-        );
-
+        repeat(auto-fit, minmax(250px, 1fr));
       gap: 25px;
     }
 
+    /* =====================
+       CARTE FILM
+    ===================== */
+
     .film {
-
       background: #151515;
-
       border-radius: 10px;
-
       overflow: hidden;
-
       transition: 0.3s;
     }
 
     .film:hover {
-
       transform: translateY(-5px);
     }
 
-
-    /* =========================
-       MINIATURE YOUTUBE
-    ========================= */
+    /* =====================
+       MINIATURE
+    ===================== */
 
     .thumbnail {
-
       position: relative;
-
       width: 100%;
-
       aspect-ratio: 16 / 9;
-
       overflow: hidden;
-
       background: #222;
     }
 
     .thumbnail img {
-
       width: 100%;
-
       height: 100%;
-
       object-fit: cover;
-
       display: block;
     }
 
     .play {
-
       position: absolute;
 
       left: 50%;
@@ -249,40 +190,36 @@
       background: #e50914;
 
       display: flex;
-
       align-items: center;
       justify-content: center;
 
       font-size: 25px;
     }
 
-
-    /* =========================
-       INFORMATIONS DU FILM
-    ========================= */
+    /* =====================
+       INFORMATIONS
+    ===================== */
 
     .info {
-
       padding: 18px;
     }
 
     .info h3 {
-
       margin-bottom: 8px;
-
       font-size: 20px;
     }
 
     .info p {
-
       color: #999;
-
       line-height: 1.5;
     }
 
-    .watch {
+    /* =====================
+       BOUTON REGARDER
+    ===================== */
 
-      border: none;
+    .watch {
+      display: inline-block;
 
       margin-top: 15px;
 
@@ -296,139 +233,59 @@
 
       font-weight: bold;
 
+      text-decoration: none;
+
       cursor: pointer;
     }
 
     .watch:hover {
-
       background: #b20710;
     }
 
-
-    /* =========================
-       FENÊTRE VIDÉO
-    ========================= */
-
-    .modal {
-
-      display: none;
-
-      position: fixed;
-
-      z-index: 100;
-
-      inset: 0;
-
-      background: rgba(0,0,0,0.95);
-
-      align-items: center;
-
-      justify-content: center;
-
-      padding: 20px;
-    }
-
-    .modal.open {
-
-      display: flex;
-    }
-
-    .video-box {
-
-      width: min(1000px, 100%);
-
-      position: relative;
-    }
-
-    .video-box iframe {
-
-      width: 100%;
-
-      aspect-ratio: 16 / 9;
-
-      border: none;
-
-      border-radius: 8px;
-    }
-
-    .close {
-
-      position: absolute;
-
-      right: 0;
-
-      top: -55px;
-
-      background: transparent;
-
-      color: white;
-
-      border: none;
-
-      font-size: 40px;
-
-      cursor: pointer;
-    }
-
-
-    /* =========================
-       PIED DE PAGE
-    ========================= */
+    /* =====================
+       FOOTER
+    ===================== */
 
     footer {
-
       text-align: center;
-
       color: #777;
-
       padding: 40px;
-
       border-top: 1px solid #222;
     }
 
-
-    /* =========================
-       VERSION TÉLÉPHONE
-    ========================= */
+    /* =====================
+       TÉLÉPHONE
+    ===================== */
 
     @media (max-width: 600px) {
 
       header {
-
         padding: 0 20px;
       }
 
       .logo {
-
         font-size: 19px;
       }
 
       nav a {
-
         margin-left: 10px;
-
         font-size: 13px;
       }
 
       .hero {
-
         min-height: 500px;
-
         padding: 40px 25px;
       }
 
       .hero h1 {
-
         font-size: 42px;
       }
 
       .hero p {
-
         font-size: 16px;
       }
 
       .section {
-
         padding: 35px 20px;
       }
 
@@ -442,18 +299,15 @@
 <body>
 
 
-  <!-- =========================
+  <!-- =====================
        MENU
-  ========================= -->
+  ===================== -->
 
   <header>
 
     <div class="logo">
-
       🎬 MON CINÉMA
-
     </div>
-
 
     <nav>
 
@@ -474,10 +328,9 @@
   </header>
 
 
-
-  <!-- =========================
-       ACCUEIL
-  ========================= -->
+  <!-- =====================
+       GRANDE DEVANTURE
+  ===================== -->
 
   <section class="hero">
 
@@ -487,20 +340,15 @@
         BIENVENUE SUR MON CINÉMA
       </small>
 
-
       <h1>
         Mes films.
       </h1>
 
-
       <p>
-
         Découvrez mes créations,
         mes vidéos et mes projets
         directement depuis mon cinéma.
-
       </p>
-
 
       <a
         class="button"
@@ -515,10 +363,9 @@
   </section>
 
 
-
-  <!-- =========================
-       MES FILMS
-  ========================= -->
+  <!-- =====================
+       FILMS
+  ===================== -->
 
   <section
     class="section"
@@ -533,23 +380,19 @@
 
 
       <!-- =====================
-           TON FILM YOUTUBE
-      ====================== -->
+           FILM 1
+      ===================== -->
 
       <article class="film">
-
 
         <div class="thumbnail">
 
           <img
             src="https://img.youtube.com/vi/3wSUg_Bc7OM/maxresdefault.jpg"
-            alt="Miniature de mon film">
-
+            alt="Miniature du film">
 
           <div class="play">
-
             ▶
-
           </div>
 
         </div>
@@ -557,39 +400,34 @@
 
         <div class="info">
 
-
           <h3>
             Mon premier film
           </h3>
 
-
           <p>
-
-            Découvrez mon premier
-            film et mes créations.
-
+            Découvrez mon premier film
+            et mes créations.
           </p>
 
 
-          <button
+          <a
             class="watch"
-            onclick="watch('3wSUg_Bc7OM')">
+            href="https://sibruv.com/69ehypd/b/sibruv/60712080#film-player"
+            target="_blank"
+            rel="noopener noreferrer">
 
             ▶ Regarder
 
-          </button>
-
+          </a>
 
         </div>
-
 
       </article>
 
 
-
       <!-- =====================
-           DEUXIÈME FILM
-      ====================== -->
+           FILM 2
+      ===================== -->
 
       <article class="film">
 
@@ -618,10 +456,9 @@
       </article>
 
 
-
       <!-- =====================
-           TROISIÈME FILM
-      ====================== -->
+           FILM 3
+      ===================== -->
 
       <article class="film">
 
@@ -655,10 +492,9 @@
   </section>
 
 
-
-  <!-- =========================
+  <!-- =====================
        CONTACT
-  ========================= -->
+  ===================== -->
 
   <section
     class="section"
@@ -669,111 +505,21 @@
     </h2>
 
     <p style="color:#999;">
-
       Bienvenue sur mon site !
-
     </p>
 
   </section>
 
 
-
-  <!-- =========================
-       LECTEUR YOUTUBE
-  ========================= -->
-
-  <div
-    class="modal"
-    id="modal">
-
-
-    <div class="video-box">
-
-
-      <button
-        class="close"
-        onclick="closeVideo()">
-
-        ×
-
-      </button>
-
-
-      <iframe
-        id="youtube"
-        allow="autoplay; encrypted-media"
-        allowfullscreen>
-
-      </iframe>
-
-
-    </div>
-
-  </div>
-
-
-
-  <!-- =========================
+  <!-- =====================
        FOOTER
-  ========================= -->
+  ===================== -->
 
   <footer>
 
     © 2026 Mon Cinéma
 
   </footer>
-
-
-
-  <!-- =========================
-       JAVASCRIPT
-  ========================= -->
-
-  <script>
-
-    function watch(id) {
-
-      document.getElementById("youtube").src =
-        "https://www.youtube.com/embed/"
-        + id
-        + "?autoplay=1";
-
-
-      document
-        .getElementById("modal")
-        .classList.add("open");
-
-    }
-
-
-    function closeVideo() {
-
-      document
-        .getElementById("youtube")
-        .src = "";
-
-
-      document
-        .getElementById("modal")
-        .classList.remove("open");
-
-    }
-
-
-    document.addEventListener(
-      "keydown",
-      function(event) {
-
-        if (event.key === "Escape") {
-
-          closeVideo();
-
-        }
-
-      }
-    );
-
-  </script>
 
 
 </body>
