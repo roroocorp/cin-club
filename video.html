@@ -1,0 +1,327 @@
+<!DOCTYPE html><html lang="fr"><head>  <meta charset="UTF-8">  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>Lecture - Mon Cinéma</title>  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #080808;
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* MENU */
+
+    header {
+      height: 70px;
+      background: #0d0d0d;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 0 6%;
+
+      border-bottom: 1px solid #222;
+    }
+
+    .logo {
+      color: #e50914;
+      font-size: 25px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .back {
+      color: white;
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    .back:hover {
+      color: #e50914;
+    }
+
+    /* CONTENU */
+
+    .video-page {
+      width: min(1100px, 90%);
+      margin: 50px auto 100px;
+    }
+
+    /* AFFICHAGE DU FILM */
+
+    .movie-card {
+      position: relative;
+
+      background: #151515;
+
+      border-radius: 12px;
+
+      overflow: hidden;
+
+      margin-bottom: 35px;
+
+      box-shadow:
+        0 0 25px rgba(255,0,0,0.12);
+    }
+
+    /* LED ROUGE */
+
+    .movie-card::before {
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+      top: 20px;
+      bottom: 20px;
+
+      width: 5px;
+
+      background: #ff0000;
+
+      box-shadow:
+        0 0 5px #ff0000,
+        0 0 15px #ff0000,
+        0 0 30px rgba(255,0,0,0.8);
+
+      z-index: 5;
+    }
+
+    .movie-poster {
+      width: 100%;
+      max-height: 500px;
+
+      object-fit: cover;
+
+      display: block;
+    }
+
+    .movie-info {
+      padding: 25px;
+    }
+
+    .movie-info h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .movie-info p {
+      color: #999;
+      line-height: 1.6;
+    }
+
+    /* VIDEO */
+
+    .video-title {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+
+      background: black;
+
+      border-radius: 10px;
+
+      overflow: hidden;
+
+      box-shadow:
+        0 0 20px rgba(255,0,0,0.15);
+    }
+
+    .video-container iframe {
+      width: 100%;
+      height: 100%;
+
+      border: none;
+    }
+
+    /* BOUTON RETOUR */
+
+    .return {
+      display: block;
+
+      width: 65px;
+      height: 65px;
+
+      margin: 70px auto 0;
+
+      border-radius: 50%;
+
+      background: #e50914;
+
+      color: white;
+
+      text-decoration: none;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      font-size: 30px;
+
+      box-shadow:
+        0 0 10px #e50914,
+        0 0 25px rgba(229,9,20,0.5);
+
+      transition: 0.3s;
+    }
+
+    .return:hover {
+      background: #b20710;
+
+      transform: translateY(-5px);
+
+      box-shadow:
+        0 0 15px #e50914,
+        0 0 35px rgba(229,9,20,0.7);
+    }
+
+    /* FOOTER */
+
+    footer {
+      text-align: center;
+
+      color: #777;
+
+      padding: 40px;
+
+      border-top: 1px solid #222;
+    }
+
+    /* TELEPHONE */
+
+    @media (max-width: 600px) {
+
+      header {
+        padding: 0 20px;
+      }
+
+      .logo {
+        font-size: 18px;
+      }
+
+      .video-page {
+        width: 94%;
+        margin-top: 30px;
+      }
+
+      .movie-info h1 {
+        font-size: 25px;
+      }
+
+      .video-title {
+        font-size: 23px;
+      }
+
+    }
+
+  </style></head><body>  <!-- MENU -->  <header><div class="logo">
+  🎬 MON CINÉMA
+</div>
+
+<a
+  class="back"
+  href="index.html">
+
+  ← Retour aux films
+
+</a>
+
+  </header>  <!-- PAGE VIDEO -->  <main class="video-page"><!-- CARTE DU FILM -->
+
+<div class="movie-card">
+
+  <img
+    class="movie-poster"
+    id="poster"
+    src=""
+    alt="Affiche du film">
+
+  <div class="movie-info">
+
+    <h1 id="movieTitle">
+      Mon film
+    </h1>
+
+    <p>
+      Regardez le film directement depuis Mon Cinéma.
+    </p>
+
+  </div>
+
+</div>
+
+
+<!-- VIDEO -->
+
+<h2 class="video-title">
+  ▶ Regarder le film
+</h2>
+
+<div class="video-container">
+
+  <iframe
+    id="video"
+    allow="autoplay; encrypted-media; fullscreen"
+    allowfullscreen>
+  </iframe>
+
+</div>
+
+
+<!-- RETOUR EN HAUT -->
+
+<a
+  href="#top"
+  class="return"
+  title="Retour en haut">
+
+  ↑
+
+</a>
+
+  </main>  <!-- FOOTER -->  <footer>© 2026 Mon Cinéma
+
+  </footer>  <script>
+
+    const params =
+      new URLSearchParams(window.location.search);
+
+    const id =
+      params.get("id") || "3wSUg_Bc7OM";
+
+
+    document.getElementById("poster").src =
+      "https://img.youtube.com/vi/"
+      + id
+      + "/maxresdefault.jpg";
+
+
+    document.getElementById("video").src =
+      "https://www.youtube.com/embed/"
+      + id
+      + "?autoplay=1";
+
+
+    if (id === "3wSUg_Bc7OM") {
+
+      document.getElementById("movieTitle").textContent =
+        "Mon premier film";
+
+    }
+
+  </script></body></html>
+```
