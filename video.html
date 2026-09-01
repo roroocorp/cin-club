@@ -34,7 +34,6 @@
 
     header {
       height: 70px;
-
       background: #0d0d0d;
 
       display: flex;
@@ -47,29 +46,23 @@
 
       position: sticky;
       top: 0;
-
       z-index: 50;
     }
 
     .logo {
       color: #e50914;
-
       font-size: 25px;
-
       font-weight: bold;
-
       letter-spacing: 2px;
     }
 
     .back {
       color: white;
-
       text-decoration: none;
 
       padding: 10px 18px;
 
       border: 1px solid #333;
-
       border-radius: 5px;
 
       transition: 0.3s;
@@ -86,7 +79,6 @@
 
     .video-page {
       width: min(1100px, 92%);
-
       margin: 45px auto 100px;
     }
 
@@ -95,7 +87,6 @@
     ========================= */
 
     .movie-card {
-
       position: relative;
 
       background: #151515;
@@ -110,18 +101,13 @@
         0 0 25px rgba(255,0,0,0.12);
     }
 
-    /* LED ROUGE */
-
     .movie-card::before {
-
       content: "";
 
       position: absolute;
 
       left: 0;
-
       top: 20px;
-
       bottom: 20px;
 
       width: 5px;
@@ -137,7 +123,6 @@
     }
 
     .movie-poster {
-
       width: 100%;
 
       max-height: 500px;
@@ -148,21 +133,16 @@
     }
 
     .movie-info {
-
       padding: 25px;
     }
 
     .movie-info h1 {
-
       font-size: 32px;
-
       margin-bottom: 10px;
     }
 
     .movie-info p {
-
       color: #999;
-
       line-height: 1.6;
     }
 
@@ -171,14 +151,11 @@
     ========================= */
 
     .video-title {
-
       font-size: 28px;
-
       margin-bottom: 20px;
     }
 
     .video-container {
-
       position: relative;
 
       width: 100%;
@@ -196,9 +173,7 @@
     }
 
     .video-container iframe {
-
       width: 100%;
-
       height: 100%;
 
       border: none;
@@ -211,11 +186,9 @@
     ========================= */
 
     .return {
-
       display: flex;
 
       width: 65px;
-
       height: 65px;
 
       margin: 70px auto 0;
@@ -229,7 +202,6 @@
       text-decoration: none;
 
       align-items: center;
-
       justify-content: center;
 
       font-size: 30px;
@@ -242,7 +214,6 @@
     }
 
     .return:hover {
-
       background: #b20710;
 
       transform: translateY(-5px);
@@ -257,7 +228,6 @@
     ========================= */
 
     footer {
-
       text-align: center;
 
       color: #777;
@@ -268,47 +238,38 @@
     }
 
     /* =========================
-       TELEPHONE
+       TÉLÉPHONE
     ========================= */
 
     @media (max-width: 600px) {
 
       header {
-
         padding: 0 20px;
       }
 
       .logo {
-
         font-size: 18px;
       }
 
       .back {
-
         font-size: 13px;
-
         padding: 8px 12px;
       }
 
       .video-page {
-
         width: 94%;
-
         margin-top: 30px;
       }
 
       .movie-info {
-
         padding: 20px;
       }
 
       .movie-info h1 {
-
         font-size: 25px;
       }
 
       .video-title {
-
         font-size: 23px;
       }
 
@@ -329,11 +290,8 @@
   <header>
 
     <div class="logo">
-
       🎬 MON CINÉMA
-
     </div>
-
 
     <a
       class="back"
@@ -357,7 +315,6 @@
 
     <div class="movie-card">
 
-
       <img
         class="movie-poster"
         id="poster"
@@ -367,21 +324,14 @@
 
       <div class="movie-info">
 
-
         <h1 id="movieTitle">
-
           Mon film
-
         </h1>
 
-
         <p id="movieDescription">
-
           Regardez le film directement
           depuis Mon Cinéma.
-
         </p>
-
 
       </div>
 
@@ -393,14 +343,11 @@
     ========================= -->
 
     <h2 class="video-title">
-
       ▶ Regarder le film
-
     </h2>
 
 
     <div class="video-container">
-
 
       <iframe
         id="player"
@@ -409,7 +356,6 @@
         allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
         allowfullscreen>
       </iframe>
-
 
     </div>
 
@@ -467,10 +413,7 @@
 
     const movies = {
 
-
-      /* =====================
-         FILM 1
-      ====================== */
+      /* FILM 1 */
 
       "3wSUg_Bc7OM": {
 
@@ -489,9 +432,7 @@
       },
 
 
-      /* =====================
-         FILM 2
-      ====================== */
+      /* FILM 2 */
 
       "1MoeXM9HISY": {
 
@@ -510,9 +451,7 @@
       },
 
 
-      /* =====================
-         FILM 3
-      ====================== */
+      /* FILM 3 */
 
       "A2HM48PwsXQ": {
 
@@ -531,9 +470,7 @@
       },
 
 
-      /* =====================
-         FILM 4 - ARTE
-      ====================== */
+      /* FILM 4 */
 
       "arte": {
 
@@ -552,9 +489,7 @@
       },
 
 
-      /* =====================
-         FILM 5 - ARTE
-      ====================== */
+      /* FILM 5 */
 
       "arte5": {
 
@@ -573,9 +508,7 @@
       },
 
 
-      /* =====================
-         FILM 6 - ARTE
-      ====================== */
+      /* FILM 6 */
 
       "arte6": {
 
@@ -594,51 +527,7 @@
       },
 
 
-      /* =====================
-         FILM 7
-      ====================== */
-
-      "film7": {
-
-        title:
-          "Mon film 7",
-
-        description:
-          "Une nouvelle création arrive bientôt.",
-
-        poster:
-          "",
-
-        video:
-          ""
-
-      },
-
-
-      /* =====================
-         FILM 8
-      ====================== */
-
-      "film8": {
-
-        title:
-          "Mon film 8",
-
-        description:
-          "Une nouvelle création prochainement.",
-
-        poster:
-          "",
-
-        video:
-          ""
-
-      },
-
-
-      /* =====================
-         FILM 9 - ARTE
-      ====================== */
+      /* FILM 9 */
 
       "arte9": {
 
@@ -646,10 +535,10 @@
           "Entretien avec Christian Petzold",
 
         description:
-          "Entretien avec Christian Petzold, disponible directement dans Mon Cinéma.",
+          "Entretien avec Christian Petzold.",
 
         poster:
-          "https://rorocorp.github.io/cine-club/film9.jpg",
+          "film9.jpg",
 
         video:
           "https://www.arte.tv/embeds/fr/093576-000-A?autoplay=true&mute=0"
@@ -657,9 +546,7 @@
       },
 
 
-      /* =====================
-         FILM 10 - ARTE
-      ====================== */
+      /* FILM 10 */
 
       "arte10": {
 
@@ -667,7 +554,7 @@
           "Fantômes",
 
         description:
-          "Découvrez Fantômes directement dans Mon Cinéma.",
+          "Découvrez cette vidéo directement dans Mon Cinéma.",
 
         poster:
           "",
@@ -678,9 +565,7 @@
       },
 
 
-      /* =====================
-         FILM 11 - ARTE
-      ====================== */
+      /* FILM 11 */
 
       "arte11": {
 
@@ -688,7 +573,7 @@
           "Phoenix",
 
         description:
-          "Découvrez Phoenix directement dans Mon Cinéma.",
+          "Découvrez cette vidéo directement dans Mon Cinéma.",
 
         poster:
           "",
@@ -699,9 +584,7 @@
       },
 
 
-      /* =====================
-         FILM 12 - ARTE
-      ====================== */
+      /* FILM 12 */
 
       "arte12": {
 
@@ -709,7 +592,7 @@
           "Contrôle d'identité",
 
         description:
-          "Découvrez Contrôle d'identité directement dans Mon Cinéma.",
+          "Découvrez cette vidéo directement dans Mon Cinéma.",
 
         poster:
           "",
@@ -720,9 +603,7 @@
       },
 
 
-      /* =====================
-         FILM 13 - ARTE
-      ====================== */
+      /* FILM 13 */
 
       "arte13": {
 
@@ -730,7 +611,7 @@
           "Yella",
 
         description:
-          "Découvrez Yella directement dans Mon Cinéma.",
+          "Découvrez cette vidéo directement dans Mon Cinéma.",
 
         poster:
           "",
@@ -741,9 +622,7 @@
       },
 
 
-      /* =====================
-         FILM 14 - ARTE
-      ====================== */
+      /* FILM 14 */
 
       "arte14": {
 
@@ -751,7 +630,7 @@
           "Transit",
 
         description:
-          "Découvrez Transit directement dans Mon Cinéma.",
+          "Découvrez cette vidéo directement dans Mon Cinéma.",
 
         poster:
           "",
@@ -762,9 +641,7 @@
       },
 
 
-      /* =====================
-         FILM 15 - ARTE
-      ====================== */
+      /* FILM 15 */
 
       "arte15": {
 
@@ -772,7 +649,7 @@
           "La firme",
 
         description:
-          "Découvrez La firme directement dans Mon Cinéma.",
+          "Découvrez cette vidéo directement dans Mon Cinéma.",
 
         poster:
           "",
@@ -783,9 +660,7 @@
       },
 
 
-      /* =====================
-         FILM 16 - ARTE
-      ====================== */
+      /* FILM 16 */
 
       "arte16": {
 
@@ -793,7 +668,7 @@
           "The Yards",
 
         description:
-          "Découvrez The Yards directement dans Mon Cinéma.",
+          "Découvrez cette vidéo directement dans Mon Cinéma.",
 
         poster:
           "",
@@ -816,7 +691,6 @@
 
     if (movie) {
 
-
       /* TITRE */
 
       document.getElementById(
@@ -835,34 +709,35 @@
 
       /* LECTEUR */
 
-      if (movie.video) {
-
-        document.getElementById(
-          "player"
-        ).src =
-          movie.video;
-
-      }
+      document.getElementById(
+        "player"
+      ).src =
+        movie.video;
 
 
       /* =====================
-         AFFICHES
+         AFFICHAGE DE L'AFFICHE
       ====================== */
+
+      const poster =
+        document.getElementById(
+          "poster"
+        );
+
 
       if (movie.poster) {
 
-        document.getElementById(
-          "poster"
-        ).src =
+        poster.src =
           movie.poster;
+
+        poster.style.display =
+          "block";
 
       }
 
       else {
 
-        document.getElementById(
-          "poster"
-        ).style.display =
+        poster.style.display =
           "none";
 
       }
@@ -886,6 +761,12 @@
         "movieDescription"
       ).textContent =
         "Ce film n'existe pas.";
+
+
+      document.getElementById(
+        "player"
+      ).style.display =
+        "none";
 
     }
 
