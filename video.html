@@ -1,16 +1,7 @@
-<!DOCTYPE html>
-<html lang="fr">
+<!DOCTYPE html><html lang="fr"><head>  <meta charset="UTF-8"><meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-<head>
-
-  <meta charset="UTF-8">
-
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
-
-  <title>Lecture - Mon Cinéma</title>
-
-  <style>
+  <title>Lecture - Mon Cinéma</title>  <style>
 
     * {
       margin: 0;
@@ -124,7 +115,6 @@
 
     .movie-poster {
       width: 100%;
-
       max-height: 500px;
 
       object-fit: cover;
@@ -275,124 +265,91 @@
 
     }
 
-  </style>
-
-</head>
-
-
-<body id="top">
-
-
-  <!-- =========================
+  </style></head><body id="top">  <!-- =========================
        MENU
-  ========================= -->
+  ========================= -->  <header><div class="logo">
+  🎬 MON CINÉMA
+</div>
 
-  <header>
+<a
+  class="back"
+  href="index.html">
 
-    <div class="logo">
-      🎬 MON CINÉMA
-    </div>
+  ← Retour aux films
 
-    <a
-      class="back"
-      href="index.html">
+</a>
 
-      ← Retour aux films
-
-    </a>
-
-  </header>
-
-
-  <!-- =========================
+  </header>  <!-- =========================
        PAGE DE LECTURE
-  ========================= -->
+  ========================= -->  <main class="video-page"><!-- CARTE DU FILM -->
 
-  <main class="video-page">
+<div class="movie-card">
 
-
-    <!-- CARTE DU FILM -->
-
-    <div class="movie-card">
-
-      <img
-        class="movie-poster"
-        id="poster"
-        src=""
-        alt="Affiche du film">
+  <img
+    class="movie-poster"
+    id="poster"
+    src=""
+    alt="Affiche du film">
 
 
-      <div class="movie-info">
+  <div class="movie-info">
 
-        <h1 id="movieTitle">
-          Mon film
-        </h1>
+    <h1 id="movieTitle">
+      Mon film
+    </h1>
 
-        <p id="movieDescription">
-          Regardez le film directement
-          depuis Mon Cinéma.
-        </p>
+    <p id="movieDescription">
+      Regardez le film directement
+      depuis Mon Cinéma.
+    </p>
 
-      </div>
+  </div>
 
-    </div>
-
-
-    <!-- =========================
-         LECTEUR
-    ========================= -->
-
-    <h2 class="video-title">
-      ▶ Regarder le film
-    </h2>
+</div>
 
 
-    <div class="video-container">
+<!-- =========================
+     LECTEUR
+========================= -->
 
-      <iframe
-        id="player"
-        src=""
-        title="Lecteur vidéo"
-        allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
-        allowfullscreen>
-      </iframe>
-
-    </div>
+<h2 class="video-title">
+  ▶ Regarder le film
+</h2>
 
 
-    <!-- =========================
-         RETOUR EN HAUT
-    ========================= -->
+<div class="video-container">
 
-    <a
-      class="return"
-      href="#top"
-      title="Retour en haut">
+  <iframe
+    id="player"
+    src=""
+    title="Lecteur vidéo"
+    allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+    allowfullscreen>
+  </iframe>
 
-      ↑
-
-    </a>
-
-
-  </main>
+</div>
 
 
-  <!-- =========================
+<!-- =========================
+     RETOUR EN HAUT
+========================= -->
+
+<a
+  class="return"
+  href="#top"
+  title="Retour en haut">
+
+  ↑
+
+</a>
+
+  </main>  <!-- =========================
        FOOTER
-    ========================= -->
+  ========================= -->  <footer>© 2026 Mon Cinéma
 
-  <footer>
-
-    © 2026 Mon Cinéma
-
-  </footer>
-
-
-  <!-- =========================
+  </footer>  <!-- =========================
        JAVASCRIPT
-  ========================= -->
-
-  <script>
+    ========================= -->  <script>
 
     /* =========================
        RÉCUPÉRER L'ID
@@ -414,9 +371,75 @@
     const movies = {
 
 
-      /* =====================
-         FILM 1
-      ====================== */
+      /* =========================
+         NOUVEAU FILM 1
+         Notre dame
+      ========================= */
+
+      "arte1": {
+
+        title:
+          "Notre dame",
+
+        description:
+          "Découvrez Notre dame directement dans Mon Cinéma.",
+
+        poster:
+          "film1.jpg",
+
+        video:
+          "https://www.arte.tv/embeds/fr/129910-000-A?autoplay=true&mute=0"
+
+      },
+
+
+      /* =========================
+         NOUVEAU FILM 2
+         Rendez-vous avec la mort
+      ========================= */
+
+      "arte2": {
+
+        title:
+          "Rendez-vous avec la mort",
+
+        description:
+          "Découvrez Rendez-vous avec la mort directement dans Mon Cinéma.",
+
+        poster:
+          "film2.jpg",
+
+        video:
+          "https://www.arte.tv/embeds/fr/024862-000-A?autoplay=true&mute=0"
+
+      },
+
+
+      /* =========================
+         NOUVEAU FILM 3
+         Two Lovers
+      ========================= */
+
+      "arte3": {
+
+        title:
+          "Two Lovers",
+
+        description:
+          "Découvrez Two Lovers directement dans Mon Cinéma.",
+
+        poster:
+          "film3.jpg",
+
+        video:
+          "https://www.arte.tv/embeds/fr/047570-000-A?autoplay=true&mute=0"
+
+      },
+
+
+      /* =========================
+         ANCIEN FILM 1
+      ========================= */
 
       "3wSUg_Bc7OM": {
 
@@ -435,9 +458,9 @@
       },
 
 
-      /* =====================
-         FILM 2
-      ====================== */
+      /* =========================
+         ANCIEN FILM 2
+      ========================= */
 
       "1MoeXM9HISY": {
 
@@ -456,9 +479,9 @@
       },
 
 
-      /* =====================
-         FILM 3
-      ====================== */
+      /* =========================
+         ANCIEN FILM 3
+      ========================= */
 
       "A2HM48PwsXQ": {
 
@@ -477,9 +500,9 @@
       },
 
 
-      /* =====================
+      /* =========================
          FILM 4
-      ====================== */
+      ========================= */
 
       "arte": {
 
@@ -498,9 +521,9 @@
       },
 
 
-      /* =====================
+      /* =========================
          FILM 5
-      ====================== */
+      ========================= */
 
       "arte5": {
 
@@ -519,9 +542,9 @@
       },
 
 
-      /* =====================
+      /* =========================
          FILM 6
-      ====================== */
+      ========================= */
 
       "arte6": {
 
@@ -529,7 +552,7 @@
           "Ondine",
 
         description:
-          "Regardez Ondine directement dans Mon Cinéma.",
+          "Découvrez cette vidéo directement dans Mon Cinéma.",
 
         poster:
           "film6.jpg",
@@ -540,51 +563,9 @@
       },
 
 
-      /* =====================
-         FILM 7
-      ====================== */
-
-      "film7": {
-
-        title:
-          "Mon film 7",
-
-        description:
-          "Une nouvelle création arrive bientôt.",
-
-        poster:
-          "",
-
-        video:
-          ""
-
-      },
-
-
-      /* =====================
-         FILM 8
-      ====================== */
-
-      "film8": {
-
-        title:
-          "Mon film 8",
-
-        description:
-          "Une nouvelle création prochainement.",
-
-        poster:
-          "",
-
-        video:
-          ""
-
-      },
-
-
-      /* =====================
+      /* =========================
          FILM 9
-      ====================== */
+      ========================= */
 
       "arte9": {
 
@@ -603,9 +584,9 @@
       },
 
 
-      /* =====================
+      /* =========================
          FILM 10
-      ====================== */
+      ========================= */
 
       "arte10": {
 
@@ -624,9 +605,9 @@
       },
 
 
-      /* =====================
+      /* =========================
          FILM 11
-      ====================== */
+      ========================= */
 
       "arte11": {
 
@@ -645,9 +626,9 @@
       },
 
 
-      /* =====================
+      /* =========================
          FILM 12
-      ====================== */
+      ========================= */
 
       "arte12": {
 
@@ -666,9 +647,9 @@
       },
 
 
-      /* =====================
+      /* =========================
          FILM 13
-      ====================== */
+      ========================= */
 
       "arte13": {
 
@@ -687,9 +668,9 @@
       },
 
 
-      /* =====================
+      /* =========================
          FILM 14
-      ====================== */
+      ========================= */
 
       "arte14": {
 
@@ -708,9 +689,9 @@
       },
 
 
-      /* =====================
+      /* =========================
          FILM 15
-      ====================== */
+      ========================= */
 
       "arte15": {
 
@@ -729,9 +710,9 @@
       },
 
 
-      /* =====================
+      /* =========================
          FILM 16
-      ====================== */
+      ========================= */
 
       "arte16": {
 
@@ -761,7 +742,6 @@
 
 
     if (movie) {
-
 
       /* TITRE */
 
@@ -842,9 +822,4 @@
 
     }
 
-  </script>
-
-
-</body>
-
-</html>
+  </script></body></html>
