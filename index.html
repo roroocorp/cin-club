@@ -1,7 +1,16 @@
-<!DOCTYPE html><html lang="fr"><head>  <meta charset="UTF-8"><meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html>
+<html lang="fr">
 
-  <title>Mon Cinéma</title>  <style>
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>Mon Cinéma</title>
+
+  <style>
 
     * {
       margin: 0;
@@ -550,797 +559,699 @@ content="width=device-width, initial-scale=1.0">
 
     }
 
-  </style></head><body>  <!-- =========================
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- =========================
        MENU
-  ========================= -->  <header><div class="logo">
-  🎬 MON CINÉMA
-</div>
+  ========================= -->
 
-<nav>
+  <header>
 
-  <a href="#">
-    Accueil
-  </a>
+    <div class="logo">
+      🎬 MON CINÉMA
+    </div>
 
-  <a href="#films">
-    Films
-  </a>
+    <nav>
 
-  <a href="#series">
-    Séries
-  </a>
+      <a href="#">
+        Accueil
+      </a>
 
-</nav>
+      <a href="#films">
+        Films
+      </a>
 
-  </header>  <!-- =========================
+      <a href="#series">
+        Séries
+      </a>
+
+    </nav>
+
+  </header>
+
+
+  <!-- =========================
        ACCUEIL
-  ========================= -->  <section class="hero"><div class="hero-content">
+  ========================= -->
 
-  <small>
-    BIENVENUE SUR MON CINÉMA
-  </small>
+  <section class="hero">
 
-  <h1>
-    Mes films.
-  </h1>
+    <div class="hero-content">
 
-  <p>
-    Découvrez mes créations,
-    mes vidéos, mes films et mes séries
-    directement depuis mon cinéma.
-  </p>
+      <small>
+        BIENVENUE SUR MON CINÉMA
+      </small>
 
-  <a
-    class="button"
-    href="#films">
+      <h1>
+        Mes films.
+      </h1>
 
-    🎬 Découvrir
+      <p>
+        Découvrez mes créations,
+        mes vidéos, mes films et mes séries
+        directement depuis mon cinéma.
+      </p>
 
-  </a>
+      <a
+        class="button"
+        href="#films">
 
-</div>
+        🎬 Découvrir
 
-  </section>  <!-- =========================
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
        RECHERCHE
-  ========================= -->  <div class="search-area"><div class="search-box">
+  ========================= -->
 
-  <input
-    type="text"
-    id="searchInput"
-    placeholder="🔎 Rechercher un film ou une série..."
-    autocomplete="off">
+  <div class="search-area">
 
-  <button
-    class="search-button"
-    onclick="searchFilms()">
+    <div class="search-box">
 
-    🔎
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="🔎 Rechercher un film ou une série..."
+        autocomplete="off">
 
-  </button>
+      <button
+        class="search-button"
+        onclick="searchFilms()">
 
-</div>
+        🔎
 
-  </div>  <div id="searchMessage"></div>  <!-- =========================
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <div id="searchMessage"></div>
+
+
+  <!-- =========================
        CONTENU
-  ========================= -->  <main id="films"><!-- =========================
-     TOUS LES FILMS
-========================= -->
+  ========================= -->
 
-<section class="section">
-
-  <h2>
-    🎬 Tous les films
-  </h2>
-
-  <div class="films-row">
+  <main id="films">
 
 
-    <!-- FILM 1 -->
+    <!-- =========================
+         TOUS LES FILMS
+    ========================= -->
 
-    <a
-      class="film"
-      data-title="Mon premier film"
-      href="video.html?id=3wSUg_Bc7OM">
+    <section class="section">
 
-      <div class="thumbnail">
+      <h2>
+        🎬 Tous les films
+      </h2>
 
-        <img
-          src="https://img.youtube.com/vi/3wSUg_Bc7OM/maxresdefault.jpg"
-          alt="Mon premier film">
+      <div class="films-row">
 
-        <div class="play">▶</div>
+
+        <!-- FILM 1 -->
+
+        <a class="film"
+           data-title="Mon premier film"
+           href="video.html?id=3wSUg_Bc7OM">
+
+          <div class="thumbnail">
+
+            <img
+              src="https://img.youtube.com/vi/3wSUg_Bc7OM/maxresdefault.jpg"
+              alt="Mon premier film">
+
+            <div class="play">▶</div>
+
+          </div>
+
+          <div class="info">
+
+            <h3>Mon premier film</h3>
+
+            <p>
+              Découvrez mon premier film
+              et mes créations.
+            </p>
+
+            <span class="watch">▶ Regarder</span>
+
+          </div>
+
+        </a>
+
+
+        <!-- FILM 2 -->
+
+        <a class="film"
+           data-title="Mon film 2"
+           href="video.html?id=1MoeXM9HISY">
+
+          <div class="thumbnail">
+
+            <img
+              src="https://img.youtube.com/vi/1MoeXM9HISY/maxresdefault.jpg"
+              alt="Mon film 2">
+
+            <div class="play">▶</div>
+
+          </div>
+
+          <div class="info">
+
+            <h3>Mon film 2</h3>
+
+            <p>
+              Découvrez mon deuxième film.
+            </p>
+
+            <span class="watch">▶ Regarder</span>
+
+          </div>
+
+        </a>
+
+
+        <!-- FILM 3 -->
+
+        <a class="film"
+           data-title="Mon film 3"
+           href="video.html?id=A2HM48PwsXQ">
+
+          <div class="thumbnail">
+
+            <img
+              src="https://img.youtube.com/vi/A2HM48PwsXQ/maxresdefault.jpg"
+              alt="Mon film 3">
+
+            <div class="play">▶</div>
+
+          </div>
+
+          <div class="info">
+
+            <h3>Mon film 3</h3>
+
+            <p>
+              Découvrez mon troisième film.
+            </p>
+
+            <span class="watch">▶ Regarder</span>
+
+          </div>
+
+        </a>
+
+
+        <!-- FILM 4 -->
+
+        <a class="film"
+           data-title="Dans le grand tourbillon de la vie"
+           href="video.html?id=arte">
+
+          <div class="thumbnail">
+
+            <div class="placeholder">🎬</div>
+
+            <div class="play">▶</div>
+
+          </div>
+
+          <div class="info">
+
+            <h3>Dans le grand tourbillon de la vie</h3>
+
+            <p>
+              Découvrez cette vidéo
+              directement dans Mon Cinéma.
+            </p>
+
+            <span class="watch">▶ Regarder</span>
+
+          </div>
+
+        </a>
+
+
+        <!-- FILM 5 -->
+
+        <a class="film"
+           data-title="Tout pour ma fille"
+           href="video.html?id=arte5">
+
+          <div class="thumbnail">
+
+            <div class="placeholder">🎬</div>
+
+            <div class="play">▶</div>
+
+          </div>
+
+          <div class="info">
+
+            <h3>Tout pour ma fille</h3>
+
+            <p>
+              Regardez cette vidéo
+              directement dans Mon Cinéma.
+            </p>
+
+            <span class="watch">▶ Regarder</span>
+
+          </div>
+
+        </a>
+
+
+        <!-- FILM 6 -->
+
+        <a class="film"
+           data-title="Ondine"
+           href="video.html?id=arte6">
+
+          <div class="thumbnail">
+
+            <img
+              src="film6.jpg"
+              alt="Ondine">
+
+            <div class="play">▶</div>
+
+          </div>
+
+          <div class="info">
+
+            <h3>Ondine</h3>
+
+            <p>
+              Regardez cette vidéo
+              directement dans Mon Cinéma.
+            </p>
+
+            <span class="watch">▶ Regarder</span>
+
+          </div>
+
+        </a>
+
+
+        <!-- FILM 7 -->
+
+        <a class="film"
+           data-title="Mon film 7"
+           href="#">
+
+          <div class="thumbnail">
+
+            <div class="placeholder">🎥</div>
+
+          </div>
+
+          <div class="info">
+
+            <h3>Mon film 7</h3>
+
+            <p>
+              Une nouvelle création
+              arrive bientôt.
+            </p>
+
+            <span class="watch">Bientôt</span>
+
+          </div>
+
+        </a>
+
+
+        <!-- FILM 8 -->
+
+        <a class="film"
+           data-title="Mon film 8"
+           href="#">
+
+          <div class="thumbnail">
+
+            <div class="placeholder">🎞️</div>
+
+          </div>
+
+          <div class="info">
+
+            <h3>Mon film 8</h3>
+
+            <p>
+              Une nouvelle création
+              prochainement.
+            </p>
+
+            <span class="watch">Bientôt</span>
+
+          </div>
+
+        </a>
+
+
+        <!-- FILM 9 -->
+
+        <a class="film"
+           data-title="Entretien avec Christian Petzold"
+           href="video.html?id=arte9">
+
+          <div class="thumbnail">
+
+            <img
+              src="film9.jpg"
+              alt="Entretien avec Christian Petzold">
+
+            <div class="play">▶</div>
+
+          </div>
+
+          <div class="info">
+
+            <h3>
+              Entretien avec Christian Petzold
+            </h3>
+
+            <p>
+              Entretien avec Christian Petzold.
+            </p>
+
+            <span class="watch">▶ Regarder</span>
+
+          </div>
+
+        </a>
+
+
+        <!-- FILM 10 -->
+
+        <a class="film"
+           data-title="Fantômes"
+           href="video.html?id=arte10">
+
+          <div class="thumbnail">
+
+            <img
+              src="film10.jpg"
+              alt="Fantômes">
+
+            <div class="play">▶</div>
+
+          </div>
+
+          <div class="info">
+
+            <h3>Fantômes</h3>
+
+            <p>
+              Découvrez cette vidéo
+              directement dans Mon Cinéma.
+            </p>
+
+            <span class="watch">▶ Regarder</span>
+
+          </div>
+
+        </a>
+
+
+        <!-- FILM 11 -->
+
+        <a class="film"
+           data-title="Phoenix"
+           href="video.html?id=arte11">
+
+          <div class="thumbnail">
+
+            <img
+              src="film11.jpg"
+              alt="Phoenix">
+
+            <div class="play">▶</div>
+
+          </div>
+
+          <div class="info">
+
+            <h3>Phoenix</h3>
+
+            <p>
+              Découvrez cette vidéo
+              directement dans Mon Cinéma.
+            </p>
+
+            <span class="watch">▶ Regarder</span>
+
+          </div>
+
+        </a>
+
+
+        <!-- FILM 12 -->
+
+        <a class="film"
+           data-title="Contrôle d'identité"
+           href="video.html?id=arte12">
+
+          <div class="thumbnail">
+
+            <img
+              src="film12.jpg"
+              alt="Contrôle d'identité">
+
+            <div class="play">▶</div>
+
+          </div>
+
+          <div class="info">
+
+            <h3>Contrôle d'identité</h3>
+
+            <p>
+              Découvrez cette vidéo
+              directement dans Mon Cinéma.
+            </p>
+
+            <span class="watch">▶ Regarder</span>
+
+          </div>
+
+        </a>
+
+
+        <!-- FILM 13 -->
+
+        <a class="film"
+           data-title="Yella"
+           href="video.html?id=arte13">
+
+          <div class="thumbnail">
+
+            <img
+              src="film13.jpg"
+              alt="Yella">
+
+            <div class="play">▶</div>
+
+          </div>
+
+          <div class="info">
+
+            <h3>Yella</h3>
+
+            <p>
+              Découvrez cette vidéo
+              directement dans Mon Cinéma.
+            </p>
+
+            <span class="watch">▶ Regarder</span>
+
+          </div>
+
+        </a>
+
+
+        <!-- FILM 14 -->
+
+        <a class="film"
+           data-title="Transit"
+           href="video.html?id=arte14">
+
+          <div class="thumbnail">
+
+            <img
+              src="film14.jpg"
+              alt="Transit">
+
+            <div class="play">▶</div>
+
+          </div>
+
+          <div class="info">
+
+            <h3>Transit</h3>
+
+            <p>
+              Découvrez cette vidéo
+              directement dans Mon Cinéma.
+            </p>
+
+            <span class="watch">▶ Regarder</span>
+
+          </div>
+
+        </a>
+
+
+        <!-- FILM 15 -->
+
+        <a class="film"
+           data-title="La firme"
+           href="video.html?id=arte15">
+
+          <div class="thumbnail">
+
+            <img
+              src="film15.jpg"
+              alt="La firme">
+
+            <div class="play">▶</div>
+
+          </div>
+
+          <div class="info">
+
+            <h3>La firme</h3>
+
+            <p>
+              Découvrez cette vidéo
+              directement dans Mon Cinéma.
+            </p>
+
+            <span class="watch">▶ Regarder</span>
+
+          </div>
+
+        </a>
+
+
+        <!-- FILM 16 -->
+
+        <a class="film"
+           data-title="The Yards"
+           href="video.html?id=arte16">
+
+          <div class="thumbnail">
+
+            <div class="placeholder">🎬</div>
+
+            <div class="play">▶</div>
+
+          </div>
+
+          <div class="info">
+
+            <h3>The Yards</h3>
+
+            <p>
+              Découvrez cette vidéo
+              directement dans Mon Cinéma.
+            </p>
+
+            <span class="watch">▶ Regarder</span>
+
+          </div>
+
+        </a>
 
       </div>
 
-      <div class="info">
-
-        <h3>Mon premier film</h3>
-
-        <p>
-          Découvrez mon premier film
-          et mes créations.
-        </p>
-
-        <span class="watch">
-          ▶ Regarder
-        </span>
-
-      </div>
-
-    </a>
+    </section>
 
 
-    <!-- FILM 2 -->
+    <!-- =========================
+         HORREUR
+    ========================= -->
 
-    <a
-      class="film"
-      data-title="Mon film 2"
-      href="video.html?id=1MoeXM9HISY">
+    <section class="section">
 
-      <div class="thumbnail">
+      <h2 class="category-title">
+        👻 Horreur
+      </h2>
 
-        <img
-          src="https://img.youtube.com/vi/1MoeXM9HISY/maxresdefault.jpg"
-          alt="Mon film 2">
+      <div class="films-row">
 
-        <div class="play">▶</div>
+        <a class="film"
+           data-title="Fantômes"
+           href="video.html?id=arte10">
 
-      </div>
+          <div class="thumbnail">
 
-      <div class="info">
+            <img
+              src="film10.jpg"
+              alt="Fantômes">
 
-        <h3>Mon film 2</h3>
+            <div class="badge">
+              HORREUR
+            </div>
 
-        <p>
-          Découvrez mon deuxième film.
-        </p>
+            <div class="play">▶</div>
 
-        <span class="watch">
-          ▶ Regarder
-        </span>
+          </div>
 
-      </div>
+          <div class="info">
 
-    </a>
+            <h3>Fantômes</h3>
 
+            <p>
+              Une vidéo mystérieuse
+              et inquiétante.
+            </p>
 
-    <!-- FILM 3 -->
+            <span class="watch">▶ Regarder</span>
 
-    <a
-      class="film"
-      data-title="Mon film 3"
-      href="video.html?id=A2HM48PwsXQ">
+          </div>
 
-      <div class="thumbnail">
-
-        <img
-          src="https://img.youtube.com/vi/A2HM48PwsXQ/maxresdefault.jpg"
-          alt="Mon film 3">
-
-        <div class="play">▶</div>
+        </a>
 
       </div>
 
-      <div class="info">
+    </section>
 
-        <h3>Mon film 3</h3>
 
-        <p>
-          Découvrez mon troisième film.
-        </p>
+    <!-- =========================
+         DRAME
+    ========================= -->
 
-        <span class="watch">
-          ▶ Regarder
-        </span>
+    <section class="section">
 
-      </div>
+      <h2 class="category-title">
+        🎭 Drame
+      </h2>
 
-    </a>
+      <div class="films-row">
 
+        <a class="film"
+           data-title="Phoenix"
+           href="video.html?id=arte11">
 
-    <!-- FILM 4 -->
+          <div class="thumbnail">
 
-    <a
-      class="film"
-      data-title="Dans le grand tourbillon de la vie"
-      href="video.html?id=arte">
+            <img
+              src="film11.jpg"
+              alt="Phoenix">
 
-      <div class="thumbnail">
-
-        <div class="placeholder">🎬</div>
-
-        <div class="play">▶</div>
-
-      </div>
-
-      <div class="info">
-
-        <h3>
-          Dans le grand tourbillon de la vie
-        </h3>
-
-        <p>
-          Découvrez cette vidéo
-          directement dans Mon Cinéma.
-        </p>
-
-        <span class="watch">
-          ▶ Regarder
-        </span>
-
-      </div>
-
-    </a>
-
-
-    <!-- FILM 5 -->
-
-    <a
-      class="film"
-      data-title="Tout pour ma fille"
-      href="video.html?id=arte5">
-
-      <div class="thumbnail">
-
-        <div class="placeholder">🎬</div>
-
-        <div class="play">▶</div>
-
-      </div>
-
-      <div class="info">
-
-        <h3>Tout pour ma fille</h3>
-
-        <p>
-          Regardez cette vidéo
-          directement dans Mon Cinéma.
-        </p>
-
-        <span class="watch">
-          ▶ Regarder
-        </span>
-
-      </div>
-
-    </a>
-
-
-    <!-- FILM 6 -->
-
-    <a
-      class="film"
-      data-title="Ondine"
-      href="video.html?id=arte6">
-
-      <div class="thumbnail">
-
-        <img
-          src="film6.jpg"
-          alt="Ondine">
-
-        <div class="play">▶</div>
-
-      </div>
-
-      <div class="info">
-
-        <h3>Ondine</h3>
-
-        <p>
-          Regardez cette vidéo
-          directement dans Mon Cinéma.
-        </p>
-
-        <span class="watch">
-          ▶ Regarder
-        </span>
-
-      </div>
-
-    </a>
-
-
-    <!-- FILM 7 -->
-
-    <a
-      class="film"
-      data-title="Mon film 7"
-      href="#">
-
-      <div class="thumbnail">
-
-        <div class="placeholder">🎥</div>
-
-      </div>
-
-      <div class="info">
-
-        <h3>Mon film 7</h3>
-
-        <p>
-          Une nouvelle création
-          arrive bientôt.
-        </p>
-
-        <span class="watch">
-          Bientôt
-        </span>
-
-      </div>
-
-    </a>
-
-
-    <!-- FILM 8 -->
-
-    <a
-      class="film"
-      data-title="Mon film 8"
-      href="#">
-
-      <div class="thumbnail">
-
-        <div class="placeholder">🎞️</div>
-
-      </div>
-
-      <div class="info">
-
-        <h3>Mon film 8</h3>
-
-        <p>
-          Une nouvelle création
-          prochainement.
-        </p>
-
-        <span class="watch">
-          Bientôt
-        </span>
-
-      </div>
-
-    </a>
-
-
-    <!-- FILM 9 -->
-
-    <a
-      class="film"
-      data-title="Entretien avec Christian Petzold"
-      href="video.html?id=arte9">
-
-      <div class="thumbnail">
-
-        <img
-          src="film9.jpg"
-          alt="Entretien avec Christian Petzold">
-
-        <div class="play">▶</div>
-
-      </div>
-
-      <div class="info">
-
-        <h3>
-          Entretien avec Christian Petzold
-        </h3>
-
-        <p>
-          Entretien avec Christian Petzold.
-        </p>
-
-        <span class="watch">
-          ▶ Regarder
-        </span>
-
-      </div>
-
-    </a>
-
-
-    <!-- FILM 10 -->
-
-    <a
-      class="film"
-      data-title="Fantômes"
-      href="video.html?id=arte10">
-
-      <div class="thumbnail">
-
-        <img
-          src="film10.jpg"
-          alt="Fantômes">
-
-        <div class="play">▶</div>
-
-      </div>
-
-      <div class="info">
-
-        <h3>Fantômes</h3>
-
-        <p>
-          Découvrez cette vidéo
-          directement dans Mon Cinéma.
-        </p>
-
-        <span class="watch">
-          ▶ Regarder
-        </span>
-
-      </div>
-
-    </a>
-
-
-    <!-- FILM 11 -->
-
-    <a
-      class="film"
-      data-title="Phoenix"
-      href="video.html?id=arte11">
-
-      <div class="thumbnail">
-
-        <img
-          src="film11.jpg"
-          alt="Phoenix">
-
-        <div class="play">▶</div>
-
-      </div>
-
-      <div class="info">
-
-        <h3>Phoenix</h3>
-
-        <p>
-          Découvrez cette vidéo
-          directement dans Mon Cinéma.
-        </p>
-
-        <span class="watch">
-          ▶ Regarder
-        </span>
-
-      </div>
-
-    </a>
-
-
-    <!-- FILM 12 -->
-
-    <a
-      class="film"
-      data-title="Contrôle d'identité"
-      href="video.html?id=arte12">
-
-      <div class="thumbnail">
-
-        <img
-          src="film12.jpg"
-          alt="Contrôle d'identité">
-
-        <div class="play">▶</div>
-
-      </div>
-
-      <div class="info">
-
-        <h3>Contrôle d'identité</h3>
-
-        <p>
-          Découvrez cette vidéo
-          directement dans Mon Cinéma.
-        </p>
-
-        <span class="watch">
-          ▶ Regarder
-        </span>
-
-      </div>
-
-    </a>
-
-
-    <!-- FILM 13 -->
-
-    <a
-      class="film"
-      data-title="Yella"
-      href="video.html?id=arte13">
-
-      <div class="thumbnail">
-
-        <div class="placeholder">🎬</div>
-
-        <div class="play">▶</div>
-
-      </div>
-
-      <div class="info">
-
-        <h3>Yella</h3>
-
-        <p>
-          Découvrez cette vidéo
-          directement dans Mon Cinéma.
-        </p>
-
-        <span class="watch">
-          ▶ Regarder
-        </span>
-
-      </div>
-
-    </a>
-
-
-    <!-- FILM 14 -->
-
-    <a
-      class="film"
-      data-title="Transit"
-      href="video.html?id=arte14">
-
-      <div class="thumbnail">
-
-        <div class="placeholder">🎬</div>
-
-        <div class="play">▶</div>
-
-      </div>
-
-      <div class="info">
-
-        <h3>Transit</h3>
-
-        <p>
-          Découvrez cette vidéo
-          directement dans Mon Cinéma.
-        </p>
-
-        <span class="watch">
-          ▶ Regarder
-        </span>
-
-      </div>
-
-    </a>
-
-
-    <!-- FILM 15 -->
-
-    <a
-      class="film"
-      data-title="La firme"
-      href="video.html?id=arte15">
-
-      <div class="thumbnail">
-
-        <div class="placeholder">🎬</div>
-
-        <div class="play">▶</div>
-
-      </div>
-
-      <div class="info">
-
-        <h3>La firme</h3>
-
-        <p>
-          Découvrez cette vidéo
-          directement dans Mon Cinéma.
-        </p>
-
-        <span class="watch">
-          ▶ Regarder
-        </span>
-
-      </div>
-
-    </a>
-
-
-    <!-- FILM 16 -->
-
-    <a
-      class="film"
-      data-title="The Yards"
-      href="video.html?id=arte16">
-
-      <div class="thumbnail">
-
-        <div class="placeholder">🎬</div>
-
-        <div class="play">▶</div>
-
-      </div>
-
-      <div class="info">
-
-        <h3>The Yards</h3>
-
-        <p>
-          Découvrez cette vidéo
-          directement dans Mon Cinéma.
-        </p>
-
-        <span class="watch">
-          ▶ Regarder
-        </span>
-
-      </div>
-
-    </a>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     HORREUR
-========================= -->
-
-<section class="section">
-
-  <h2 class="category-title">
-    👻 Horreur
-  </h2>
-
-  <div class="films-row">
-
-    <a
-      class="film"
-      data-title="Fantômes"
-      href="video.html?id=arte10">
-
-      <div class="thumbnail">
-
-        <img
-          src="film10.jpg"
-          alt="Fantômes">
-
-        <div class="badge">
-          HORREUR
-        </div>
-
-        <div class="play">▶</div>
-
-      </div>
-
-      <div class="info">
-
-        <h3>Fantômes</h3>
-
-        <p>
-          Une vidéo mystérieuse
-          et inquiétante.
-        </p>
-
-        <span class="watch">
-          ▶ Regarder
-        </span>
-
-      </div>
-
-    </a>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     DRAME
-========================= -->
-
-<section class="section">
-
-  <h2 class="category-title">
-    🎭 Drame
-  </h2>
-
-  <div class="films-row">
-
-    <a
-      class="film"
-      data-title="Phoenix"
-      href="video.html?id=arte11">
-
-      <div class="thumbnail">
-
-        <img
-          src="film11.jpg"
-          alt="Phoenix">
-
-        <div class="badge">
-          DRAME
-        </div>
-
-        <div class="play">▶</div>
-
-      </div>
-
-      <div class="info">
-
-        <h3>Phoenix</h3>
-
-        <p>
-          Découvrez ce film
-          directement dans Mon Cinéma.
-        </p>
-
-        <span class="watch">
-          ▶ Regarder
-        </span>
-
-      </div>
-
-    </a>
-
-    <a
-      class="film"
-      data-title="Yella"
-      href="video.html?id=arte13">
-
-      <div class="thumbnail">
-
-        <div class="placeholder">🎬</div>
-
-        <div class="badge">
-          DRAME
-        </div>
-
-        <div class="play">▶</div>
-
-      </div>
-
-      <div class="info">
-
-        <h3>Yella</h3>
-
-        <p>
-          Découvrez ce film
-          directement dans Mon Cinéma.
-        </p>
-
-        <span class="watch">
-          ▶ Regarder
-        </span>
-
-      </div>
-
-    </a>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     THRILLER
-========================= -->
-
-<section class="section">
-
-  <h2 class="category-title">
-    🔪 Thriller
-  </h2>
-
-  <div class="films-row">
-
-    <a
-      class="film"
-      data-title="Transit"
-      href="video.html?id=arte14">
-
-      <div class="thumbnail">
-
-        <div class="placeholder">🎬</div>
-
-        <div class="badge">
-          THRILLER
-    
+            <di
