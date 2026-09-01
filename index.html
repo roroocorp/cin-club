@@ -33,14 +33,14 @@
     ========================= */
 
     header {
-      height: 70px;
+      min-height: 70px;
       background: #0d0d0d;
 
       display: flex;
       align-items: center;
       justify-content: space-between;
 
-      padding: 0 6%;
+      padding: 12px 6%;
 
       border-bottom: 1px solid #222;
 
@@ -56,6 +56,7 @@
       font-weight: bold;
 
       letter-spacing: 2px;
+      white-space: nowrap;
     }
 
     nav a {
@@ -146,6 +147,170 @@
     }
 
     /* =========================
+       RECHERCHE
+    ========================= */
+
+    .search-area {
+      width: min(900px, 90%);
+
+      margin: 35px auto 10px;
+
+      position: relative;
+    }
+
+    .search-box {
+      display: flex;
+
+      background: #151515;
+
+      border: 1px solid #333;
+
+      border-radius: 8px;
+
+      overflow: hidden;
+
+      box-shadow:
+        0 0 20px rgba(255,0,0,0.08);
+    }
+
+    .search-box input {
+      flex: 1;
+
+      padding: 16px 18px;
+
+      background: transparent;
+
+      border: none;
+
+      outline: none;
+
+      color: white;
+
+      font-size: 16px;
+    }
+
+    .search-box input::placeholder {
+      color: #777;
+    }
+
+    .search-button {
+      padding: 0 22px;
+
+      background: #e50914;
+
+      border: none;
+
+      color: white;
+
+      font-size: 18px;
+
+      cursor: pointer;
+    }
+
+    .search-button:hover {
+      background: #b20710;
+    }
+
+    /* =========================
+       RECOMMANDATIONS
+    ========================= */
+
+    .suggestions {
+      position: absolute;
+
+      left: 0;
+      right: 0;
+
+      top: calc(100% + 5px);
+
+      background: #181818;
+
+      border: 1px solid #333;
+
+      border-radius: 8px;
+
+      overflow: hidden;
+
+      display: none;
+
+      z-index: 20;
+
+      box-shadow:
+        0 10px 30px rgba(0,0,0,0.6);
+    }
+
+    .suggestion {
+      padding: 14px 18px;
+
+      cursor: pointer;
+
+      border-bottom: 1px solid #292929;
+    }
+
+    .suggestion:last-child {
+      border-bottom: none;
+    }
+
+    .suggestion:hover {
+      background: #292929;
+    }
+
+    .suggestion-title {
+      font-weight: bold;
+    }
+
+    .suggestion-category {
+      color: #888;
+
+      font-size: 12px;
+
+      margin-top: 4px;
+    }
+
+    /* =========================
+       CATÉGORIES
+    ========================= */
+
+    .categories {
+      width: min(1100px, 90%);
+
+      margin: 25px auto 0;
+
+      display: flex;
+
+      gap: 10px;
+
+      flex-wrap: wrap;
+    }
+
+    .category {
+      padding: 10px 18px;
+
+      border-radius: 20px;
+
+      border: 1px solid #333;
+
+      background: #151515;
+
+      color: #ccc;
+
+      cursor: pointer;
+
+      transition: 0.3s;
+
+      font-size: 14px;
+    }
+
+    .category:hover,
+    .category.active {
+      background: #e50914;
+
+      border-color: #e50914;
+
+      color: white;
+    }
+
+    /* =========================
        SECTION FILMS
     ========================= */
 
@@ -198,6 +363,10 @@
       box-shadow:
         0 0 10px rgba(255,0,0,0.25),
         0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    .film.hidden {
+      display: none;
     }
 
     /* LED ROUGE */
@@ -337,6 +506,22 @@
     }
 
     /* =========================
+       MESSAGE AUCUN RÉSULTAT
+    ========================= */
+
+    #noResults {
+      display: none;
+
+      text-align: center;
+
+      color: #888;
+
+      padding: 50px 20px;
+
+      font-size: 17px;
+    }
+
+    /* =========================
        FOOTER
     ========================= */
 
@@ -380,6 +565,12 @@
         font-size: 45px;
       }
 
+      header {
+        flex-wrap: wrap;
+
+        gap: 10px;
+      }
+
     }
 
     /* =========================
@@ -389,7 +580,7 @@
     @media (max-width: 600px) {
 
       header {
-        padding: 0 20px;
+        padding: 12px 20px;
       }
 
       .logo {
@@ -414,6 +605,24 @@
 
       .hero p {
         font-size: 16px;
+      }
+
+      .search-area {
+        width: 92%;
+      }
+
+      .search-box input {
+        min-width: 0;
+
+        font-size: 14px;
+      }
+
+      .search-button {
+        padding: 0 16px;
+      }
+
+      .categories {
+        width: 92%;
       }
 
       .section {
@@ -495,6 +704,72 @@
 
 
   <!-- =========================
+       RECHERCHE
+  ========================= -->
+
+  <div class="search-area">
+
+    <div class="search-box">
+
+      <input
+        type="text"
+        id="search"
+        placeholder="🔎 Rechercher un film..."
+        autocomplete="off">
+
+      <button
+        class="search-button"
+        onclick="searchMovies()">
+
+        🔎
+
+      </button>
+
+    </div>
+
+
+    <div
+      class="suggestions"
+      id="suggestions">
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       CATÉGORIES
+  ========================= -->
+
+  <div class="categories">
+
+    <button
+      class="category active"
+      data-category="all">
+
+      🎬 Tous
+
+    </button>
+
+    <button
+      class="category"
+      data-category="youtube">
+
+      ▶ YouTube
+
+    </button>
+
+    <button
+      class="category"
+      data-category="arte">
+
+      📺 ARTE
+
+    </button>
+
+  </div>
+
+
+  <!-- =========================
        MES FILMS
   ========================= -->
 
@@ -509,12 +784,12 @@
     <div class="films">
 
 
-      <!-- =====================
-           FILM 1
-      ====================== -->
+      <!-- FILM 1 -->
 
       <a
         class="film"
+        data-category="youtube"
+        data-title="Mon premier film"
         href="video.html?id=3wSUg_Bc7OM">
 
         <div class="thumbnail">
@@ -523,21 +798,17 @@
             src="https://img.youtube.com/vi/3wSUg_Bc7OM/maxresdefault.jpg"
             alt="Mon premier film">
 
-          <div class="play">
-            ▶
-          </div>
+          <div class="play">▶</div>
 
         </div>
 
         <div class="info">
 
-          <h3>
-            Mon premier film
-          </h3>
+          <h3>Mon premier film</h3>
 
           <p>
-            Découvrez mon premier
-            film et mes créations.
+            Découvrez mon premier film
+            et mes créations.
           </p>
 
           <span class="watch">
@@ -549,12 +820,12 @@
       </a>
 
 
-      <!-- =====================
-           FILM 2
-      ====================== -->
+      <!-- FILM 2 -->
 
       <a
         class="film"
+        data-category="youtube"
+        data-title="Mon film 2"
         href="video.html?id=1MoeXM9HISY">
 
         <div class="thumbnail">
@@ -563,21 +834,16 @@
             src="https://img.youtube.com/vi/1MoeXM9HISY/maxresdefault.jpg"
             alt="Mon film 2">
 
-          <div class="play">
-            ▶
-          </div>
+          <div class="play">▶</div>
 
         </div>
 
         <div class="info">
 
-          <h3>
-            Mon film 2
-          </h3>
+          <h3>Mon film 2</h3>
 
           <p>
-            Découvrez mon deuxième
-            film.
+            Découvrez mon deuxième film.
           </p>
 
           <span class="watch">
@@ -589,12 +855,12 @@
       </a>
 
 
-      <!-- =====================
-           FILM 3
-      ====================== -->
+      <!-- FILM 3 -->
 
       <a
         class="film"
+        data-category="youtube"
+        data-title="Mon film 3"
         href="video.html?id=A2HM48PwsXQ">
 
         <div class="thumbnail">
@@ -603,21 +869,16 @@
             src="https://img.youtube.com/vi/A2HM48PwsXQ/maxresdefault.jpg"
             alt="Mon film 3">
 
-          <div class="play">
-            ▶
-          </div>
+          <div class="play">▶</div>
 
         </div>
 
         <div class="info">
 
-          <h3>
-            Mon film 3
-          </h3>
+          <h3>Mon film 3</h3>
 
           <p>
-            Découvrez mon troisième
-            film.
+            Découvrez mon troisième film.
           </p>
 
           <span class="watch">
@@ -629,23 +890,19 @@
       </a>
 
 
-      <!-- =====================
-           FILM 4
-      ====================== -->
+      <!-- FILM 4 -->
 
       <a
         class="film"
+        data-category="arte"
+        data-title="Dans le grand tourbillon de la vie"
         href="video.html?id=arte">
 
         <div class="thumbnail">
 
-          <div class="placeholder">
-            🎬
-          </div>
+          <div class="placeholder">🎬</div>
 
-          <div class="play">
-            ▶
-          </div>
+          <div class="play">▶</div>
 
         </div>
 
@@ -669,23 +926,19 @@
       </a>
 
 
-      <!-- =====================
-           FILM 5
-      ====================== -->
+      <!-- FILM 5 -->
 
       <a
         class="film"
+        data-category="arte"
+        data-title="Tout pour ma fille"
         href="video.html?id=arte5">
 
         <div class="thumbnail">
 
-          <div class="placeholder">
-            🎬
-          </div>
+          <div class="placeholder">🎬</div>
 
-          <div class="play">
-            ▶
-          </div>
+          <div class="play">▶</div>
 
         </div>
 
@@ -709,31 +962,25 @@
       </a>
 
 
-      <!-- =====================
-           FILM 6
-      ====================== -->
+      <!-- FILM 6 -->
 
       <a
         class="film"
+        data-category="arte"
+        data-title="Ondine"
         href="video.html?id=arte6">
 
         <div class="thumbnail">
 
-          <div class="placeholder">
-            🎬
-          </div>
+          <div class="placeholder">🎬</div>
 
-          <div class="play">
-            ▶
-          </div>
+          <div class="play">▶</div>
 
         </div>
 
         <div class="info">
 
-          <h3>
-            Ondine
-          </h3>
+          <h3>Ondine</h3>
 
           <p>
             Regardez cette vidéo
@@ -749,27 +996,23 @@
       </a>
 
 
-      <!-- =====================
-           FILM 7
-      ====================== -->
+      <!-- FILM 7 -->
 
       <a
         class="film"
+        data-category="youtube"
+        data-title="Mon film 7"
         href="#">
 
         <div class="thumbnail">
 
-          <div class="placeholder">
-            🎥
-          </div>
+          <div class="placeholder">🎥</div>
 
         </div>
 
         <div class="info">
 
-          <h3>
-            Mon film 7
-          </h3>
+          <h3>Mon film 7</h3>
 
           <p>
             Une nouvelle création
@@ -785,27 +1028,23 @@
       </a>
 
 
-      <!-- =====================
-           FILM 8
-      ====================== -->
+      <!-- FILM 8 -->
 
       <a
         class="film"
+        data-category="youtube"
+        data-title="Mon film 8"
         href="#">
 
         <div class="thumbnail">
 
-          <div class="placeholder">
-            🎞️
-          </div>
+          <div class="placeholder">🎞️</div>
 
         </div>
 
         <div class="info">
 
-          <h3>
-            Mon film 8
-          </h3>
+          <h3>Mon film 8</h3>
 
           <p>
             Une nouvelle création
@@ -821,18 +1060,18 @@
       </a>
 
 
-      <!-- =====================
-           FILM 9
-      ====================== -->
+      <!-- FILM 9 -->
 
       <a
         class="film"
+        data-category="arte"
+        data-title="Entretien avec Christian Petzold"
         href="video.html?id=arte9">
 
         <div class="thumbnail">
 
           <img
-            src="film9.jpg"
+            src="https://rorocorp.github.io/cine-club/film9.jpg"
             alt="Entretien avec Christian Petzold">
 
           <div class="play">
@@ -848,8 +1087,8 @@
           </h3>
 
           <p>
-            Découvrez cette vidéo
-            directement dans Mon Cinéma.
+            Entretien avec Christian Petzold,
+            disponible directement dans Mon Cinéma.
           </p>
 
           <span class="watch">
@@ -861,31 +1100,25 @@
       </a>
 
 
-      <!-- =====================
-           FILM 10
-      ====================== -->
+      <!-- FILM 10 -->
 
       <a
         class="film"
+        data-category="arte"
+        data-title="Fantômes"
         href="video.html?id=arte10">
 
         <div class="thumbnail">
 
-          <div class="placeholder">
-            🎬
-          </div>
+          <div class="placeholder">🎬</div>
 
-          <div class="play">
-            ▶
-          </div>
+          <div class="play">▶</div>
 
         </div>
 
         <div class="info">
 
-          <h3>
-            Fantômes
-          </h3>
+          <h3>Fantômes</h3>
 
           <p>
             Découvrez cette vidéo
@@ -901,31 +1134,25 @@
       </a>
 
 
-      <!-- =====================
-           FILM 11
-      ====================== -->
+      <!-- FILM 11 -->
 
       <a
         class="film"
+        data-category="arte"
+        data-title="Phoenix"
         href="video.html?id=arte11">
 
         <div class="thumbnail">
 
-          <div class="placeholder">
-            🎬
-          </div>
+          <div class="placeholder">🎬</div>
 
-          <div class="play">
-            ▶
-          </div>
+          <div class="play">▶</div>
 
         </div>
 
         <div class="info">
 
-          <h3>
-            Phoenix
-          </h3>
+          <h3>Phoenix</h3>
 
           <p>
             Découvrez cette vidéo
@@ -941,23 +1168,19 @@
       </a>
 
 
-      <!-- =====================
-           FILM 12
-      ====================== -->
+      <!-- FILM 12 -->
 
       <a
         class="film"
+        data-category="arte"
+        data-title="Contrôle d'identité"
         href="video.html?id=arte12">
 
         <div class="thumbnail">
 
-          <div class="placeholder">
-            🎬
-          </div>
+          <div class="placeholder">🎬</div>
 
-          <div class="play">
-            ▶
-          </div>
+          <div class="play">▶</div>
 
         </div>
 
@@ -981,31 +1204,25 @@
       </a>
 
 
-      <!-- =====================
-           FILM 13
-      ====================== -->
+      <!-- FILM 13 -->
 
       <a
         class="film"
+        data-category="arte"
+        data-title="Yella"
         href="video.html?id=arte13">
 
         <div class="thumbnail">
 
-          <div class="placeholder">
-            🎬
-          </div>
+          <div class="placeholder">🎬</div>
 
-          <div class="play">
-            ▶
-          </div>
+          <div class="play">▶</div>
 
         </div>
 
         <div class="info">
 
-          <h3>
-            Yella
-          </h3>
+          <h3>Yella</h3>
 
           <p>
             Découvrez cette vidéo
@@ -1021,31 +1238,25 @@
       </a>
 
 
-      <!-- =====================
-           FILM 14
-      ====================== -->
+      <!-- FILM 14 -->
 
       <a
         class="film"
+        data-category="arte"
+        data-title="Transit"
         href="video.html?id=arte14">
 
         <div class="thumbnail">
 
-          <div class="placeholder">
-            🎬
-          </div>
+          <div class="placeholder">🎬</div>
 
-          <div class="play">
-            ▶
-          </div>
+          <div class="play">▶</div>
 
         </div>
 
         <div class="info">
 
-          <h3>
-            Transit
-          </h3>
+          <h3>Transit</h3>
 
           <p>
             Découvrez cette vidéo
@@ -1061,31 +1272,25 @@
       </a>
 
 
-      <!-- =====================
-           FILM 15
-      ====================== -->
+      <!-- FILM 15 -->
 
       <a
         class="film"
+        data-category="arte"
+        data-title="La firme"
         href="video.html?id=arte15">
 
         <div class="thumbnail">
 
-          <div class="placeholder">
-            🎬
-          </div>
+          <div class="placeholder">🎬</div>
 
-          <div class="play">
-            ▶
-          </div>
+          <div class="play">▶</div>
 
         </div>
 
         <div class="info">
 
-          <h3>
-            La firme
-          </h3>
+          <h3>La firme</h3>
 
           <p>
             Découvrez cette vidéo
@@ -1101,31 +1306,25 @@
       </a>
 
 
-      <!-- =====================
-           FILM 16
-      ====================== -->
+      <!-- FILM 16 -->
 
       <a
         class="film"
+        data-category="arte"
+        data-title="The Yards"
         href="video.html?id=arte16">
 
         <div class="thumbnail">
 
-          <div class="placeholder">
-            🎬
-          </div>
+          <div class="placeholder">🎬</div>
 
-          <div class="play">
-            ▶
-          </div>
+          <div class="play">▶</div>
 
         </div>
 
         <div class="info">
 
-          <h3>
-            The Yards
-          </h3>
+          <h3>The Yards</h3>
 
           <p>
             Découvrez cette vidéo
@@ -1136,27 +1335,4 @@
             ▶ Regarder
           </span>
 
-        </div>
-
-      </a>
-
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       FOOTER
-  ========================= -->
-
-  <footer>
-
-    © 2026 Mon Cinéma
-
-  </footer>
-
-
-</body>
-
-  </html>
+            </div>
