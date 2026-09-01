@@ -532,7 +532,7 @@
 
 
       /* =====================
-         FILM 4
+         FILM 4 - ARTE
       ====================== */
 
       "arte": {
@@ -553,7 +553,7 @@
 
 
       /* =====================
-         FILM 5
+         FILM 5 - ARTE
       ====================== */
 
       "arte5": {
@@ -574,7 +574,7 @@
 
 
       /* =====================
-         FILM 6
+         FILM 6 - ARTE
       ====================== */
 
       "arte6": {
@@ -595,7 +595,49 @@
 
 
       /* =====================
-         FILM 9
+         FILM 7
+      ====================== */
+
+      "film7": {
+
+        title:
+          "Mon film 7",
+
+        description:
+          "Une nouvelle création arrive bientôt.",
+
+        poster:
+          "",
+
+        video:
+          ""
+
+      },
+
+
+      /* =====================
+         FILM 8
+      ====================== */
+
+      "film8": {
+
+        title:
+          "Mon film 8",
+
+        description:
+          "Une nouvelle création prochainement.",
+
+        poster:
+          "",
+
+        video:
+          ""
+
+      },
+
+
+      /* =====================
+         FILM 9 - ARTE
       ====================== */
 
       "arte9": {
@@ -607,7 +649,7 @@
           "Entretien avec Christian Petzold, disponible directement dans Mon Cinéma.",
 
         poster:
-          "film9.jpg",
+          "https://rorocorp.github.io/cine-club/film9.jpg",
 
         video:
           "https://www.arte.tv/embeds/fr/093576-000-A?autoplay=true&mute=0"
@@ -616,7 +658,7 @@
 
 
       /* =====================
-         FILM 10
+         FILM 10 - ARTE
       ====================== */
 
       "arte10": {
@@ -625,7 +667,7 @@
           "Fantômes",
 
         description:
-          "Découvrez cette vidéo directement dans Mon Cinéma.",
+          "Découvrez Fantômes directement dans Mon Cinéma.",
 
         poster:
           "",
@@ -637,7 +679,7 @@
 
 
       /* =====================
-         FILM 11
+         FILM 11 - ARTE
       ====================== */
 
       "arte11": {
@@ -646,7 +688,7 @@
           "Phoenix",
 
         description:
-          "Découvrez cette vidéo directement dans Mon Cinéma.",
+          "Découvrez Phoenix directement dans Mon Cinéma.",
 
         poster:
           "",
@@ -658,7 +700,7 @@
 
 
       /* =====================
-         FILM 12
+         FILM 12 - ARTE
       ====================== */
 
       "arte12": {
@@ -667,7 +709,7 @@
           "Contrôle d'identité",
 
         description:
-          "Découvrez cette vidéo directement dans Mon Cinéma.",
+          "Découvrez Contrôle d'identité directement dans Mon Cinéma.",
 
         poster:
           "",
@@ -679,7 +721,7 @@
 
 
       /* =====================
-         FILM 13
+         FILM 13 - ARTE
       ====================== */
 
       "arte13": {
@@ -688,7 +730,7 @@
           "Yella",
 
         description:
-          "Découvrez cette vidéo directement dans Mon Cinéma.",
+          "Découvrez Yella directement dans Mon Cinéma.",
 
         poster:
           "",
@@ -700,7 +742,7 @@
 
 
       /* =====================
-         FILM 14
+         FILM 14 - ARTE
       ====================== */
 
       "arte14": {
@@ -709,7 +751,7 @@
           "Transit",
 
         description:
-          "Découvrez cette vidéo directement dans Mon Cinéma.",
+          "Découvrez Transit directement dans Mon Cinéma.",
 
         poster:
           "",
@@ -721,7 +763,7 @@
 
 
       /* =====================
-         FILM 15
+         FILM 15 - ARTE
       ====================== */
 
       "arte15": {
@@ -730,7 +772,7 @@
           "La firme",
 
         description:
-          "Découvrez cette vidéo directement dans Mon Cinéma.",
+          "Découvrez La firme directement dans Mon Cinéma.",
 
         poster:
           "",
@@ -742,7 +784,7 @@
 
 
       /* =====================
-         FILM 16
+         FILM 16 - ARTE
       ====================== */
 
       "arte16": {
@@ -751,7 +793,7 @@
           "The Yards",
 
         description:
-          "Découvrez cette vidéo directement dans Mon Cinéma.",
+          "Découvrez The Yards directement dans Mon Cinéma.",
 
         poster:
           "",
@@ -793,33 +835,34 @@
 
       /* LECTEUR */
 
-      document.getElementById(
-        "player"
-      ).src =
-        movie.video;
+      if (movie.video) {
+
+        document.getElementById(
+          "player"
+        ).src =
+          movie.video;
+
+      }
 
 
       /* =====================
-         AFFICHAGE DE L'AFFICHE
+         AFFICHES
       ====================== */
-
-      const poster =
-        document.getElementById("poster");
-
 
       if (movie.poster) {
 
-        poster.src =
+        document.getElementById(
+          "poster"
+        ).src =
           movie.poster;
-
-        poster.style.display =
-          "block";
 
       }
 
       else {
 
-        poster.style.display =
+        document.getElementById(
+          "poster"
+        ).style.display =
           "none";
 
       }
