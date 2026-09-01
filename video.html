@@ -28,6 +28,10 @@
       font-family: Arial, Helvetica, sans-serif;
     }
 
+    /* =========================
+       MENU
+    ========================= */
+
     header {
       height: 70px;
       background: #0d0d0d;
@@ -69,10 +73,18 @@
       border-color: #e50914;
     }
 
+    /* =========================
+       PAGE
+    ========================= */
+
     .video-page {
       width: min(1100px, 92%);
       margin: 45px auto 100px;
     }
+
+    /* =========================
+       CARTE DU FILM
+    ========================= */
 
     .movie-card {
       position: relative;
@@ -134,6 +146,10 @@
       line-height: 1.6;
     }
 
+    /* =========================
+       LECTEUR
+    ========================= */
+
     .video-title {
       font-size: 28px;
       margin-bottom: 20px;
@@ -164,6 +180,10 @@
 
       display: block;
     }
+
+    /* =========================
+       RETOUR EN HAUT
+    ========================= */
 
     .return {
       display: flex;
@@ -203,6 +223,10 @@
         0 0 35px rgba(229,9,20,0.7);
     }
 
+    /* =========================
+       FOOTER
+    ========================= */
+
     footer {
       text-align: center;
 
@@ -212,6 +236,10 @@
 
       border-top: 1px solid #222;
     }
+
+    /* =========================
+       TÉLÉPHONE
+    ========================= */
 
     @media (max-width: 600px) {
 
@@ -251,7 +279,13 @@
 
 </head>
 
+
 <body id="top">
+
+
+  <!-- =========================
+       MENU
+  ========================= -->
 
   <header>
 
@@ -270,7 +304,14 @@
   </header>
 
 
+  <!-- =========================
+       PAGE DE LECTURE
+  ========================= -->
+
   <main class="video-page">
+
+
+    <!-- CARTE DU FILM -->
 
     <div class="movie-card">
 
@@ -279,6 +320,7 @@
         id="poster"
         src=""
         alt="Affiche du film">
+
 
       <div class="movie-info">
 
@@ -295,6 +337,10 @@
 
     </div>
 
+
+    <!-- =========================
+         LECTEUR
+    ========================= -->
 
     <h2 class="video-title">
       ▶ Regarder le film
@@ -314,6 +360,10 @@
     </div>
 
 
+    <!-- =========================
+         RETOUR EN HAUT
+    ========================= -->
+
     <a
       class="return"
       href="#top"
@@ -323,8 +373,13 @@
 
     </a>
 
+
   </main>
 
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
 
   <footer>
 
@@ -333,7 +388,15 @@
   </footer>
 
 
+  <!-- =========================
+       JAVASCRIPT
+  ========================= -->
+
   <script>
+
+    /* =========================
+       RÉCUPÉRER L'ID
+    ========================= */
 
     const params =
       new URLSearchParams(
@@ -344,8 +407,11 @@
       params.get("id");
 
 
-    const movies = {
+    /* =========================
+       LISTE DES FILMS
+    ========================= */
 
+    const movies = {
 
       /* FILM 1 */
 
@@ -615,11 +681,17 @@
     };
 
 
+    /* =========================
+       CHARGER LE FILM
+    ========================= */
+
     const movie =
       movies[id];
 
 
     if (movie) {
+
+      /* TITRE */
 
       document.getElementById(
         "movieTitle"
@@ -627,17 +699,25 @@
         movie.title;
 
 
+      /* DESCRIPTION */
+
       document.getElementById(
         "movieDescription"
       ).textContent =
         movie.description;
 
 
+      /* LECTEUR */
+
       document.getElementById(
         "player"
       ).src =
         movie.video;
 
+
+      /* =====================
+         AFFICHAGE DE L'AFFICHE
+      ====================== */
 
       const poster =
         document.getElementById(
@@ -665,6 +745,10 @@
     }
 
 
+    /* =========================
+       FILM INCONNU
+    ========================= */
+
     else {
 
       document.getElementById(
@@ -687,6 +771,7 @@
     }
 
   </script>
+
 
 </body>
 
