@@ -4,6 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Mon Cinéma</title>
 
 <style>
@@ -31,11 +32,15 @@ body{
 header{
   height:70px;
   background:#0d0d0d;
+
   display:flex;
   align-items:center;
   justify-content:space-between;
+
   padding:0 6%;
+
   border-bottom:1px solid #222;
+
   position:sticky;
   top:0;
   z-index:50;
@@ -65,10 +70,12 @@ nav a:hover{
 ========================= */
 
 .hero{
-  min-height:520px;
+  min-height:500px;
+
   display:flex;
   align-items:center;
-  padding:60px 7%;
+
+  padding:50px 7%;
 
   background:
     linear-gradient(
@@ -107,11 +114,15 @@ nav a:hover{
 
 .button{
   display:inline-block;
+
   margin-top:25px;
   padding:14px 25px;
+
   background:#e50914;
   color:white;
+
   border-radius:5px;
+
   text-decoration:none;
   font-weight:bold;
 }
@@ -125,12 +136,12 @@ nav a:hover{
 ========================= */
 
 .section{
-  padding:35px 7% 5px;
+  padding:25px 7% 0;
 }
 
 .section h2{
   font-size:24px;
-  margin-bottom:18px;
+  margin-bottom:14px;
 }
 
 /* =========================
@@ -139,12 +150,15 @@ nav a:hover{
 
 .films-row{
   display:flex;
+
   gap:18px;
 
   overflow-x:auto;
   overflow-y:hidden;
 
-  padding:5px 5px 20px;
+  padding:5px 0 18px;
+
+  scroll-behavior:smooth;
 }
 
 .films-row::-webkit-scrollbar{
@@ -161,7 +175,7 @@ nav a:hover{
 }
 
 /* =========================
-   CARTE FILM
+   CARTE
 ========================= */
 
 .film{
@@ -169,7 +183,7 @@ nav a:hover{
 
   flex:0 0 260px;
 
-  height:350px;
+  height:345px;
 
   background:#151515;
 
@@ -182,6 +196,7 @@ nav a:hover{
   cursor:pointer;
 
   text-decoration:none;
+
   color:white;
 
   display:flex;
@@ -190,6 +205,7 @@ nav a:hover{
 
 .film:hover{
   transform:scale(1.04);
+
   z-index:5;
 
   box-shadow:
@@ -224,8 +240,6 @@ nav a:hover{
 
 /* =========================
    CATÉGORIE
-   PETIT CARRÉ NOIR
-   EN HAUT À DROITE
 ========================= */
 
 .badge{
@@ -336,7 +350,7 @@ nav a:hover{
 ========================= */
 
 .info{
-  padding:15px;
+  padding:14px;
 
   flex:1;
 
@@ -345,7 +359,7 @@ nav a:hover{
 }
 
 .info h3{
-  margin-bottom:7px;
+  margin-bottom:6px;
 
   font-size:17px;
 
@@ -369,8 +383,7 @@ nav a:hover{
 }
 
 /* =========================
-   BOUTON ROUGE
-   TOUS IDENTIQUES
+   BOUTON
 ========================= */
 
 .watch{
@@ -380,6 +393,7 @@ nav a:hover{
   justify-content:center;
 
   width:100%;
+
   height:34px;
 
   margin-top:auto;
@@ -414,7 +428,7 @@ footer{
 
   border-top:1px solid #222;
 
-  margin-top:40px;
+  margin-top:35px;
 }
 
 /* =========================
@@ -454,7 +468,7 @@ footer{
   }
 
   .hero{
-    min-height:450px;
+    min-height:440px;
     padding:40px 25px;
   }
 
@@ -467,7 +481,7 @@ footer{
   }
 
   .section{
-    padding:30px 20px 5px;
+    padding:25px 20px 0;
   }
 
   .section h2{
@@ -484,7 +498,6 @@ footer{
 </style>
 
 </head>
-
 
 <body>
 
@@ -549,16 +562,12 @@ footer{
 </section>
 
 
-<!-- =========================
-     CONTENU
-========================= -->
-
 <main id="films">
 
 
-<!-- =========================
+<!-- =====================================================
      TOUS LES FILMS
-========================= -->
+===================================================== -->
 
 <section class="section">
 
@@ -571,30 +580,36 @@ footer{
 
 <a class="film" href="video.html?id=arte1">
 
-  <div class="badge">DRAME</div>
+<div class="badge">
+  DRAME
+</div>
 
-  <div class="thumbnail">
+<div class="thumbnail">
 
-    <img src="film1.jpg" alt="Notre dame">
+<img src="film1.jpg" alt="Notre dame">
 
-    <div class="play">▶</div>
+<div class="play">
+  ▶
+</div>
 
-  </div>
+</div>
 
-  <div class="info">
+<div class="info">
 
-    <h3>Notre dame</h3>
+<h3>
+  Notre dame
+</h3>
 
-    <p>
-      Découvrez Notre dame directement
-      dans Mon Cinéma.
-    </p>
+<p>
+  Découvrez Notre dame directement
+  dans Mon Cinéma.
+</p>
 
-    <span class="watch">
-      ▶ Regarder
-    </span>
+<span class="watch">
+  ▶ Regarder
+</span>
 
-  </div>
+</div>
 
 </a>
 
@@ -603,30 +618,37 @@ footer{
 
 <a class="film" href="video.html?id=arte2">
 
-  <div class="badge">HORREUR</div>
+<div class="badge">
+  HORREUR
+</div>
 
-  <div class="thumbnail">
+<div class="thumbnail">
 
-    <img src="film2.jpg" alt="Rendez-vous avec la mort">
+<img src="film2.jpg"
+     alt="Rendez-vous avec la mort">
 
-    <div class="play">▶</div>
+<div class="play">
+  ▶
+</div>
 
-  </div>
+</div>
 
-  <div class="info">
+<div class="info">
 
-    <h3>Rendez-vous avec la mort</h3>
+<h3>
+  Rendez-vous avec la mort
+</h3>
 
-    <p>
-      Découvrez ce film directement
-      dans Mon Cinéma.
-    </p>
+<p>
+  Découvrez ce film directement
+  dans Mon Cinéma.
+</p>
 
-    <span class="watch">
-      ▶ Regarder
-    </span>
+<span class="watch">
+  ▶ Regarder
+</span>
 
-  </div>
+</div>
 
 </a>
 
@@ -635,30 +657,37 @@ footer{
 
 <a class="film" href="video.html?id=arte3">
 
-  <div class="badge">ROMANCE</div>
+<div class="badge">
+  ROMANCE
+</div>
 
-  <div class="thumbnail">
+<div class="thumbnail">
 
-    <img src="film3.jpg" alt="Two Lovers">
+<img src="film3.jpg"
+     alt="Two Lovers">
 
-    <div class="play">▶</div>
+<div class="play">
+  ▶
+</div>
 
-  </div>
+</div>
 
-  <div class="info">
+<div class="info">
 
-    <h3>Two Lovers</h3>
+<h3>
+  Two Lovers
+</h3>
 
-    <p>
-      Découvrez Two Lovers directement
-      dans Mon Cinéma.
-    </p>
+<p>
+  Découvrez Two Lovers directement
+  dans Mon Cinéma.
+</p>
 
-    <span class="watch">
-      ▶ Regarder
-    </span>
+<span class="watch">
+  ▶ Regarder
+</span>
 
-  </div>
+</div>
 
 </a>
 
@@ -667,30 +696,38 @@ footer{
 
 <a class="film" href="video.html?id=arte">
 
-  <div class="badge">DRAME</div>
+<div class="badge">
+  DRAME
+</div>
 
-  <div class="thumbnail">
+<div class="thumbnail">
 
-    <div class="placeholder">🎬</div>
+<div class="placeholder">
+  🎬
+</div>
 
-    <div class="play">▶</div>
+<div class="play">
+  ▶
+</div>
 
-  </div>
+</div>
 
-  <div class="info">
+<div class="info">
 
-    <h3>Dans le grand tourbillon de la vie</h3>
+<h3>
+  Dans le grand tourbillon de la vie
+</h3>
 
-    <p>
-      Découvrez cette vidéo directement
-      dans Mon Cinéma.
-    </p>
+<p>
+  Découvrez cette vidéo directement
+  dans Mon Cinéma.
+</p>
 
-    <span class="watch">
-      ▶ Regarder
-    </span>
+<span class="watch">
+  ▶ Regarder
+</span>
 
-  </div>
+</div>
 
 </a>
 
@@ -699,30 +736,38 @@ footer{
 
 <a class="film" href="video.html?id=arte5">
 
-  <div class="badge">DRAME</div>
+<div class="badge">
+  DRAME
+</div>
 
-  <div class="thumbnail">
+<div class="thumbnail">
 
-    <div class="placeholder">🎬</div>
+<div class="placeholder">
+  🎬
+</div>
 
-    <div class="play">▶</div>
+<div class="play">
+  ▶
+</div>
 
-  </div>
+</div>
 
-  <div class="info">
+<div class="info">
 
-    <h3>Tout pour ma fille</h3>
+<h3>
+  Tout pour ma fille
+</h3>
 
-    <p>
-      Regardez cette vidéo directement
-      dans Mon Cinéma.
-    </p>
+<p>
+  Regardez cette vidéo directement
+  dans Mon Cinéma.
+</p>
 
-    <span class="watch">
-      ▶ Regarder
-    </span>
+<span class="watch">
+  ▶ Regarder
+</span>
 
-  </div>
+</div>
 
 </a>
 
@@ -731,30 +776,37 @@ footer{
 
 <a class="film" href="video.html?id=arte6">
 
-  <div class="badge">FANTASTIQUE</div>
+<div class="badge">
+  FANTASTIQUE
+</div>
 
-  <div class="thumbnail">
+<div class="thumbnail">
 
-    <img src="film6.jpg" alt="Ondine">
+<img src="film6.jpg"
+     alt="Ondine">
 
-    <div class="play">▶</div>
+<div class="play">
+  ▶
+</div>
 
-  </div>
+</div>
 
-  <div class="info">
+<div class="info">
 
-    <h3>Ondine</h3>
+<h3>
+  Ondine
+</h3>
 
-    <p>
-      Regardez cette vidéo directement
-      dans Mon Cinéma.
-    </p>
+<p>
+  Regardez cette vidéo directement
+  dans Mon Cinéma.
+</p>
 
-    <span class="watch">
-      ▶ Regarder
-    </span>
+<span class="watch">
+  ▶ Regarder
+</span>
 
-  </div>
+</div>
 
 </a>
 
@@ -763,27 +815,33 @@ footer{
 
 <a class="film" href="#">
 
-  <div class="badge">COMÉDIE</div>
+<div class="badge">
+  COMÉDIE
+</div>
 
-  <div class="thumbnail">
+<div class="thumbnail">
 
-    <div class="placeholder">🎥</div>
+<div class="placeholder">
+  🎥
+</div>
 
-  </div>
+</div>
 
-  <div class="info">
+<div class="info">
 
-    <h3>Mon film 7</h3>
+<h3>
+  Mon film 7
+</h3>
 
-    <p>
-      Une nouvelle création arrive bientôt.
-    </p>
+<p>
+  Une nouvelle création arrive bientôt.
+</p>
 
-    <span class="watch">
-      Bientôt
-    </span>
+<span class="watch">
+  Bientôt
+</span>
 
-  </div>
+</div>
 
 </a>
 
@@ -792,27 +850,33 @@ footer{
 
 <a class="film" href="#">
 
-  <div class="badge">SCIENCE-FICTION</div>
+<div class="badge">
+  SCIENCE-FICTION
+</div>
 
-  <div class="thumbnail">
+<div class="thumbnail">
 
-    <div class="placeholder">🎞️</div>
+<div class="placeholder">
+  🎞️
+</div>
 
-  </div>
+</div>
 
-  <div class="info">
+<div class="info">
 
-    <h3>Mon film 8</h3>
+<h3>
+  Mon film 8
+</h3>
 
-    <p>
-      Une nouvelle création prochainement.
-    </p>
+<p>
+  Une nouvelle création prochainement.
+</p>
 
-    <span class="watch">
-      Bientôt
-    </span>
+<span class="watch">
+  Bientôt
+</span>
 
-  </div>
+</div>
 
 </a>
 
@@ -821,30 +885,36 @@ footer{
 
 <a class="film" href="video.html?id=arte9">
 
-  <div class="badge">POLICIER</div>
+<div class="badge">
+  POLICIER
+</div>
 
-  <div class="thumbnail">
+<div class="thumbnail">
 
-    <img src="film9.jpg"
-         alt="Entretien avec Christian Petzold">
+<img src="film9.jpg"
+     alt="Entretien avec Christian Petzold">
 
-    <div class="play">▶</div>
+<div class="play">
+  ▶
+</div>
 
-  </div>
+</div>
 
-  <div class="info">
+<div class="info">
 
-    <h3>Entretien avec Christian Petzold</h3>
+<h3>
+  Entretien avec Christian Petzold
+</h3>
 
-    <p>
-      Entretien avec Christian Petzold.
-    </p>
+<p>
+  Entretien avec Christian Petzold.
+</p>
 
-    <span class="watch">
-      ▶ Regarder
-    </span>
+<span class="watch">
+  ▶ Regarder
+</span>
 
-  </div>
+</div>
 
 </a>
 
@@ -853,30 +923,37 @@ footer{
 
 <a class="film" href="video.html?id=arte10">
 
-  <div class="badge">HORREUR</div>
+<div class="badge">
+  HORREUR
+</div>
 
-  <div class="thumbnail">
+<div class="thumbnail">
 
-    <img src="film10.jpg" alt="Fantômes">
+<img src="film10.jpg"
+     alt="Fantômes">
 
-    <div class="play">▶</div>
+<div class="play">
+  ▶
+</div>
 
-  </div>
+</div>
 
-  <div class="info">
+<div class="info">
 
-    <h3>Fantômes</h3>
+<h3>
+  Fantômes
+</h3>
 
-    <p>
-      Découvrez cette vidéo directement
-      dans Mon Cinéma.
-    </p>
+<p>
+  Découvrez cette vidéo directement
+  dans Mon Cinéma.
+</p>
 
-    <span class="watch">
-      ▶ Regarder
-    </span>
+<span class="watch">
+  ▶ Regarder
+</span>
 
-  </div>
+</div>
 
 </a>
 
@@ -885,30 +962,37 @@ footer{
 
 <a class="film" href="video.html?id=arte11">
 
-  <div class="badge">DRAME</div>
+<div class="badge">
+  DRAME
+</div>
 
-  <div class="thumbnail">
+<div class="thumbnail">
 
-    <img src="film11.jpg" alt="Phoenix">
+<img src="film11.jpg"
+     alt="Phoenix">
 
-    <div class="play">▶</div>
+<div class="play">
+  ▶
+</div>
 
-  </div>
+</div>
 
-  <div class="info">
+<div class="info">
 
-    <h3>Phoenix</h3>
+<h3>
+  Phoenix
+</h3>
 
-    <p>
-      Découvrez cette vidéo directement
-      dans Mon Cinéma.
-    </p>
+<p>
+  Découvrez cette vidéo directement
+  dans Mon Cinéma.
+</p>
 
-    <span class="watch">
-      ▶ Regarder
-    </span>
+<span class="watch">
+  ▶ Regarder
+</span>
 
-  </div>
+</div>
 
 </a>
 
@@ -917,30 +1001,37 @@ footer{
 
 <a class="film" href="video.html?id=arte12">
 
-  <div class="badge">THRILLER</div>
+<div class="badge">
+  THRILLER
+</div>
 
-  <div class="thumbnail">
+<div class="thumbnail">
 
-    <img src="film12.jpg" alt="Contrôle d'identité">
+<img src="film12.jpg"
+     alt="Contrôle d'identité">
 
-    <div class="play">▶</div>
+<div class="play">
+  ▶
+</div>
 
-  </div>
+</div>
 
-  <div class="info">
+<div class="info">
 
-    <h3>Contrôle d'identité</h3>
+<h3>
+  Contrôle d'identité
+</h3>
 
-    <p>
-      Découvrez cette vidéo directement
-      dans Mon Cinéma.
-    </p>
+<p>
+  Découvrez cette vidéo directement
+  dans Mon Cinéma.
+</p>
 
-    <span class="watch">
-      ▶ Regarder
-    </span>
+<span class="watch">
+  ▶ Regarder
+</span>
 
-  </div>
+</div>
 
 </a>
 
@@ -949,30 +1040,37 @@ footer{
 
 <a class="film" href="video.html?id=arte13">
 
-  <div class="badge">DRAME</div>
+<div class="badge">
+  DRAME
+</div>
 
-  <div class="thumbnail">
+<div class="thumbnail">
 
-    <img src="film13.jpg" alt="Yella">
+<img src="film13.jpg"
+     alt="Yella">
 
-    <div class="play">▶</div>
+<div class="play">
+  ▶
+</div>
 
-  </div>
+</div>
 
-  <div class="info">
+<div class="info">
 
-    <h3>Yella</h3>
+<h3>
+  Yella
+</h3>
 
-    <p>
-      Découvrez cette vidéo directement
-      dans Mon Cinéma.
-    </p>
+<p>
+  Découvrez cette vidéo directement
+  dans Mon Cinéma.
+</p>
 
-    <span class="watch">
-      ▶ Regarder
-    </span>
+<span class="watch">
+  ▶ Regarder
+</span>
 
-  </div>
+</div>
 
 </a>
 
@@ -981,30 +1079,37 @@ footer{
 
 <a class="film" href="video.html?id=arte14">
 
-  <div class="badge">THRILLER</div>
+<div class="badge">
+  THRILLER
+</div>
 
-  <div class="thumbnail">
+<div class="thumbnail">
 
-    <img src="film14.jpg" alt="Transit">
+<img src="film14.jpg"
+     alt="Transit">
 
-    <div class="play">▶</div>
+<div class="play">
+  ▶
+</div>
 
-  </div>
+</div>
 
-  <div class="info">
+<div class="info">
 
-    <h3>Transit</h3>
+<h3>
+  Transit
+</h3>
 
-    <p>
-      Découvrez cette vidéo directement
-      dans Mon Cinéma.
-    </p>
+<p>
+  Découvrez cette vidéo directement
+  dans Mon Cinéma.
+</p>
 
-    <span class="watch">
-      ▶ Regarder
-    </span>
+<span class="watch">
+  ▶ Regarder
+</span>
 
-  </div>
+</div>
 
 </a>
 
@@ -1013,30 +1118,37 @@ footer{
 
 <a class="film" href="video.html?id=arte15">
 
-  <div class="badge">POLICIER</div>
+<div class="badge">
+  POLICIER
+</div>
 
-  <div class="thumbnail">
+<div class="thumbnail">
 
-    <img src="film15.jpg" alt="La firme">
+<img src="film15.jpg"
+     alt="La firme">
 
-    <div class="play">▶</div>
+<div class="play">
+  ▶
+</div>
 
-  </div>
+</div>
 
-  <div class="info">
+<div class="info">
 
-    <h3>La firme</h3>
+<h3>
+  La firme
+</h3>
 
-    <p>
-      Découvrez cette vidéo directement
-      dans Mon Cinéma.
-    </p>
+<p>
+  Découvrez cette vidéo directement
+  dans Mon Cinéma.
+</p>
 
-    <span class="watch">
-      ▶ Regarder
-    </span>
+<span class="watch">
+  ▶ Regarder
+</span>
 
-  </div>
+</div>
 
 </a>
 
@@ -1045,30 +1157,38 @@ footer{
 
 <a class="film" href="video.html?id=arte16">
 
-  <div class="badge">POLICIER</div>
+<div class="badge">
+  POLICIER
+</div>
 
-  <div class="thumbnail">
+<div class="thumbnail">
 
-    <div class="placeholder">🎬</div>
+<div class="placeholder">
+  🎬
+</div>
 
-    <div class="play">▶</div>
+<div class="play">
+  ▶
+</div>
 
-  </div>
+</div>
 
-  <div class="info">
+<div class="info">
 
-    <h3>The Yards</h3>
+<h3>
+  The Yards
+</h3>
 
-    <p>
-      Découvrez cette vidéo directement
-      dans Mon Cinéma.
-    </p>
+<p>
+  Découvrez cette vidéo directement
+  dans Mon Cinéma.
+</p>
 
-    <span class="watch">
-      ▶ Regarder
-    </span>
+<span class="watch">
+  ▶ Regarder
+</span>
 
-  </div>
+</div>
 
 </a>
 
@@ -1077,9 +1197,9 @@ footer{
 </section>
 
 
-<!-- =========================
+<!-- =====================================================
      HORREUR
-========================= -->
+===================================================== -->
 
 <section class="section">
 
@@ -1087,62 +1207,77 @@ footer{
 
 <div class="films-row">
 
+
 <a class="film" href="video.html?id=arte10">
 
-  <div class="badge">HORREUR</div>
+<div class="badge">
+  HORREUR
+</div>
 
-  <div class="thumbnail">
+<div class="thumbnail">
 
-    <img src="film10.jpg" alt="Fantômes">
+<img src="film10.jpg"
+     alt="Fantômes">
 
-    <div class="play">▶</div>
+<div class="play">
+  ▶
+</div>
 
-  </div>
+</div>
 
-  <div class="info">
+<div class="info">
 
-    <h3>Fantômes</h3>
+<h3>
+  Fantômes
+</h3>
 
-    <p>
-      Une vidéo mystérieuse
-      et inquiétante.
-    </p>
+<p>
+  Une vidéo mystérieuse
+  et inquiétante.
+</p>
 
-    <span class="watch">
-      ▶ Regarder
-    </span>
+<span class="watch">
+  ▶ Regarder
+</span>
 
-  </div>
+</div>
 
 </a>
 
+
 <a class="film" href="video.html?id=arte2">
 
-  <div class="badge">HORREUR</div>
+<div class="badge">
+  HORREUR
+</div>
 
-  <div class="thumbnail">
+<div class="thumbnail">
 
-    <img src="film2.jpg"
-         alt="Rendez-vous avec la mort">
+<img src="film2.jpg"
+     alt="Rendez-vous avec la mort">
 
-    <div class="play">▶</div>
+<div class="play">
+  ▶
+</div>
 
-  </div>
+</div>
 
-  <div class="info">
+<div class="info">
 
-    <h3>Rendez-vous avec la mort</h3>
+<h3>
+  Rendez-vous avec la mort
+</h3>
 
-    <p>
-      Une histoire mystérieuse
-      à découvrir.
-    </p>
+<p>
+  Une histoire mystérieuse
+  à découvrir.
+</p>
 
-    <span class="watch">
-      ▶ Regarder
-    </span>
+<span class="watch">
+  ▶ Regarder
+</span>
 
-  </div>
+</div>
 
 </a>
 
@@ -1150,9 +1285,9 @@ footer{
 </section>
 
 
-<!-- =========================
+<!-- =====================================================
      COMÉDIE
-========================= -->
+===================================================== -->
 
 <section class="section">
 
@@ -1162,27 +1297,34 @@ footer{
 
 <a class="film" href="#">
 
-  <div class="badge">COMÉDIE</div>
+<div class="badge">
+  COMÉDIE
+</div>
 
-  <div class="thumbnail">
+<div class="thumbnail">
 
-    <div class="placeholder">😂</div>
+<div class="placeholder">
+  😂
+</div>
 
-  </div>
+</div>
 
-  <div class="info">
+<div class="info">
 
-    <h3>Mon film 7</h3>
+<h3>
+  Mon film 7
+</h3>
 
-    <p>
-      Une nouvelle création bientôt.
-    </p>
+<p>
+  Une nouvelle création
+  arrive bientôt.
+</p>
 
-    <span class="watch">
-      Bientôt
-    </span>
+<span class="watch">
+  Bientôt
+</span>
 
-  </div>
+</div>
 
 </a>
 
@@ -1190,9 +1332,9 @@ footer{
 </section>
 
 
-<!-- =========================
+<!-- =====================================================
      ROMANCE
-========================= -->
+===================================================== -->
 
 <section class="section">
 
@@ -1202,58 +1344,37 @@ footer{
 
 <a class="film" href="video.html?id=arte3">
 
-  <div class="badge">ROMANCE</div>
+<div class="badge">
+  ROMANCE
+</div>
 
-  <div class="thumbnail">
+<div class="thumbnail">
 
-    <img src="film3.jpg" alt="Two Lovers">
+<img src="film3.jpg"
+     alt="Two Lovers">
 
-    <div class="play">▶</div>
+<div class="play">
+  ▶
+</div>
 
-  </div>
+</div>
 
-  <div class="info">
+<div class="info">
 
-    <h3>Two Lovers</h3>
+<h3>
+  Two Lovers
+</h3>
 
-    <p>
-      Une histoire d'amour
-      à découvrir.
-    </p>
+<p>
+  Une histoire d'amour
+  à découvrir.
+</p>
 
-    <span class="watch">
-      ▶ Regarder
-    </span>
+<span class="watch">
+  ▶ Regarder
+</span>
 
-  </div>
-
-</a>
-
-<a class="film" href="video.html?id=arte6">
-
-  <div class="badge">FANTASTIQUE</div>
-
-  <div class="thumbnail">
-
-    <img src="film6.jpg" alt="Ondine">
-
-    <div class="play">▶</div>
-
-  </div>
-
-  <div class="info">
-
-    <h3>Ondine</h3>
-
-    <p>
-      Un film à découvrir.
-    </p>
-
-    <span class="watch">
-      ▶ Regarder
-    </span>
-
-  </div>
+</div>
 
 </a>
 
@@ -1261,9 +1382,9 @@ footer{
 </section>
 
 
-<!-- =========================
+<!-- =====================================================
      ACTION
-========================= -->
+===================================================== -->
 
 <section class="section">
 
@@ -1271,59 +1392,76 @@ footer{
 
 <div class="films-row">
 
+
 <a class="film" href="video.html?id=arte15">
 
-  <div class="badge">ACTION</div>
+<div class="badge">
+  ACTION
+</div>
 
-  <div class="thumbnail">
+<div class="thumbnail">
 
-    <img src="film15.jpg" alt="La firme">
+<img src="film15.jpg"
+     alt="La firme">
 
-    <div class="play">▶</div>
+<div class="play">
+  ▶
+</div>
 
-  </div>
+</div>
 
-  <div class="info">
+<div class="info">
 
-    <h3>La firme</h3>
+<h3>
+  La firme
+</h3>
 
-    <p>
-      Découvrez cette vidéo.
-    </p>
+<p>
+  Découvrez cette vidéo.
+</p>
 
-    <span class="watch">
-      ▶ Regarder
-    </span>
+<span class="watch">
+  ▶ Regarder
+</span>
 
-  </div>
+</div>
 
 </a>
 
+
 <a class="film" href="video.html?id=arte16">
 
-  <div class="badge">ACTION</div>
+<div class="badge">
+  ACTION
+</div>
 
-  <div class="thumbnail">
+<div class="thumbnail">
 
-    <div class="placeholder">🔥</div>
+<div class="placeholder">
+  🔥
+</div>
 
-    <div class="play">▶</div>
+<div class="play">
+  ▶
+</div>
 
-  </div>
+</div>
 
-  <div class="info">
+<div class="info">
 
-    <h3>The Yards</h3>
+<h3>
+  The Yards
+</h3>
 
-    <p>
-      Découvrez cette vidéo.
-    </p>
+<p>
+  Découvrez cette vidéo.
+</p>
 
-    <span class="watch">
-      ▶ Regarder
-    </span>
+<span class="watch">
+  ▶ Regarder
+</span>
 
-  </div>
+</div>
 
 </a>
 
@@ -1331,9 +1469,9 @@ footer{
 </section>
 
 
-<!-- =========================
+<!-- =====================================================
      THRILLER
-========================= -->
+===================================================== -->
 
 <section class="section">
 
@@ -1341,61 +1479,76 @@ footer{
 
 <div class="films-row">
 
+
 <a class="film" href="video.html?id=arte12">
 
-  <div class="badge">THRILLER</div>
+<div class="badge">
+  THRILLER
+</div>
 
-  <div class="thumbnail">
+<div class="thumbnail">
 
-    <img src="film12.jpg"
-         alt="Contrôle d'identité">
+<img src="film12.jpg"
+     alt="Contrôle d'identité">
 
-    <div class="play">▶</div>
+<div class="play">
+  ▶
+</div>
 
-  </div>
+</div>
 
-  <div class="info">
+<div class="info">
 
-    <h3>Contrôle d'identité</h3>
+<h3>
+  Contrôle d'identité
+</h3>
 
-    <p>
-      Une histoire pleine
-      de suspense.
-    </p>
+<p>
+  Une histoire pleine
+  de suspense.
+</p>
 
-    <span class="watch">
-      ▶ Regarder
-    </span>
+<span class="watch">
+  ▶ Regarder
+</span>
 
-  </div>
+</div>
 
 </a>
 
+
 <a class="film" href="video.html?id=arte14">
 
-  <div class="badge">THRILLER</div>
+<div class="badge">
+  THRILLER
+</div>
 
-  <div class="thumbnail">
+<div class="thumbnail">
 
-    <img src="film14.jpg" alt="Transit">
+<img src="film14.jpg"
+     alt="Transit">
 
-    <div class="play">▶</div>
+<div class="play">
+  ▶
+</div>
 
-  </div>
+</div>
 
-  <div class="info">
+<div class="info">
 
-    <h3>Transit</h3>
+<h3>
+  Transit
+</h3>
 
-    <p>
-      Un film à découvrir.
-    </p>
+<p>
+  Un film à découvrir.
+</p>
 
-    <span class="watch">
-      ▶ Regarder
-    </span>
+<span class="watch">
+  ▶ Regarder
+</span>
 
-  </div>
+</div>
 
 </a>
 
@@ -1403,9 +1556,9 @@ footer{
 </section>
 
 
-<!-- =========================
+<!-- =====================================================
      DRAME
-========================= -->
+===================================================== -->
 
 <section class="section">
 
@@ -1413,87 +1566,111 @@ footer{
 
 <div class="films-row">
 
+
 <a class="film" href="video.html?id=arte11">
 
-  <div class="badge">DRAME</div>
+<div class="badge">
+  DRAME
+</div>
 
-  <div class="thumbnail">
+<div class="thumbnail">
 
-    <img src="film11.jpg" alt="Phoenix">
+<img src="film11.jpg"
+     alt="Phoenix">
 
-    <div class="play">▶</div>
+<div class="play">
+  ▶
+</div>
 
-  </div>
+</div>
 
-  <div class="info">
+<div class="info">
 
-    <h3>Phoenix</h3>
+<h3>
+  Phoenix
+</h3>
 
-    <p>
-      Découvrez cette vidéo.
-    </p>
+<p>
+  Découvrez cette vidéo.
+</p>
 
-    <span class="watch">
-      ▶ Regarder
-    </span>
+<span class="watch">
+  ▶ Regarder
+</span>
 
-  </div>
+</div>
 
 </a>
+
 
 <a class="film" href="video.html?id=arte13">
 
-  <div class="badge">DRAME</div>
+<div class="badge">
+  DRAME
+</div>
 
-  <div class="thumbnail">
+<div class="thumbnail">
 
-    <img src="film13.jpg" alt="Yella">
+<img src="film13.jpg"
+     alt="Yella">
 
-    <div class="play">▶</div>
+<div class="play">
+  ▶
+</div>
 
-  </div>
+</div>
 
-  <div class="info">
+<div class="info">
 
-    <h3>Yella</h3>
+<h3>
+  Yella
+</h3>
 
-    <p>
-      Découvrez cette vidéo.
-    </p>
+<p>
+  Découvrez cette vidéo.
+</p>
 
-    <span class="watch">
-      ▶ Regarder
-    </span>
+<span class="watch">
+  ▶ Regarder
+</span>
 
-  </div>
+</div>
 
 </a>
 
+
 <a class="film" href="video.html?id=arte1">
 
-  <div class="badge">DRAME</div>
+<div class="badge">
+  DRAME
+</div>
 
-  <div class="thumbnail">
+<div class="thumbnail">
 
-    <img src="film1.jpg" alt="Notre dame">
+<img src="film1.jpg"
+     alt="Notre dame">
 
-    <div class="play">▶</div>
+<div class="play">
+  ▶
+</div>
 
-  </div>
+</div>
 
-  <div class="info">
+<div class="info">
 
-    <h3>Notre dame</h3>
+<h3>
+  Notre dame
+</h3>
 
-    <p>
-      Découvrez cette vidéo.
-    </p>
+<p>
+  Découvrez cette vidéo.
+</p>
 
-    <span class="watch">
-      ▶ Regarder
-    </span>
+<span class="watch">
+  ▶ Regarder
+</span>
 
-  </div>
+</div>
 
 </a>
 
@@ -1501,9 +1678,9 @@ footer{
 </section>
 
 
-<!-- =========================
+<!-- =====================================================
      SCIENCE-FICTION
-========================= -->
+===================================================== -->
 
 <section class="section">
 
@@ -1511,30 +1688,37 @@ footer{
 
 <div class="films-row">
 
+
 <a class="film" href="#">
 
-  <div class="badge">SCIENCE-FICTION</div>
+<div class="badge">
+  SCIENCE-FICTION
+</div>
 
-  <div class="thumbnail">
+<div class="thumbnail">
 
-    <div class="placeholder">🚀</div>
+<div class="placeholder">
+  🚀
+</div>
 
-  </div>
+</div>
 
-  <div class="info">
+<div class="info">
 
-    <h3>Mon film 8</h3>
+<h3>
+  Mon film 8
+</h3>
 
-    <p>
-      Une nouvelle création
-      prochainement.
-    </p>
+<p>
+  Une nouvelle création
+  prochainement.
+</p>
 
-    <span class="watch">
-      Bientôt
-    </span>
+<span class="watch">
+  Bientôt
+</span>
 
-  </div>
+</div>
 
 </a>
 
@@ -1542,9 +1726,9 @@ footer{
 </section>
 
 
-<!-- =========================
+<!-- =====================================================
      POLICIER
-========================= -->
+===================================================== -->
 
 <section class="section">
 
@@ -1552,50 +1736,153 @@ footer{
 
 <div class="films-row">
 
+
 <a class="film" href="video.html?id=arte9">
 
-  <div class="badge">POLICIER</div>
+<div class="badge">
+  POLICIER
+</div>
 
-  <div class="thumbnail">
+<div class="thumbnail">
 
-    <img src="film9.jpg"
-         alt="Entretien avec Christian Petzold">
+<img src="film9.jpg"
+     alt="Entretien avec Christian Petzold">
 
-    <div class="play">▶</div>
+<div class="play">
+  ▶
+</div>
 
-  </div>
+</div>
 
-  <div class="info">
+<div class="info">
 
-    <h3>Entretien avec Christian Petzold</h3>
+<h3>
+  Entretien avec Christian Petzold
+</h3>
 
-    <p>
-      Découvrez cette vidéo.
-    </p>
+<p>
+  Découvrez cette vidéo.
+</p>
 
-    <span class="watch">
-      ▶ Regarder
-    </span>
+<span class="watch">
+  ▶ Regarder
+</span>
 
-  </div>
+</div>
 
 </a>
 
+
 <a class="film" href="video.html?id=arte15">
 
-  <div class="badge">POLICIER</div>
+<div class="badge">
+  POLICIER
+</div>
 
-  <div class="thumbnail">
+<div class="thumbnail">
 
-    <img src="film15.jpg" alt="La firme">
+<img src="film15.jpg"
+     alt="La firme">
 
-    <div class="play">▶</div>
+<div class="play">
+  ▶
+</div>
 
-  </div>
+</div>
 
-  <div class="info">
+<div class="info">
 
-    <h3>La firme</h3>
+<h3>
+  La firme
+</h3>
 
-    <p>
-      Dé
+<p>
+  Découvrez cette vidéo.
+</p>
+
+<span class="watch">
+  ▶ Regarder
+</span>
+
+</div>
+
+</a>
+
+
+<a class="film" href="video.html?id=arte16">
+
+<div class="badge">
+  POLICIER
+</div>
+
+<div class="thumbnail">
+
+<div class="placeholder">
+  🎬
+</div>
+
+<div class="play">
+  ▶
+</div>
+
+</div>
+
+<div class="info">
+
+<h3>
+  The Yards
+</h3>
+
+<p>
+  Découvrez cette vidéo.
+</p>
+
+<span class="watch">
+  ▶ Regarder
+</span>
+
+</div>
+
+</a>
+
+</div>
+</section>
+
+
+<!-- =====================================================
+     FANTASTIQUE
+===================================================== -->
+
+<section class="section">
+
+<h2>🧙 Fantastique</h2>
+
+<div class="films-row">
+
+
+<a class="film" href="video.html?id=arte6">
+
+<div class="badge">
+  FANTASTIQUE
+</div>
+
+<div class="thumbnail">
+
+<img src="film6.jpg"
+     alt="Ondine">
+
+<div class="play">
+  ▶
+</div>
+
+</div>
+
+<div class="info">
+
+<h3>
+  Ondine
+</h3>
+
+<p>
+  Découvrez cette vidéo
+  direc
