@@ -2,1310 +2,1738 @@
 <html lang="fr">
 
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mon Cinéma</title>
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:#080808;
+  color:white;
+  font-family:Arial,Helvetica,sans-serif;
+}
+
+/* =========================
+   MENU
+========================= */
+
+header{
+  height:70px;
+  background:#0d0d0d;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  padding:0 6%;
+
+  border-bottom:1px solid #222;
+
+  position:sticky;
+  top:0;
+  z-index:50;
+}
+
+.logo{
+  color:#e50914;
+  font-size:25px;
+  font-weight:bold;
+  letter-spacing:2px;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:25px;
+  font-size:15px;
+}
+
+nav a:hover{
+  color:#e50914;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+  min-height:520px;
+
+  display:flex;
+  align-items:center;
+
+  padding:60px 7%;
+
+  background:
+  linear-gradient(
+    90deg,
+    #080808 0%,
+    rgba(8,8,8,.85) 40%,
+    rgba(8,8,8,.2) 100%
+  ),
+  linear-gradient(
+    135deg,
+    #292929,
+    #111
+  );
+}
+
+.hero-content{
+  max-width:650px;
+}
+
+.hero small{
+  color:#aaa;
+  font-size:13px;
+  letter-spacing:3px;
+}
+
+.hero h1{
+  font-size:60px;
+  margin:20px 0;
+}
 
-  <meta charset="UTF-8">
+.hero p{
+  color:#ccc;
+  font-size:18px;
+  line-height:1.6;
+}
 
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+.button{
+  display:inline-block;
+  margin-top:25px;
+  padding:14px 25px;
 
-  <title>Mon Cinéma</title>
+  background:#e50914;
+  color:white;
 
-  <style>
+  border-radius:5px;
+  text-decoration:none;
+  font-weight:bold;
+}
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+.button:hover{
+  background:#b20710;
+}
 
-    html {
-      scroll-behavior: smooth;
-    }
+/* =========================
+   RECHERCHE
+========================= */
 
-    body {
-      background: #080808;
-      color: white;
-      font-family: Arial, Helvetica, sans-serif;
-    }
+.search-area{
+  width:min(900px,86%);
+  margin:35px auto 10px;
+}
 
-    /* =========================
-       MENU
-    ========================= */
+.search-box{
+  display:flex;
 
-    header {
-      height: 70px;
-      background: #0d0d0d;
+  background:#151515;
+  border:1px solid #333;
 
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+  border-radius:7px;
+  overflow:hidden;
+}
 
-      padding: 0 6%;
+.search-box input{
+  flex:1;
+  min-width:0;
 
-      border-bottom: 1px solid #222;
+  padding:16px 18px;
 
-      position: sticky;
-      top: 0;
-      z-index: 50;
-    }
+  background:transparent;
+  border:none;
+  outline:none;
 
-    .logo {
-      color: #e50914;
-      font-size: 25px;
-      font-weight: bold;
-      letter-spacing: 2px;
-    }
+  color:white;
+  font-size:16px;
+}
 
-    nav a {
-      color: white;
-      text-decoration: none;
+.search-button{
+  padding:0 22px;
 
-      margin-left: 25px;
+  background:#e50914;
+  border:none;
 
-      font-size: 15px;
+  color:white;
+  font-size:18px;
 
-      transition: 0.3s;
-    }
+  cursor:pointer;
+}
 
-    nav a:hover {
-      color: #e50914;
-    }
+/* =========================
+   SECTIONS
+========================= */
 
-    /* =========================
-       ACCUEIL
-    ========================= */
+.section{
+  padding:35px 7% 5px;
+}
 
-    .hero {
-      min-height: 520px;
+.section h2{
+  font-size:24px;
+  margin-bottom:18px;
+}
 
-      display: flex;
-      align-items: center;
+.category-title{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
 
-      padding: 60px 7%;
+/* =========================
+   RANGÉES
+========================= */
 
-      background:
-        linear-gradient(
-          90deg,
-          #080808 0%,
-          rgba(8,8,8,0.85) 40%,
-          rgba(8,8,8,0.2) 100%
-        ),
-        linear-gradient(
-          135deg,
-          #292929,
-          #111111
-        );
-    }
+.films-row{
+  display:flex;
+  gap:18px;
 
-    .hero-content {
-      max-width: 650px;
-    }
+  overflow-x:auto;
+  overflow-y:hidden;
 
-    .hero small {
-      color: #aaa;
+  padding:5px 5px 20px;
+}
 
-      font-size: 13px;
+.films-row::-webkit-scrollbar{
+  height:7px;
+}
 
-      letter-spacing: 3px;
-    }
+.films-row::-webkit-scrollbar-track{
+  background:#151515;
+}
 
-    .hero h1 {
-      font-size: 60px;
+.films-row::-webkit-scrollbar-thumb{
+  background:#444;
+  border-radius:10px;
+}
 
-      margin: 20px 0;
-    }
+/* =========================
+   CARTE
+========================= */
 
-    .hero p {
-      color: #ccc;
+.film{
+  position:relative;
 
-      font-size: 18px;
+  flex:0 0 260px;
 
-      line-height: 1.6;
-    }
+  background:#151515;
 
-    .button {
-      display: inline-block;
+  border-radius:9px;
 
-      margin-top: 25px;
+  overflow:hidden;
 
-      padding: 14px 25px;
+  transition:.3s;
 
-      background: #e50914;
+  cursor:pointer;
 
-      color: white;
+  text-decoration:none;
 
-      border-radius: 5px;
+  color:white;
 
-      text-decoration: none;
+  display:block;
+}
 
-      font-weight: bold;
-    }
+.film:hover{
+  transform:scale(1.04);
+  z-index:5;
 
-    .button:hover {
-      background: #b20710;
-    }
+  box-shadow:
+  0 0 12px rgba(255,0,0,.3),
+  0 10px 30px rgba(0,0,0,.7);
+}
 
-    /* =========================
-       RECHERCHE
-    ========================= */
+.film::before{
+  content:"";
 
-    .search-area {
-      width: min(900px, 86%);
+  position:absolute;
 
-      margin: 35px auto 10px;
-    }
+  left:0;
+  top:12px;
+  bottom:12px;
 
-    .search-box {
-      display: flex;
+  width:4px;
 
-      background: #151515;
+  background:#ff0000;
 
-      border: 1px solid #333;
+  box-shadow:
+  0 0 5px #ff0000,
+  0 0 10px #ff0000,
+  0 0 20px rgba(255,0,0,.8);
 
-      border-radius: 7px;
+  z-index:5;
+}
 
-      overflow: hidden;
-    }
+/* =========================
+   MINIATURE
+========================= */
 
-    .search-box input {
-      flex: 1;
+.thumbnail{
+  position:relative;
 
-      min-width: 0;
+  width:100%;
 
-      padding: 16px 18px;
+  aspect-ratio:16 / 9;
 
-      background: transparent;
+  overflow:hidden;
 
-      border: none;
+  background:#222;
+}
 
-      outline: none;
+.thumbnail img{
+  width:100%;
+  height:100%;
 
-      color: white;
+  object-fit:cover;
 
-      font-size: 16px;
-    }
+  display:block;
+}
 
-    .search-box input::placeholder {
-      color: #777;
-    }
+.placeholder{
+  width:100%;
+  height:100%;
 
-    .search-button {
-      padding: 0 22px;
+  display:flex;
 
-      background: #e50914;
+  align-items:center;
+  justify-content:center;
 
-      border: none;
+  background:
+  linear-gradient(
+    135deg,
+    #292929,
+    #111
+  );
 
-      color: white;
+  color:#777;
 
-      font-size: 18px;
+  font-size:45px;
+}
 
-      cursor: pointer;
-    }
+.play{
+  position:absolute;
 
-    .search-button:hover {
-      background: #b20710;
-    }
+  left:50%;
+  top:50%;
 
-    #searchMessage {
-      width: min(1100px, 86%);
+  transform:translate(-50%,-50%);
 
-      margin: 20px auto 0;
+  width:55px;
+  height:55px;
 
-      color: #aaa;
+  border-radius:50%;
 
-      display: none;
+  background:#e50914;
 
-      font-size: 15px;
-    }
+  display:flex;
 
-    /* =========================
-       SECTIONS
-    ========================= */
+  align-items:center;
+  justify-content:center;
 
-    .section {
-      padding: 35px 7% 5px;
-    }
+  font-size:21px;
 
-    .section h2 {
-      font-size: 24px;
+  box-shadow:
+  0 0 12px rgba(229,9,20,.6);
+}
 
-      margin-bottom: 18px;
-    }
+/* =========================
+   INFORMATIONS
+========================= */
 
-    .category-title {
-      display: flex;
+.info{
+  padding:15px;
+}
 
-      align-items: center;
+.info h3{
+  margin-bottom:7px;
 
-      gap: 10px;
-    }
+  font-size:17px;
 
-    /* =========================
-       RANGÉE
-    ========================= */
+  line-height:1.3;
+}
 
-    .films-row {
-      display: flex;
+.info p{
+  color:#999;
 
-      gap: 18px;
+  line-height:1.4;
 
-      overflow-x: auto;
+  font-size:13px;
 
-      overflow-y: hidden;
+  min-height:38px;
+}
 
-      padding: 5px 5px 20px;
+.watch{
+  display:inline-block;
 
-      scroll-behavior: smooth;
-    }
+  margin-top:12px;
 
-    .films-row::-webkit-scrollbar {
-      height: 7px;
-    }
+  padding:8px 13px;
 
-    .films-row::-webkit-scrollbar-track {
-      background: #151515;
-    }
+  background:#e50914;
 
-    .films-row::-webkit-scrollbar-thumb {
-      background: #444;
+  color:white;
 
-      border-radius: 10px;
-    }
+  border-radius:5px;
 
-    /* =========================
-       CARTE
-    ========================= */
+  font-size:13px;
 
-    .film {
-      position: relative;
+  font-weight:bold;
+}
 
-      flex: 0 0 260px;
+.badge{
+  position:absolute;
 
-      background: #151515;
+  top:10px;
+  right:10px;
 
-      border-radius: 9px;
+  z-index:10;
 
-      overflow: hidden;
+  padding:5px 8px;
 
-      transition: 0.3s;
+  background:rgba(0,0,0,.8);
 
-      cursor: pointer;
+  border:1px solid #444;
 
-      text-decoration: none;
+  border-radius:4px;
 
-      color: white;
+  font-size:11px;
 
-      display: block;
-    }
+  font-weight:bold;
+}
 
-    .film:hover {
-      transform: scale(1.04);
+/* =========================
+   FOOTER
+========================= */
 
-      z-index: 5;
+footer{
+  text-align:center;
 
-      box-shadow:
-        0 0 12px rgba(255,0,0,0.3),
-        0 10px 30px rgba(0,0,0,0.7);
-    }
+  color:#777;
 
-    .film.hidden {
-      display: none;
-    }
+  padding:40px;
 
-    /* =========================
-       LED ROUGE
-    ========================= */
+  border-top:1px solid #222;
 
-    .film::before {
-      content: "";
+  margin-top:40px;
+}
 
-      position: absolute;
+/* =========================
+   MOBILE
+========================= */
 
-      left: 0;
-      top: 12px;
-      bottom: 12px;
+@media(max-width:750px){
 
-      width: 4px;
+  .hero h1{
+    font-size:45px;
+  }
 
-      background: #ff0000;
+  .film{
+    flex-basis:230px;
+  }
 
-      box-shadow:
-        0 0 5px #ff0000,
-        0 0 10px #ff0000,
-        0 0 20px rgba(255,0,0,0.8);
+}
 
-      z-index: 5;
-    }
+@media(max-width:600px){
 
-    /* =========================
-       MINIATURE
-    ========================= */
+  header{
+    padding:0 20px;
+  }
 
-    .thumbnail {
-      position: relative;
+  .logo{
+    font-size:18px;
+  }
 
-      width: 100%;
+  nav a{
+    margin-left:10px;
+    font-size:13px;
+  }
 
-      aspect-ratio: 16 / 9;
+  .hero{
+    min-height:450px;
+    padding:40px 25px;
+  }
 
-      overflow: hidden;
+  .hero h1{
+    font-size:40px;
+  }
 
-      background: #222;
-    }
+  .hero p{
+    font-size:16px;
+  }
 
-    .thumbnail img {
-      width: 100%;
-      height: 100%;
+  .section{
+    padding:30px 20px 5px;
+  }
 
-      object-fit: cover;
+  .section h2{
+    font-size:21px;
+  }
 
-      display: block;
-    }
+  .film{
+    flex-basis:230px;
+  }
 
-    .placeholder {
-      width: 100%;
-      height: 100%;
+}
 
-      display: flex;
-
-      align-items: center;
-      justify-content: center;
-
-      background:
-        linear-gradient(
-          135deg,
-          #292929,
-          #111111
-        );
-
-      color: #777;
-
-      font-size: 45px;
-    }
-
-    .play {
-      position: absolute;
-
-      left: 50%;
-      top: 50%;
-
-      transform:
-        translate(-50%, -50%);
-
-      width: 55px;
-      height: 55px;
-
-      border-radius: 50%;
-
-      background: #e50914;
-
-      display: flex;
-
-      align-items: center;
-      justify-content: center;
-
-      font-size: 21px;
-
-      box-shadow:
-        0 0 12px rgba(229,9,20,0.6);
-    }
-
-    /* =========================
-       INFORMATIONS
-    ========================= */
-
-    .info {
-      padding: 15px;
-    }
-
-    .info h3 {
-      margin-bottom: 7px;
-
-      font-size: 17px;
-
-      line-height: 1.3;
-    }
-
-    .info p {
-      color: #999;
-
-      line-height: 1.4;
-
-      font-size: 13px;
-
-      min-height: 38px;
-    }
-
-    .watch {
-      display: inline-block;
-
-      margin-top: 12px;
-
-      padding: 8px 13px;
-
-      background: #e50914;
-
-      color: white;
-
-      border-radius: 5px;
-
-      font-size: 13px;
-
-      font-weight: bold;
-    }
-
-    /* =========================
-       BADGE
-    ========================= */
-
-    .badge {
-      position: absolute;
-
-      top: 10px;
-      right: 10px;
-
-      z-index: 10;
-
-      padding: 5px 8px;
-
-      background: rgba(0,0,0,0.8);
-
-      border: 1px solid #444;
-
-      border-radius: 4px;
-
-      font-size: 11px;
-
-      font-weight: bold;
-    }
-
-    /* =========================
-       AUCUN RÉSULTAT
-    ========================= */
-
-    #noResults {
-      display: none;
-
-      text-align: center;
-
-      color: #888;
-
-      padding: 60px 20px;
-
-      font-size: 17px;
-    }
-
-    /* =========================
-       FOOTER
-    ========================= */
-
-    footer {
-      text-align: center;
-
-      color: #777;
-
-      padding: 40px;
-
-      border-top: 1px solid #222;
-
-      margin-top: 40px;
-    }
-
-    /* =========================
-       TABLETTE
-    ========================= */
-
-    @media (max-width: 750px) {
-
-      .hero h1 {
-        font-size: 45px;
-      }
-
-      .film {
-        flex-basis: 230px;
-      }
-
-    }
-
-    /* =========================
-       TÉLÉPHONE
-    ========================= */
-
-    @media (max-width: 600px) {
-
-      header {
-        padding: 0 20px;
-      }
-
-      .logo {
-        font-size: 18px;
-      }
-
-      nav a {
-        margin-left: 10px;
-
-        font-size: 13px;
-      }
-
-      .hero {
-        min-height: 450px;
-
-        padding: 40px 25px;
-      }
-
-      .hero h1 {
-        font-size: 40px;
-      }
-
-      .hero p {
-        font-size: 16px;
-      }
-
-      .search-area {
-        width: 92%;
-      }
-
-      .search-box input {
-        font-size: 14px;
-      }
-
-      .search-button {
-        padding: 0 16px;
-      }
-
-      .section {
-        padding: 30px 20px 5px;
-      }
-
-      .section h2 {
-        font-size: 21px;
-      }
-
-      .film {
-        flex-basis: 230px;
-      }
-
-    }
-
-  </style>
-
+</style>
 </head>
 
 
 <body>
 
 
-  <!-- =========================
-       MENU
-  ========================= -->
+<header>
 
-  <header>
+  <div class="logo">
+    🎬 MON CINÉMA
+  </div>
 
-    <div class="logo">
-      🎬 MON CINÉMA
-    </div>
+  <nav>
+    <a href="#">Accueil</a>
+    <a href="#films">Films</a>
+    <a href="#series">Séries</a>
+  </nav>
 
-    <nav>
-
-      <a href="#">
-        Accueil
-      </a>
-
-      <a href="#films">
-        Films
-      </a>
-
-      <a href="#series">
-        Séries
-      </a>
-
-    </nav>
-
-  </header>
+</header>
 
 
-  <!-- =========================
-       ACCUEIL
-  ========================= -->
+<section class="hero">
 
-  <section class="hero">
+  <div class="hero-content">
 
-    <div class="hero-content">
+    <small>
+      BIENVENUE SUR MON CINÉMA
+    </small>
 
-      <small>
-        BIENVENUE SUR MON CINÉMA
-      </small>
+    <h1>
+      Mes films.
+    </h1>
 
-      <h1>
-        Mes films.
-      </h1>
+    <p>
+      Découvrez mes créations,
+      mes vidéos, mes films et mes séries
+      directement depuis mon cinéma.
+    </p>
 
-      <p>
-        Découvrez mes créations,
-        mes vidéos, mes films et mes séries
-        directement depuis mon cinéma.
-      </p>
-
-      <a
-        class="button"
-        href="#films">
-
-        🎬 Découvrir
-
-      </a>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       RECHERCHE
-  ========================= -->
-
-  <div class="search-area">
-
-    <div class="search-box">
-
-      <input
-        type="text"
-        id="searchInput"
-        placeholder="🔎 Rechercher un film ou une série..."
-        autocomplete="off">
-
-      <button
-        class="search-button"
-        onclick="searchFilms()">
-
-        🔎
-
-      </button>
-
-    </div>
+    <a class="button" href="#films">
+      🎬 Découvrir
+    </a>
 
   </div>
 
+</section>
 
-  <div id="searchMessage"></div>
 
+<div class="search-area">
 
-  <!-- =========================
-       CONTENU
-  ========================= -->
+  <div class="search-box">
 
-  <main id="films">
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="🔎 Rechercher un film ou une série..."
+      autocomplete="off">
 
+    <button
+      class="search-button"
+      onclick="searchFilms()">
+      🔎
+    </button>
 
-    <!-- =========================
-         TOUS LES FILMS
-    ========================= -->
+  </div>
 
-    <section class="section">
+</div>
 
-      <h2>
-        🎬 Tous les films
-      </h2>
 
-      <div class="films-row">
+<main id="films">
 
 
-        <!-- NOUVEAU FILM 1 -->
+<!-- =========================
+     TOUS LES FILMS
+========================= -->
 
-        <a
-          class="film"
-          data-title="Notre dame"
-          href="video.html?id=arte1">
+<section class="section">
 
-          <div class="thumbnail">
+<h2>🎬 Tous les films</h2>
 
-            <img
-              src="film1.jpg"
-              alt="Notre dame">
+<div class="films-row">
 
-            <div class="badge">
-              FILM
-            </div>
 
-            <div class="play">
-              ▶
-            </div>
+<a class="film"
+   data-title="Notre dame"
+   href="video.html?id=arte1">
 
-          </div>
+<div class="thumbnail">
 
-          <div class="info">
+<img src="film1.jpg" alt="Notre dame">
 
-            <h3>
-              Notre dame
-            </h3>
+<div class="play">▶</div>
 
-            <p>
-              Découvrez Notre dame
-              directement dans Mon Cinéma.
-            </p>
+</div>
 
-            <span class="watch">
-              ▶ Regarder
-            </span>
+<div class="info">
 
-          </div>
+<h3>Notre dame</h3>
 
-        </a>
+<p>
+Découvrez Notre dame directement
+dans Mon Cinéma.
+</p>
 
+<span class="watch">▶ Regarder</span>
 
-        <!-- NOUVEAU FILM 2 -->
+</div>
 
-        <a
-          class="film"
-          data-title="Rendez-vous avec la mort"
-          href="video.html?id=arte2">
+</a>
 
-          <div class="thumbnail">
 
-            <img
-              src="film2.jpg"
-              alt="Rendez-vous avec la mort">
+<a class="film"
+   data-title="Rendez-vous avec la mort"
+   href="video.html?id=arte2">
 
-            <div class="badge">
-              FILM
-            </div>
+<div class="thumbnail">
 
-            <div class="play">
-              ▶
-            </div>
+<img src="film2.jpg"
+     alt="Rendez-vous avec la mort">
 
-          </div>
+<div class="play">▶</div>
 
-          <div class="info">
+</div>
 
-            <h3>
-              Rendez-vous avec la mort
-            </h3>
+<div class="info">
 
-            <p>
-              Découvrez ce film
-              directement dans Mon Cinéma.
-            </p>
+<h3>Rendez-vous avec la mort</h3>
 
-            <span class="watch">
-              ▶ Regarder
-            </span>
+<p>
+Découvrez ce film directement
+dans Mon Cinéma.
+</p>
 
-          </div>
+<span class="watch">▶ Regarder</span>
 
-        </a>
+</div>
 
+</a>
 
-        <!-- NOUVEAU FILM 3 -->
 
-        <a
-          class="film"
-          data-title="Two Lovers"
-          href="video.html?id=arte3">
+<a class="film"
+   data-title="Two Lovers"
+   href="video.html?id=arte3">
 
-          <div class="thumbnail">
+<div class="thumbnail">
 
-            <img
-              src="film3.jpg"
-              alt="Two Lovers">
+<img src="film3.jpg" alt="Two Lovers">
 
-            <div class="badge">
-              FILM
-            </div>
+<div class="play">▶</div>
 
-            <div class="play">
-              ▶
-            </div>
+</div>
 
-          </div>
+<div class="info">
 
-          <div class="info">
+<h3>Two Lovers</h3>
 
-            <h3>
-              Two Lovers
-            </h3>
+<p>
+Découvrez Two Lovers directement
+dans Mon Cinéma.
+</p>
 
-            <p>
-              Découvrez Two Lovers
-              directement dans Mon Cinéma.
-            </p>
+<span class="watch">▶ Regarder</span>
 
-            <span class="watch">
-              ▶ Regarder
-            </span>
+</div>
 
-          </div>
+</a>
 
-        </a>
 
+<a class="film"
+   data-title="Dans le grand tourbillon de la vie"
+   href="video.html?id=arte">
 
-        <!-- FILM 4 -->
+<div class="thumbnail">
 
-        <a
-          class="film"
-          data-title="Dans le grand tourbillon de la vie"
-          href="video.html?id=arte">
+<div class="placeholder">🎬</div>
 
-          <div class="thumbnail">
+<div class="play">▶</div>
 
-            <div class="placeholder">
-              🎬
-            </div>
+</div>
 
-            <div class="play">
-              ▶
-            </div>
+<div class="info">
 
-          </div>
+<h3>
+Dans le grand tourbillon de la vie
+</h3>
 
-          <div class="info">
+<p>
+Découvrez cette vidéo directement
+dans Mon Cinéma.
+</p>
 
-            <h3>
-              Dans le grand tourbillon de la vie
-            </h3>
+<span class="watch">▶ Regarder</span>
 
-            <p>
-              Découvrez cette vidéo
-              directement dans Mon Cinéma.
-            </p>
+</div>
 
-            <span class="watch">
-              ▶ Regarder
-            </span>
+</a>
 
-          </div>
 
-        </a>
+<a class="film"
+   data-title="Tout pour ma fille"
+   href="video.html?id=arte5">
 
+<div class="thumbnail">
 
-        <!-- FILM 5 -->
+<div class="placeholder">🎬</div>
 
-        <a
-          class="film"
-          data-title="Tout pour ma fille"
-          href="video.html?id=arte5">
+<div class="play">▶</div>
 
-          <div class="thumbnail">
+</div>
 
-            <div class="placeholder">
-              🎬
-            </div>
+<div class="info">
 
-            <div class="play">
-              ▶
-            </div>
+<h3>Tout pour ma fille</h3>
 
-          </div>
+<p>
+Regardez cette vidéo directement
+dans Mon Cinéma.
+</p>
 
-          <div class="info">
+<span class="watch">▶ Regarder</span>
 
-            <h3>
-              Tout pour ma fille
-            </h3>
+</div>
 
-            <p>
-              Regardez cette vidéo
-              directement dans Mon Cinéma.
-            </p>
+</a>
 
-            <span class="watch">
-              ▶ Regarder
-            </span>
 
-          </div>
+<a class="film"
+   data-title="Ondine"
+   href="video.html?id=arte6">
 
-        </a>
+<div class="thumbnail">
 
+<img src="film6.jpg" alt="Ondine">
 
-        <!-- FILM 6 -->
+<div class="play">▶</div>
 
-        <a
-          class="film"
-          data-title="Ondine"
-          href="video.html?id=arte6">
+</div>
 
-          <div class="thumbnail">
+<div class="info">
 
-            <img
-              src="film6.jpg"
-              alt="Ondine">
+<h3>Ondine</h3>
 
-            <div class="play">
-              ▶
-            </div>
+<p>
+Regardez cette vidéo directement
+dans Mon Cinéma.
+</p>
 
-          </div>
+<span class="watch">▶ Regarder</span>
 
-          <div class="info">
+</div>
 
-            <h3>
-              Ondine
-            </h3>
+</a>
 
-            <p>
-              Regardez cette vidéo
-              directement dans Mon Cinéma.
-            </p>
 
-            <span class="watch">
-              ▶ Regarder
-            </span>
+<a class="film"
+   data-title="Mon film 7"
+   href="#">
 
-          </div>
+<div class="thumbnail">
 
-        </a>
+<div class="placeholder">🎥</div>
 
+</div>
 
-        <!-- FILM 7 -->
+<div class="info">
 
-        <a
-          class="film"
-          data-title="Mon film 7"
-          href="#">
+<h3>Mon film 7</h3>
 
-          <div class="thumbnail">
+<p>
+Une nouvelle création arrive bientôt.
+</p>
 
-            <div class="placeholder">
-              🎥
-            </div>
+<span class="watch">Bientôt</span>
 
-          </div>
+</div>
 
-          <div class="info">
+</a>
 
-            <h3>
-              Mon film 7
-            </h3>
 
-            <p>
-              Une nouvelle création
-              arrive bientôt.
-            </p>
+<a class="film"
+   data-title="Mon film 8"
+   href="#">
 
-            <span class="watch">
-              Bientôt
-            </span>
+<div class="thumbnail">
 
-          </div>
+<div class="placeholder">🎞️</div>
 
-        </a>
+</div>
 
+<div class="info">
 
-        <!-- FILM 8 -->
+<h3>Mon film 8</h3>
 
-        <a
-          class="film"
-          data-title="Mon film 8"
-          href="#">
+<p>
+Une nouvelle création prochainement.
+</p>
 
-          <div class="thumbnail">
+<span class="watch">Bientôt</span>
 
-            <div class="placeholder">
-              🎞️
-            </div>
+</div>
 
-          </div>
+</a>
 
-          <div class="info">
 
-            <h3>
-              Mon film 8
-            </h3>
+<a class="film"
+   data-title="Entretien avec Christian Petzold"
+   href="video.html?id=arte9">
 
-            <p>
-              Une nouvelle création
-              prochainement.
-            </p>
+<div class="thumbnail">
 
-            <span class="watch">
-              Bientôt
-            </span>
+<img src="film9.jpg"
+     alt="Entretien avec Christian Petzold">
 
-          </div>
+<div class="play">▶</div>
 
-        </a>
+</div>
 
+<div class="info">
 
-        <!-- FILM 9 -->
+<h3>
+Entretien avec Christian Petzold
+</h3>
 
-        <a
-          class="film"
-          data-title="Entretien avec Christian Petzold"
-          href="video.html?id=arte9">
+<p>
+Entretien avec Christian Petzold.
+</p>
 
-          <div class="thumbnail">
+<span class="watch">▶ Regarder</span>
 
-            <img
-              src="film9.jpg"
-              alt="Entretien avec Christian Petzold">
+</div>
 
-            <div class="play">
-              ▶
-            </div>
+</a>
 
-          </div>
 
-          <div class="info">
+<a class="film"
+   data-title="Fantômes"
+   href="video.html?id=arte10">
 
-            <h3>
-              Entretien avec Christian Petzold
-            </h3>
+<div class="thumbnail">
 
-            <p>
-              Entretien avec Christian Petzold.
-            </p>
+<img src="film10.jpg" alt="Fantômes">
 
-            <span class="watch">
-              ▶ Regarder
-            </span>
+<div class="play">▶</div>
 
-          </div>
+</div>
 
-        </a>
+<div class="info">
 
+<h3>Fantômes</h3>
 
-        <!-- FILM 10 -->
+<p>
+Découvrez cette vidéo directement
+dans Mon Cinéma.
+</p>
 
-        <a
-          class="film"
-          data-title="Fantômes"
-          href="video.html?id=arte10">
+<span class="watch">▶ Regarder</span>
 
-          <div class="thumbnail">
+</div>
 
-            <img
-              src="film10.jpg"
-              alt="Fantômes">
+</a>
 
-            <div class="play">
-              ▶
-            </div>
 
-          </div>
+<a class="film"
+   data-title="Phoenix"
+   href="video.html?id=arte11">
 
-          <div class="info">
+<div class="thumbnail">
 
-            <h3>
-              Fantômes
-            </h3>
+<img src="film11.jpg" alt="Phoenix">
 
-            <p>
-              Découvrez cette vidéo
-              directement dans Mon Cinéma.
-            </p>
+<div class="play">▶</div>
 
-            <span class="watch">
-              ▶ Regarder
-            </span>
+</div>
 
-          </div>
+<div class="info">
 
-        </a>
+<h3>Phoenix</h3>
 
+<p>
+Découvrez cette vidéo directement
+dans Mon Cinéma.
+</p>
 
-        <!-- FILM 11 -->
+<span class="watch">▶ Regarder</span>
 
-        <a
-          class="film"
-          data-title="Phoenix"
-          href="video.html?id=arte11">
+</div>
 
-          <div class="thumbnail">
+</a>
 
-            <img
-              src="film11.jpg"
-              alt="Phoenix">
 
-            <div class="play">
-              ▶
-            </div>
+<a class="film"
+   data-title="Contrôle d'identité"
+   href="video.html?id=arte12">
 
-          </div>
+<div class="thumbnail">
 
-          <div class="info">
+<img src="film12.jpg"
+     alt="Contrôle d'identité">
 
-            <h3>
-              Phoenix
-            </h3>
+<div class="play">▶</div>
 
-            <p>
-              Découvrez cette vidéo
-              directement dans Mon Cinéma.
-            </p>
+</div>
 
-            <span class="watch">
-              ▶ Regarder
-            </span>
+<div class="info">
 
-          </div>
+<h3>Contrôle d'identité</h3>
 
-        </a>
+<p>
+Découvrez cette vidéo directement
+dans Mon Cinéma.
+</p>
 
+<span class="watch">▶ Regarder</span>
 
-        <!-- FILM 12 -->
+</div>
 
-        <a
-          class="film"
-          data-title="Contrôle d'identité"
-          href="video.html?id=arte12">
+</a>
 
-          <div class="thumbnail">
 
-            <img
-              src="film12.jpg"
-              alt="Contrôle d'identité">
+<a class="film"
+   data-title="Yella"
+   href="video.html?id=arte13">
 
-            <div class="play">
-              ▶
-            </div>
+<div class="thumbnail">
 
-          </div>
+<img src="film13.jpg" alt="Yella">
 
-          <div class="info">
+<div class="play">▶</div>
 
-            <h3>
-              Contrôle d'identité
-            </h3>
+</div>
 
-            <p>
-              Découvrez cette vidéo
-              directement dans Mon Cinéma.
-            </p>
+<div class="info">
 
-            <span class="watch">
-              ▶ Regarder
-            </span>
+<h3>Yella</h3>
 
-          </div>
+<p>
+Découvrez cette vidéo directement
+dans Mon Cinéma.
+</p>
 
-        </a>
+<span class="watch">▶ Regarder</span>
 
+</div>
 
-        <!-- FILM 13 -->
+</a>
 
-        <a
-          class="film"
-          data-title="Yella"
-          href="video.html?id=arte13">
 
-          <div class="thumbnail">
+<a class="film"
+   data-title="Transit"
+   href="video.html?id=arte14">
 
-            <img
-              src="film13.jpg"
-              alt="Yella">
+<div class="thumbnail">
 
-            <div class="play">
-              ▶
-            </div>
+<img src="film14.jpg" alt="Transit">
 
-          </div>
+<div class="play">▶</div>
 
-          <div class="info">
+</div>
 
-            <h3>
-              Yella
-            </h3>
+<div class="info">
 
-            <p>
-              Découvrez cette vidéo
-              directement dans Mon Cinéma.
-            </p>
+<h3>Transit</h3>
 
-            <span class="watch">
-              ▶ Regarder
-            </span>
+<p>
+Découvrez cette vidéo directement
+dans Mon Cinéma.
+</p>
 
-          </div>
+<span class="watch">▶ Regarder</span>
 
-        </a>
+</div>
 
+</a>
 
-        <!-- FILM 14 -->
 
-        <a
-          class="film"
-          data-title="Transit"
-          href="video.html?id=arte14">
+<a class="film"
+   data-title="La firme"
+   href="video.html?id=arte15">
 
-          <div class="thumbnail">
+<div class="thumbnail">
 
-            <img
-              src="film14.jpg"
-              alt="Transit">
+<img src="film15.jpg" alt="La firme">
 
-            <div class="play">
-              ▶
-            </div>
+<div class="play">▶</div>
 
-          </div>
+</div>
 
-          <div class="info">
+<div class="info">
 
-            <h3>
-              Transit
-            </h3>
+<h3>La firme</h3>
 
-            <p>
-              Découvrez cette vidéo
-              directement dans Mon Cinéma.
-            </p>
+<p>
+Découvrez cette vidéo directement
+dans Mon Cinéma.
+</p>
 
-            <span class="watch">
-              ▶ Regarder
-            </span>
+<span class="watch">▶ Regarder</span>
 
-          </div>
+</div>
 
-        </a>
+</a>
 
 
-        <!-- FILM 15 -->
+<a class="film"
+   data-title="The Yards"
+   href="video.html?id=arte16">
 
-        <a
-          class="film"
-          data-title="La firme"
-          href="video.html?id=arte15">
+<div class="thumbnail">
 
-          <div class="thumbnail">
+<div class="placeholder">🎬</div>
 
-            <img
-              src="film15.jpg"
-              alt="La firme">
+<div class="play">▶</div>
 
-            <div class="play">
-              ▶
-            </div>
+</div>
 
-          </div>
+<div class="info">
 
-          <div class="info">
+<h3>The Yards</h3>
 
-            <h3>
-              La firme
-            </h3>
+<p>
+Découvrez cette vidéo directement
+dans Mon Cinéma.
+</p>
 
-            <p>
-              Découvrez cette vidéo
-              directement dans Mon Cinéma.
-            </p>
+<span class="watch">▶ Regarder</span>
 
-            <span class="watch">
-              ▶ Regarder
-            </span>
+</div>
 
-          </div>
+</a>
 
-        </a>
 
+</div>
+</section>
 
-        <!-- FILM 16 -->
 
-        <a
-          class="film"
-          data-title="The Yards"
-          href="video.html?id=arte16">
+<!-- =========================
+     À DÉCOUVRIR
+========================= -->
 
-          <div class="thumbnail">
+<section class="section">
 
-            <div class="placeholder">
-      
+<h2>⭐ À découvrir</h2>
+
+<div class="films-row">
+
+
+<a class="film" href="video.html?id=arte1">
+
+<div class="thumbnail">
+<img src="film1.jpg" alt="Notre dame">
+<div class="play">▶</div>
+</div>
+
+<div class="info">
+
+<h3>Notre dame</h3>
+
+<p>Un film à découvrir.</p>
+
+<span class="watch">▶ Regarder</span>
+
+</div>
+
+</a>
+
+
+<a class="film" href="video.html?id=arte3">
+
+<div class="thumbnail">
+<img src="film3.jpg" alt="Two Lovers">
+<div class="play">▶</div>
+</div>
+
+<div class="info">
+
+<h3>Two Lovers</h3>
+
+<p>Un film à découvrir.</p>
+
+<span class="watch">▶ Regarder</span>
+
+</div>
+
+</a>
+
+
+<a class="film" href="video.html?id=arte11">
+
+<div class="thumbnail">
+<img src="film11.jpg" alt="Phoenix">
+<div class="play">▶</div>
+</div>
+
+<div class="info">
+
+<h3>Phoenix</h3>
+
+<p>Un film à découvrir.</p>
+
+<span class="watch">▶ Regarder</span>
+
+</div>
+
+</a>
+
+
+</div>
+</section>
+
+
+<!-- =========================
+     HORREUR
+========================= -->
+
+<section class="section">
+
+<h2>👻 Horreur</h2>
+
+<div class="films-row">
+
+
+<a class="film" href="video.html?id=arte10">
+
+<div class="thumbnail">
+
+<img src="film10.jpg" alt="Fantômes">
+
+<div class="badge">HORREUR</div>
+
+<div class="play">▶</div>
+
+</div>
+
+<div class="info">
+
+<h3>Fantômes</h3>
+
+<p>
+Une vidéo mystérieuse
+et inquiétante.
+</p>
+
+<span class="watch">▶ Regarder</span>
+
+</div>
+
+</a>
+
+
+<a class="film" href="video.html?id=arte2">
+
+<div class="thumbnail">
+
+<img src="film2.jpg"
+     alt="Rendez-vous avec la mort">
+
+<div class="badge">HORREUR</div>
+
+<div class="play">▶</div>
+
+</div>
+
+<div class="info">
+
+<h3>Rendez-vous avec la mort</h3>
+
+<p>
+Une histoire mystérieuse
+à découvrir.
+</p>
+
+<span class="watch">▶ Regarder</span>
+
+</div>
+
+</a>
+
+
+</div>
+</section>
+
+
+<!-- =========================
+     COMÉDIE
+========================= -->
+
+<section class="section">
+
+<h2>😂 Comédie</h2>
+
+<div class="films-row">
+
+
+<a class="film" href="#">
+
+<div class="thumbnail">
+
+<div class="placeholder">😂</div>
+
+</div>
+
+<div class="info">
+
+<h3>Mon film 7</h3>
+
+<p>
+Une nouvelle création bientôt.
+</p>
+
+<span class="watch">Bientôt</span>
+
+</div>
+
+</a>
+
+
+<a class="film" href="video.html?id=arte5">
+
+<div class="thumbnail">
+
+<div class="placeholder">😂</div>
+
+<div class="play">▶</div>
+
+</div>
+
+<div class="info">
+
+<h3>Tout pour ma fille</h3>
+
+<p>
+Découvrez cette vidéo.
+</p>
+
+<span class="watch">▶ Regarder</span>
+
+</div>
+
+</a>
+
+
+</div>
+</section>
+
+
+<!-- =========================
+     ROMANCE
+========================= -->
+
+<section class="section">
+
+<h2>❤️ Romance</h2>
+
+<div class="films-row">
+
+
+<a class="film" href="video.html?id=arte3">
+
+<div class="thumbnail">
+
+<img src="film3.jpg" alt="Two Lovers">
+
+<div class="badge">ROMANCE</div>
+
+<div class="play">▶</div>
+
+</div>
+
+<div class="info">
+
+<h3>Two Lovers</h3>
+
+<p>
+Une histoire d'amour
+à découvrir.
+</p>
+
+<span class="watch">▶ Regarder</span>
+
+</div>
+
+</a>
+
+
+<a class="film" href="video.html?id=arte6">
+
+<div class="thumbnail">
+
+<img src="film6.jpg" alt="Ondine">
+
+<div class="play">▶</div>
+
+</div>
+
+<div class="info">
+
+<h3>Ondine</h3>
+
+<p>
+Un film à découvrir.
+</p>
+
+<span class="watch">▶ Regarder</span>
+
+</div>
+
+</a>
+
+
+</div>
+</section>
+
+
+<!-- =========================
+     ACTION
+========================= -->
+
+<section class="section">
+
+<h2>🔥 Action</h2>
+
+<div class="films-row">
+
+
+<a class="film" href="video.html?id=arte16">
+
+<div class="thumbnail">
+
+<div class="placeholder">🔥</div>
+
+<div class="play">▶</div>
+
+</div>
+
+<div class="info">
+
+<h3>The Yards</h3>
+
+<p>
+Découvrez cette vidéo.
+</p>
+
+<span class="watch">▶ Regarder</span>
+
+</div>
+
+</a>
+
+
+<a class="film" href="video.html?id=arte15">
+
+<div class="thumbnail">
+
+<img src="film15.jpg" alt="La firme">
+
+<div class="play">▶</div>
+
+</div>
+
+<div class="info">
+
+<h3>La firme</h3>
+
+<p>
+Découvrez cette vidéo.
+</p>
+
+<span class="watch">▶ Regarder</span>
+
+</div>
+
+</a>
+
+
+</div>
+</section>
+
+
+<!-- =========================
+     THRILLER
+========================= -->
+
+<section class="section">
+
+<h2>🔎 Thriller</h2>
+
+<div class="films-row">
+
+
+<a class="film" href="video.html?id=arte12">
+
+<div class="thumbnail">
+
+<img src="film12.jpg"
+     alt="Contrôle d'identité">
+
+<div class="badge">THRILLER</div>
+
+<div class="play">▶</div>
+
+</div>
+
+<div class="info">
+
+<h3>Contrôle d'identité</h3>
+
+<p>
+Une histoire pleine
+de suspense.
+</p>
+
+<span class="watch">▶ Regarder</span>
+
+</div>
+
+</a>
+
+
+<a class="film" href="video.html?id=arte14">
+
+<div class="thumbnail">
+
+<img src="film14.jpg" alt="Transit">
+
+<div class="play">▶</div>
+
+</div>
+
+<div class="info">
+
+<h3>Transit</h3>
+
+<p>
+Un film à découvrir.
+</p>
+
+<span class="watch">▶ Regarder</span>
+
+</div>
+
+</a>
+
+
+</div>
+</section>
+
+
+<!-- =========================
+     DRAME
+========================= -->
+
+<section class="section">
+
+<h2>🎭 Drame</h2>
+
+<div class="films-row">
+
+
+<a class="film" href="video.html?id=arte11">
+
+<div class="thumbnail">
+
+<img src="film11.jpg" alt="Phoenix">
+
+<div class="play">▶</div>
+
+</div>
+
+<div class="info">
+
+<h3>Phoenix</h3>
+
+<p>
+Découvrez cette vidéo.
+</p>
+
+<span class="watch">▶ Regarder</span>
+
+</div>
+
+</a>
+
+
+<a class="film" href="video.html?id=arte13">
+
+<div class="thumbnail">
+
+<img src="film13.jpg" alt="Yella">
+
+<div class="play">▶</div>
+
+</div>
+
+<div class="info">
+
+<h3>Yella</h3>
+
+<p>
+Découvrez cette vidéo.
+</p>
+
+<span class="watch">▶ Regarder</span>
+
+</div>
+
+</a>
+
+
+<a class="film" href="video.html?id=arte">
+
+<div class="thumbnail">
+
+<div class="placeholder">🎭</div>
+
+<div class="play">▶</div>
+
+</div>
+
+<div class="info">
+
+<h3>
+Dans le grand tourbillon de la vie
+</h3>
+
+<p>
+Découvrez cette vidéo.
+</p>
+
+<span class="watch">▶ Regarder</span>
+
+</div>
+
+</a>
+
+
+</div>
+</section>
+
+
+<!-- =========================
+     SCIENCE-FICTION
+========================= -->
+
+<section class="section">
+
+<h2>🚀 Science-fiction</h2>
+
+<div class="films-row">
+
+
+<a class="film" href="#">
+
+<div class="thumbnail">
+
+<div class="placeholder">🚀</div>
+
+</div>
+
+<div class="info">
+
+<h3>Mon film 8</h3>
+
+<p>
+Une nouvelle création
+prochainement.
+</p>
+
+<span class="watch">Bientôt</span>
+
+</div>
+
+</a>
+
+
+</div>
+</section>
+
+
+<!-- =========================
+     POLICIER
+========================= -->
+
+<section class="section">
+
+<h2>🕵️ Policier</h2>
+
+<div class="films-row">
+
+
+<a class="film" href="video.html?id=arte9">
+
+<div class="thumbnail">
+
+<img src="film9.jpg"
+     alt="Entretien avec Christian Petzold">
+
+<div class="badge">POLICIER</div>
+
+<div class="play">▶</div>
+
+</div>
+
+<div class="info">
+
+<h3>
+Entretien avec Christian Petzold
+</h3>
+
+<p>
+Découvrez cette vidéo.
+</p>
+
+<span class="watch">▶ Regarder</span>
+
+</div>
+
+</a>
+
+
+<a class="film" href="video.html?id=arte2">
+
+<div class="thumbnail">
+
+<img src="film2.jpg"
+     alt="Rendez-vous avec la mort">
+
+<div class="play">▶</div>
+
+</div>
+
+<div class="info">
+
+<h3>
+Rendez-vous avec la mort
+</h3>
+
+<p>
+Découvrez ce film.
+</p>
+
+<span class="watch">▶ Regarder</span>
+
+</div>
+
+</a>
+
+
+</div>
+</section>
+
+
+<!-- =========================
+     SÉRIES
+========================= -->
+
+<section
+  class="section"
+  id="series">
+
+<h2>📺 Séries</h2>
+
+<div class="films-row">
+
+
+<a class="film" href="#">
+
+<div class="thumbnail">
+
+<div class="placeholder">📺</div>
+
+</div>
+
+<div class="info">
+
+<h3>Ma série 1</h3>
+
+<p>
+Une nouvelle série
+arrivera bientôt.
+</p>
+
+<span class="watch">Bientôt</span>
+
+</div>
+
+</a>
+
+
+<a class="film" href="#">
+
+<div class="thumbnail">
+
+<div class="placeholder">📺</div>
+
+</div>
+
+<div class="info">
+
+<h3>Ma série 2</h3>
+
+<p>
+De nouveaux épisodes
+prochainement.
+</p>
+
+<span class="watch">Bientôt</span>
+
+</div>
+
+</a>
+
+
+</div>
+</section>
+
+
+</main>
+
+
+<footer>
+
+© 2026 Mon Cinéma
+
+</footer>
+
+
+<script>
+
+function searchFilms(){
+
+  const input =
+    document
+    .getElementById("searchInput")
+    .value
+    .toLowerCase()
+    .trim();
+
+  const films =
+    document.querySelectorAll(".film");
+
+  films.forEach(function(film){
+
+    const title =
+      film
+      .getAttribute("data-title");
+
+    if(!title){
+
+      film.style.display =
+        input === "" ? 
