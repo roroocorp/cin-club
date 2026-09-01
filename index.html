@@ -56,17 +56,12 @@
       letter-spacing: 2px;
     }
 
-    nav {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
     nav a {
       color: white;
       text-decoration: none;
       margin-left: 25px;
       font-size: 15px;
+      transition: 0.3s;
     }
 
     nav a:hover {
@@ -123,7 +118,6 @@
     .button {
       display: inline-block;
       margin-top: 25px;
-
       padding: 14px 25px;
 
       background: #e50914;
@@ -151,10 +145,9 @@
       display: flex;
 
       background: #151515;
-
       border: 1px solid #333;
-      border-radius: 7px;
 
+      border-radius: 7px;
       overflow: hidden;
     }
 
@@ -180,11 +173,11 @@
       padding: 0 22px;
 
       background: #e50914;
-
       border: none;
-      color: white;
 
+      color: white;
       font-size: 18px;
+
       cursor: pointer;
     }
 
@@ -205,55 +198,6 @@
     }
 
     /* =========================
-       CATÉGORIES
-    ========================= */
-
-    .categories {
-      width: min(1100px, 86%);
-      margin: 30px auto 0;
-
-      display: flex;
-      gap: 10px;
-
-      overflow-x: auto;
-
-      padding-bottom: 8px;
-    }
-
-    .categories::-webkit-scrollbar {
-      height: 5px;
-    }
-
-    .categories::-webkit-scrollbar-thumb {
-      background: #444;
-      border-radius: 10px;
-    }
-
-    .category-button {
-      flex: 0 0 auto;
-
-      padding: 10px 16px;
-
-      background: #151515;
-      color: white;
-
-      border: 1px solid #333;
-      border-radius: 20px;
-
-      cursor: pointer;
-
-      font-size: 13px;
-
-      transition: 0.3s;
-    }
-
-    .category-button:hover,
-    .category-button.active {
-      background: #e50914;
-      border-color: #e50914;
-    }
-
-    /* =========================
        SECTIONS
     ========================= */
 
@@ -264,6 +208,12 @@
     .section h2 {
       font-size: 24px;
       margin-bottom: 18px;
+    }
+
+    .category-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
     /* =========================
@@ -316,6 +266,7 @@
       cursor: pointer;
 
       text-decoration: none;
+
       color: white;
 
       display: block;
@@ -335,7 +286,9 @@
       display: none;
     }
 
-    /* LED ROUGE */
+    /* =========================
+       LED ROUGE
+    ========================= */
 
     .film::before {
       content: "";
@@ -388,6 +341,7 @@
       height: 100%;
 
       display: flex;
+
       align-items: center;
       justify-content: center;
 
@@ -409,7 +363,8 @@
       left: 50%;
       top: 50%;
 
-      transform: translate(-50%, -50%);
+      transform:
+        translate(-50%, -50%);
 
       width: 55px;
       height: 55px;
@@ -419,6 +374,7 @@
       background: #e50914;
 
       display: flex;
+
       align-items: center;
       justify-content: center;
 
@@ -440,6 +396,7 @@
       margin-bottom: 7px;
 
       font-size: 17px;
+
       line-height: 1.3;
     }
 
@@ -467,6 +424,32 @@
       border-radius: 5px;
 
       font-size: 13px;
+
+      font-weight: bold;
+    }
+
+    /* =========================
+       BADGE
+    ========================= */
+
+    .badge {
+      position: absolute;
+
+      top: 10px;
+      right: 10px;
+
+      z-index: 10;
+
+      padding: 5px 8px;
+
+      background: rgba(0,0,0,0.8);
+
+      border: 1px solid #444;
+
+      border-radius: 4px;
+
+      font-size: 11px;
+
       font-weight: bold;
     }
 
@@ -562,10 +545,6 @@
         padding: 0 16px;
       }
 
-      .categories {
-        width: 92%;
-      }
-
       .section {
         padding: 30px 20px 5px;
       }
@@ -608,6 +587,10 @@
         Films
       </a>
 
+      <a href="#series">
+        Séries
+      </a>
+
     </nav>
 
   </header>
@@ -631,7 +614,7 @@
 
       <p>
         Découvrez mes créations,
-        mes vidéos et mes projets
+        mes vidéos, mes films et mes séries
         directement depuis mon cinéma.
       </p>
 
@@ -659,7 +642,7 @@
       <input
         type="text"
         id="searchInput"
-        placeholder="🔎 Rechercher un film..."
+        placeholder="🔎 Rechercher un film ou une série..."
         autocomplete="off">
 
       <button
@@ -679,88 +662,17 @@
 
 
   <!-- =========================
-       CATÉGORIES
-  ========================= -->
-
-  <div class="categories">
-
-    <button
-      class="category-button active"
-      onclick="filterCategory('all', this)">
-      🎬 Tous
-    </button>
-
-    <button
-      class="category-button"
-      onclick="filterCategory('horreur', this)">
-      👻 Horreur
-    </button>
-
-    <button
-      class="category-button"
-      onclick="filterCategory('comedie', this)">
-      😂 Comédie
-    </button>
-
-    <button
-      class="category-button"
-      onclick="filterCategory('action', this)">
-      💥 Action
-    </button>
-
-    <button
-      class="category-button"
-      onclick="filterCategory('drame', this)">
-      🎭 Drame
-    </button>
-
-    <button
-      class="category-button"
-      onclick="filterCategory('romance', this)">
-      ❤️ Romance
-    </button>
-
-    <button
-      class="category-button"
-      onclick="filterCategory('thriller', this)">
-      🕵️ Thriller
-    </button>
-
-    <button
-      class="category-button"
-      onclick="filterCategory('sciencefiction', this)">
-      🚀 Science-fiction
-    </button>
-
-    <button
-      class="category-button"
-      onclick="filterCategory('series', this)">
-      📺 Séries
-    </button>
-
-    <button
-      class="category-button"
-      onclick="filterCategory('decouvrir', this)">
-      ⭐ À découvrir
-    </button>
-
-  </div>
-
-
-  <!-- =========================
-       FILMS
+       CONTENU
   ========================= -->
 
   <main id="films">
 
 
     <!-- =========================
-         TOUS LES FILMS
+         1 - TOUS LES FILMS
     ========================= -->
 
-    <section
-      class="section category-section"
-      data-category="all">
+    <section class="section">
 
       <h2>
         🎬 Tous les films
@@ -774,7 +686,6 @@
         <a
           class="film"
           data-title="Mon premier film"
-          data-category="drame"
           href="video.html?id=3wSUg_Bc7OM">
 
           <div class="thumbnail">
@@ -783,17 +694,13 @@
               src="https://img.youtube.com/vi/3wSUg_Bc7OM/maxresdefault.jpg"
               alt="Mon premier film">
 
-            <div class="play">
-              ▶
-            </div>
+            <div class="play">▶</div>
 
           </div>
 
           <div class="info">
 
-            <h3>
-              Mon premier film
-            </h3>
+            <h3>Mon premier film</h3>
 
             <p>
               Découvrez mon premier film
@@ -814,7 +721,6 @@
         <a
           class="film"
           data-title="Mon film 2"
-          data-category="action"
           href="video.html?id=1MoeXM9HISY">
 
           <div class="thumbnail">
@@ -823,17 +729,13 @@
               src="https://img.youtube.com/vi/1MoeXM9HISY/maxresdefault.jpg"
               alt="Mon film 2">
 
-            <div class="play">
-              ▶
-            </div>
+            <div class="play">▶</div>
 
           </div>
 
           <div class="info">
 
-            <h3>
-              Mon film 2
-            </h3>
+            <h3>Mon film 2</h3>
 
             <p>
               Découvrez mon deuxième film.
@@ -853,7 +755,6 @@
         <a
           class="film"
           data-title="Mon film 3"
-          data-category="thriller"
           href="video.html?id=A2HM48PwsXQ">
 
           <div class="thumbnail">
@@ -862,17 +763,13 @@
               src="https://img.youtube.com/vi/A2HM48PwsXQ/maxresdefault.jpg"
               alt="Mon film 3">
 
-            <div class="play">
-              ▶
-            </div>
+            <div class="play">▶</div>
 
           </div>
 
           <div class="info">
 
-            <h3>
-              Mon film 3
-            </h3>
+            <h3>Mon film 3</h3>
 
             <p>
               Découvrez mon troisième film.
@@ -892,18 +789,13 @@
         <a
           class="film"
           data-title="Dans le grand tourbillon de la vie"
-          data-category="drame"
           href="video.html?id=arte">
 
           <div class="thumbnail">
 
-            <div class="placeholder">
-              🎬
-            </div>
+            <div class="placeholder">🎬</div>
 
-            <div class="play">
-              ▶
-            </div>
+            <div class="play">▶</div>
 
           </div>
 
@@ -932,26 +824,19 @@
         <a
           class="film"
           data-title="Tout pour ma fille"
-          data-category="drame"
           href="video.html?id=arte5">
 
           <div class="thumbnail">
 
-            <div class="placeholder">
-              🎬
-            </div>
+            <div class="placeholder">🎬</div>
 
-            <div class="play">
-              ▶
-            </div>
+            <div class="play">▶</div>
 
           </div>
 
           <div class="info">
 
-            <h3>
-              Tout pour ma fille
-            </h3>
+            <h3>Tout pour ma fille</h3>
 
             <p>
               Regardez cette vidéo
@@ -972,26 +857,19 @@
         <a
           class="film"
           data-title="Ondine"
-          data-category="romance"
           href="video.html?id=arte6">
 
           <div class="thumbnail">
 
-            <div class="placeholder">
-              🎬
-            </div>
+            <div class="placeholder">🎬</div>
 
-            <div class="play">
-              ▶
-            </div>
+            <div class="play">▶</div>
 
           </div>
 
           <div class="info">
 
-            <h3>
-              Ondine
-            </h3>
+            <h3>Ondine</h3>
 
             <p>
               Regardez cette vidéo
@@ -1012,22 +890,17 @@
         <a
           class="film"
           data-title="Mon film 7"
-          data-category="comedie"
           href="#">
 
           <div class="thumbnail">
 
-            <div class="placeholder">
-              🎥
-            </div>
+            <div class="placeholder">🎥</div>
 
           </div>
 
           <div class="info">
 
-            <h3>
-              Mon film 7
-            </h3>
+            <h3>Mon film 7</h3>
 
             <p>
               Une nouvelle création
@@ -1048,22 +921,17 @@
         <a
           class="film"
           data-title="Mon film 8"
-          data-category="sciencefiction"
           href="#">
 
           <div class="thumbnail">
 
-            <div class="placeholder">
-              🎞️
-            </div>
+            <div class="placeholder">🎞️</div>
 
           </div>
 
           <div class="info">
 
-            <h3>
-              Mon film 8
-            </h3>
+            <h3>Mon film 8</h3>
 
             <p>
               Une nouvelle création
@@ -1084,7 +952,6 @@
         <a
           class="film"
           data-title="Entretien avec Christian Petzold"
-          data-category="drame"
           href="video.html?id=arte9">
 
           <div class="thumbnail">
@@ -1093,9 +960,7 @@
               src="film9.jpg"
               alt="Entretien avec Christian Petzold">
 
-            <div class="play">
-              ▶
-            </div>
+            <div class="play">▶</div>
 
           </div>
 
@@ -1123,26 +988,21 @@
         <a
           class="film"
           data-title="Fantômes"
-          data-category="horreur"
           href="video.html?id=arte10">
 
           <div class="thumbnail">
 
-            <div class="placeholder">
-              🎬
-            </div>
+            <img
+              src="film10.jpg"
+              alt="Fantômes">
 
-            <div class="play">
-              ▶
-            </div>
+            <div class="play">▶</div>
 
           </div>
 
           <div class="info">
 
-            <h3>
-              Fantômes
-            </h3>
+            <h3>Fantômes</h3>
 
             <p>
               Découvrez cette vidéo
@@ -1163,26 +1023,21 @@
         <a
           class="film"
           data-title="Phoenix"
-          data-category="thriller"
           href="video.html?id=arte11">
 
           <div class="thumbnail">
 
-            <div class="placeholder">
-              🎬
-            </div>
+            <img
+              src="film11.jpg"
+              alt="Phoenix">
 
-            <div class="play">
-              ▶
-            </div>
+            <div class="play">▶</div>
 
           </div>
 
           <div class="info">
 
-            <h3>
-              Phoenix
-            </h3>
+            <h3>Phoenix</h3>
 
             <p>
               Découvrez cette vidéo
@@ -1203,26 +1058,19 @@
         <a
           class="film"
           data-title="Contrôle d'identité"
-          data-category="thriller"
           href="video.html?id=arte12">
 
           <div class="thumbnail">
 
-            <div class="placeholder">
-              🎬
-            </div>
+            <div class="placeholder">🎬</div>
 
-            <div class="play">
-              ▶
-            </div>
+            <div class="play">▶</div>
 
           </div>
 
           <div class="info">
 
-            <h3>
-              Contrôle d'identité
-            </h3>
+            <h3>Contrôle d'identité</h3>
 
             <p>
               Découvrez cette vidéo
@@ -1243,9 +1091,174 @@
         <a
           class="film"
           data-title="Yella"
-          data-category="drame"
           href="video.html?id=arte13">
 
           <div class="thumbnail">
 
-            <div cl
+            <div class="placeholder">🎬</div>
+
+            <div class="play">▶</div>
+
+          </div>
+
+          <div class="info">
+
+            <h3>Yella</h3>
+
+            <p>
+              Découvrez cette vidéo
+              directement dans Mon Cinéma.
+            </p>
+
+            <span class="watch">
+              ▶ Regarder
+            </span>
+
+          </div>
+
+        </a>
+
+
+        <!-- FILM 14 -->
+
+        <a
+          class="film"
+          data-title="Transit"
+          href="video.html?id=arte14">
+
+          <div class="thumbnail">
+
+            <div class="placeholder">🎬</div>
+
+            <div class="play">▶</div>
+
+          </div>
+
+          <div class="info">
+
+            <h3>Transit</h3>
+
+            <p>
+              Découvrez cette vidéo
+              directement dans Mon Cinéma.
+            </p>
+
+            <span class="watch">
+              ▶ Regarder
+            </span>
+
+          </div>
+
+        </a>
+
+
+        <!-- FILM 15 -->
+
+        <a
+          class="film"
+          data-title="La firme"
+          href="video.html?id=arte15">
+
+          <div class="thumbnail">
+
+            <div class="placeholder">🎬</div>
+
+            <div class="play">▶</div>
+
+          </div>
+
+          <div class="info">
+
+            <h3>La firme</h3>
+
+            <p>
+              Découvrez cette vidéo
+              directement dans Mon Cinéma.
+            </p>
+
+            <span class="watch">
+              ▶ Regarder
+            </span>
+
+          </div>
+
+        </a>
+
+
+        <!-- FILM 16 -->
+
+        <a
+          class="film"
+          data-title="The Yards"
+          href="video.html?id=arte16">
+
+          <div class="thumbnail">
+
+            <div class="placeholder">🎬</div>
+
+            <div class="play">▶</div>
+
+          </div>
+
+          <div class="info">
+
+            <h3>The Yards</h3>
+
+            <p>
+              Découvrez cette vidéo
+              directement dans Mon Cinéma.
+            </p>
+
+            <span class="watch">
+              ▶ Regarder
+            </span>
+
+          </div>
+
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         2 - HORREUR
+    ========================= -->
+
+    <section class="section">
+
+      <h2 class="category-title">
+        👻 Horreur
+      </h2>
+
+      <div class="films-row">
+
+        <a class="film"
+           data-title="Fantômes"
+           href="video.html?id=arte10">
+
+          <div class="thumbnail">
+
+            <img src="film10.jpg" alt="Fantômes">
+
+            <div class="badge">HORREUR</div>
+
+            <div class="play">▶</div>
+
+          </div>
+
+          <div class="info">
+            <h3>Fantômes</h3>
+            <p>Une vidéo mystérieuse et inquiétante.</p>
+
+            <span class="watch">
+              ▶ Regarder
+            </span>
+          </div>
+
+        </a>
+
+        <a class="film"
+           data-title="Phoenix"
+           href="video.html?id=arte1
