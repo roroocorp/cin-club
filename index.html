@@ -51,16 +51,21 @@
 
     .logo {
       color: #e50914;
+
       font-size: 25px;
       font-weight: bold;
+
       letter-spacing: 2px;
     }
 
     nav a {
       color: white;
       text-decoration: none;
+
       margin-left: 25px;
+
       font-size: 15px;
+
       transition: 0.3s;
     }
 
@@ -100,31 +105,41 @@
 
     .hero small {
       color: #aaa;
+
       font-size: 13px;
+
       letter-spacing: 3px;
     }
 
     .hero h1 {
       font-size: 60px;
+
       margin: 20px 0;
     }
 
     .hero p {
       color: #ccc;
+
       font-size: 18px;
+
       line-height: 1.6;
     }
 
     .button {
       display: inline-block;
+
       margin-top: 25px;
+
       padding: 14px 25px;
 
       background: #e50914;
+
       color: white;
 
       border-radius: 5px;
+
       text-decoration: none;
+
       font-weight: bold;
     }
 
@@ -138,6 +153,7 @@
 
     .search-area {
       width: min(900px, 86%);
+
       margin: 35px auto 10px;
     }
 
@@ -145,23 +161,29 @@
       display: flex;
 
       background: #151515;
+
       border: 1px solid #333;
 
       border-radius: 7px;
+
       overflow: hidden;
     }
 
     .search-box input {
       flex: 1;
+
       min-width: 0;
 
       padding: 16px 18px;
 
       background: transparent;
+
       border: none;
+
       outline: none;
 
       color: white;
+
       font-size: 16px;
     }
 
@@ -173,9 +195,11 @@
       padding: 0 22px;
 
       background: #e50914;
+
       border: none;
 
       color: white;
+
       font-size: 18px;
 
       cursor: pointer;
@@ -207,12 +231,15 @@
 
     .section h2 {
       font-size: 24px;
+
       margin-bottom: 18px;
     }
 
     .category-title {
       display: flex;
+
       align-items: center;
+
       gap: 10px;
     }
 
@@ -226,6 +253,7 @@
       gap: 18px;
 
       overflow-x: auto;
+
       overflow-y: hidden;
 
       padding: 5px 5px 20px;
@@ -243,6 +271,7 @@
 
     .films-row::-webkit-scrollbar-thumb {
       background: #444;
+
       border-radius: 10px;
     }
 
@@ -296,7 +325,9 @@
       position: absolute;
 
       left: 0;
+
       top: 12px;
+
       bottom: 12px;
 
       width: 4px;
@@ -329,6 +360,7 @@
 
     .thumbnail img {
       width: 100%;
+
       height: 100%;
 
       object-fit: cover;
@@ -338,11 +370,13 @@
 
     .placeholder {
       width: 100%;
+
       height: 100%;
 
       display: flex;
 
       align-items: center;
+
       justify-content: center;
 
       background:
@@ -361,12 +395,14 @@
       position: absolute;
 
       left: 50%;
+
       top: 50%;
 
       transform:
         translate(-50%, -50%);
 
       width: 55px;
+
       height: 55px;
 
       border-radius: 50%;
@@ -376,6 +412,7 @@
       display: flex;
 
       align-items: center;
+
       justify-content: center;
 
       font-size: 21px;
@@ -436,6 +473,7 @@
       position: absolute;
 
       top: 10px;
+
       right: 10px;
 
       z-index: 10;
@@ -517,11 +555,13 @@
 
       nav a {
         margin-left: 10px;
+
         font-size: 13px;
       }
 
       .hero {
         min-height: 450px;
+
         padding: 40px 25px;
       }
 
@@ -587,8 +627,8 @@
         Films
       </a>
 
-      <a href="#series">
-        Séries
+      <a href="categories.html">
+        Catégories
       </a>
 
     </nav>
@@ -662,15 +702,15 @@
 
 
   <!-- =========================
-       CONTENU
+       FILMS
   ========================= -->
 
   <main id="films">
 
 
-    <!-- ==================================================
-         1 - TOUS LES FILMS
-    =================================================== -->
+    <!-- =========================
+         TOUS LES FILMS
+    ========================= -->
 
     <section class="section">
 
@@ -681,18 +721,18 @@
       <div class="films-row">
 
 
-        <!-- FILM 1 : NOTRE DAME -->
+        <!-- FILM 1 -->
 
         <a
           class="film"
-          data-title="Notre dame"
-          href="video.html?id=arte1">
+          data-title="Mon premier film"
+          href="video.html?id=film1">
 
           <div class="thumbnail">
 
             <img
               src="film1.jpg"
-              alt="Notre dame">
+              alt="Mon premier film">
 
             <div class="play">
               ▶
@@ -703,12 +743,12 @@
           <div class="info">
 
             <h3>
-              Notre dame
+              Mon premier film
             </h3>
 
             <p>
-              Découvrez Notre dame
-              directement dans Mon Cinéma.
+              Découvrez mon premier film
+              et mes créations.
             </p>
 
             <span class="watch">
@@ -720,18 +760,18 @@
         </a>
 
 
-        <!-- FILM 2 : RENDEZ-VOUS AVEC LA MORT -->
+        <!-- FILM 2 -->
 
         <a
           class="film"
-          data-title="Rendez-vous avec la mort"
-          href="video.html?id=arte2">
+          data-title="Mon film 2"
+          href="video.html?id=film2">
 
           <div class="thumbnail">
 
             <img
               src="film2.jpg"
-              alt="Rendez-vous avec la mort">
+              alt="Mon film 2">
 
             <div class="play">
               ▶
@@ -742,12 +782,11 @@
           <div class="info">
 
             <h3>
-              Rendez-vous avec la mort
+              Mon film 2
             </h3>
 
             <p>
-              Découvrez cette vidéo
-              directement dans Mon Cinéma.
+              Découvrez mon deuxième film.
             </p>
 
             <span class="watch">
@@ -759,18 +798,18 @@
         </a>
 
 
-        <!-- FILM 3 : TWO LOVERS -->
+        <!-- FILM 3 -->
 
         <a
           class="film"
-          data-title="Two Lovers"
-          href="video.html?id=arte3">
+          data-title="Mon film 3"
+          href="video.html?id=film3">
 
           <div class="thumbnail">
 
             <img
               src="film3.jpg"
-              alt="Two Lovers">
+              alt="Mon film 3">
 
             <div class="play">
               ▶
@@ -781,12 +820,11 @@
           <div class="info">
 
             <h3>
-              Two Lovers
+              Mon film 3
             </h3>
 
             <p>
-              Découvrez cette vidéo
-              directement dans Mon Cinéma.
+              Découvrez mon troisième film.
             </p>
 
             <span class="watch">
@@ -1278,4 +1316,11 @@
 
           <div class="info">
 
-       
+            <h3>
+              The Yards
+            </h3>
+
+            <p>
+              Découvrez cette vidéo
+              directement dans Mon Cinéma.
+          
