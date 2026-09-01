@@ -122,14 +122,22 @@
       z-index: 5;
     }
 
+    /* =========================
+       AFFICHES
+    ========================= */
+
     .movie-poster {
       width: 100%;
+      height: auto;
 
       max-height: 500px;
 
       object-fit: cover;
+      object-position: center;
 
       display: block;
+
+      background: #222;
     }
 
     .movie-info {
@@ -261,6 +269,13 @@
         margin-top: 30px;
       }
 
+      .movie-poster {
+        max-height: none;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+      }
+
       .movie-info {
         padding: 20px;
       }
@@ -311,7 +326,9 @@
   <main class="video-page">
 
 
-    <!-- CARTE DU FILM -->
+    <!-- =========================
+         CARTE DU FILM
+    ========================= -->
 
     <div class="movie-card">
 
