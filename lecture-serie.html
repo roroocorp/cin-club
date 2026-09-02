@@ -9,7 +9,6 @@
 
 <title>Lecture - Mon Cinéma</title>
 
-
 <style>
 
 *{
@@ -28,49 +27,31 @@ body{
   font-family:Arial,Helvetica,sans-serif;
 }
 
-
-/* =========================
-   MENU
-========================= */
-
 header{
   height:70px;
-
   background:#0d0d0d;
-
   display:flex;
   align-items:center;
   justify-content:space-between;
-
   padding:0 6%;
-
   border-bottom:1px solid #222;
-
   position:sticky;
   top:0;
-
   z-index:50;
 }
 
 .logo{
   color:#e50914;
-
   font-size:25px;
-
   font-weight:bold;
-
   letter-spacing:2px;
 }
 
 nav a{
   color:white;
-
   text-decoration:none;
-
   margin-left:25px;
-
   font-size:15px;
-
   transition:.3s;
 }
 
@@ -78,35 +59,18 @@ nav a:hover{
   color:#e50914;
 }
 
-
-/* =========================
-   PAGE
-========================= */
-
 .page{
   max-width:1200px;
-
   margin:auto;
-
   padding:35px 7% 60px;
 }
 
-
-/* =========================
-   RETOUR
-========================= */
-
 .back{
   display:inline-block;
-
   color:#aaa;
-
   text-decoration:none;
-
   font-size:14px;
-
   margin-bottom:20px;
-
   transition:.3s;
 }
 
@@ -114,224 +78,126 @@ nav a:hover{
   color:white;
 }
 
-
-/* =========================
-   TITRE
-========================= */
-
 .video-header{
   margin-bottom:20px;
 }
 
 .video-header small{
   color:#aaa;
-
   font-size:12px;
-
   letter-spacing:2px;
 }
 
 .video-header h1{
   font-size:32px;
-
   margin-top:8px;
 }
 
 .video-header p{
   color:#888;
-
   margin-top:8px;
-
   font-size:14px;
 }
 
-
-/* =========================
-   LECTEUR
-========================= */
-
 .video-container{
   width:100%;
-
   aspect-ratio:16 / 9;
-
   background:#000;
-
   border-radius:8px;
-
   overflow:hidden;
-
-  box-shadow:
-    0 10px 40px rgba(0,0,0,.7);
+  box-shadow:0 10px 40px rgba(0,0,0,.7);
 }
 
 .video-container iframe{
   width:100%;
-
   height:100%;
-
   border:none;
-
   display:block;
 }
 
-
-/* =========================
-   NAVIGATION
-========================= */
-
 .navigation{
   display:flex;
-
   justify-content:space-between;
-
   align-items:center;
-
   gap:15px;
-
   margin-top:25px;
 }
 
 .nav-button{
   display:inline-block;
-
   padding:12px 18px;
-
   background:#181818;
-
   border:1px solid #333;
-
   border-radius:5px;
-
   color:white;
-
   text-decoration:none;
-
   font-weight:bold;
-
   font-size:14px;
-
   transition:.3s;
 }
 
 .nav-button:hover{
   background:#292929;
-
   border-color:#555;
 }
 
 .next-button{
   background:#e50914;
-
   border-color:#e50914;
 }
 
 .next-button:hover{
   background:#b20710;
-
   border-color:#b20710;
 }
 
-
-/* =========================
-   PROGRESSION
-========================= */
-
 .progress{
   margin-top:25px;
-
   padding:15px 18px;
-
   background:#151515;
-
   border-left:4px solid #e50914;
-
   border-radius:5px;
-
   color:#aaa;
-
   font-size:14px;
 }
 
-
-/* =========================
-   ÉPISODE SUIVANT
-========================= */
-
 .next-section{
   margin-top:35px;
-
   padding:25px;
-
   background:#111;
-
   border:1px solid #222;
-
   border-radius:8px;
-
   text-align:center;
 }
 
 .next-section h2{
   font-size:22px;
-
   margin-bottom:10px;
 }
 
 .next-section p{
   color:#888;
-
   font-size:14px;
-
   margin-bottom:18px;
 }
 
-.next-hidden{
-  display:none;
-}
-
-
-/* =========================
-   ERREUR
-========================= */
-
 .error{
   display:none;
-
   background:#151515;
-
   border-left:4px solid #e50914;
-
   padding:20px;
-
   border-radius:6px;
-
   color:#aaa;
-
   margin-top:20px;
 }
 
-
-/* =========================
-   FOOTER
-========================= */
-
 footer{
   text-align:center;
-
   color:#777;
-
   padding:40px;
-
   border-top:1px solid #222;
-
   margin-top:40px;
 }
-
-
-/* =========================
-   MOBILE
-========================= */
 
 @media(max-width:600px){
 
@@ -345,7 +211,6 @@ footer{
 
   nav a{
     margin-left:10px;
-
     font-size:13px;
   }
 
@@ -359,7 +224,6 @@ footer{
 
   .navigation{
     flex-direction:column;
-
     align-items:stretch;
   }
 
@@ -373,13 +237,7 @@ footer{
 
 </head>
 
-
 <body>
-
-
-<!-- =========================
-     MENU
-========================= -->
 
 <header>
 
@@ -389,15 +247,15 @@ footer{
 
   <nav>
 
-    <a href="index.html">
+    <a href="./index.html">
       Accueil
     </a>
 
-    <a href="index.html#films">
+    <a href="./index.html#films">
       Films
     </a>
 
-    <a href="series.html">
+    <a href="./series.html">
       Séries
     </a>
 
@@ -406,25 +264,16 @@ footer{
 </header>
 
 
-<!-- =========================
-     CONTENU
-========================= -->
-
 <main class="page">
-
 
   <a
     class="back"
-    href="detail-serie.html?serie=meurtres-sandhamn">
+    href="./detail-serie.html?serie=meurtres-sandhamn">
 
     ← Retour à la série
 
   </a>
 
-
-  <!-- =========================
-       TITRE
-  ========================= -->
 
   <div class="video-header">
 
@@ -443,10 +292,6 @@ footer{
   </div>
 
 
-  <!-- =========================
-       LECTEUR
-  ========================= -->
-
   <div
     class="video-container"
     id="videoContainer">
@@ -456,15 +301,11 @@ footer{
       title="Meurtres à Sandhamn - Saison 1 (1/3)"
       allowfullscreen="true"
       allow="autoplay; fullscreen; picture-in-picture"
-      src="https://www.arte.tv/embeds/fr/050709-001-A?autoplay=true&mute=0">
+      src="https://www.arte.tv/embeds/fr/050709-001-A?autoplay=true&amp;mute=0">
     </iframe>
 
   </div>
 
-
-  <!-- =========================
-       ERREUR
-  ========================= -->
 
   <div
     class="error"
@@ -475,29 +316,20 @@ footer{
   </div>
 
 
-  <!-- =========================
-       NAVIGATION
-  ========================= -->
-
   <div class="navigation">
 
     <a
       class="nav-button"
-      href="detail-serie.html?serie=meurtres-sandhamn">
+      href="./detail-serie.html?serie=meurtres-sandhamn">
 
       ☰ Tous les épisodes
 
     </a>
 
-
     <div id="topNextButton"></div>
 
   </div>
 
-
-  <!-- =========================
-       PROGRESSION
-  ========================= -->
 
   <div class="progress">
 
@@ -508,10 +340,6 @@ footer{
 
   </div>
 
-
-  <!-- =========================
-       PROCHAIN ÉPISODE
-  ========================= -->
 
   <section
     class="next-section"
@@ -530,7 +358,6 @@ footer{
 
   </section>
 
-
 </main>
 
 
@@ -541,36 +368,25 @@ footer{
 
 <script>
 
-/* =========================
-   RÉCUPÉRER LES PARAMÈTRES
-========================= */
-
 const params =
   new URLSearchParams(
     window.location.search
   );
 
-
 const serie =
   params.get("serie") ||
   "meurtres-sandhamn";
-
 
 const saison =
   Number(
     params.get("saison")
   ) || 1;
 
-
 const episode =
   Number(
     params.get("episode")
   ) || 1;
 
-
-/* =========================
-   DONNÉES DES SÉRIES
-========================= */
 
 const seriesData = {
 
@@ -601,10 +417,6 @@ const seriesData = {
 
 };
 
-
-/* =========================
-   ÉLÉMENTS
-========================= */
 
 const videoPlayer =
   document.getElementById(
@@ -657,10 +469,6 @@ const topNextButton =
   );
 
 
-/* =========================
-   SÉRIE
-========================= */
-
 const currentSerie =
   seriesData[serie];
 
@@ -681,14 +489,8 @@ if(!currentSerie){
   seriesTitle.textContent =
     currentSerie.title.toUpperCase();
 
-
-  /* =========================
-     SAISON
-  ========================= */
-
   const currentSeason =
     currentSerie.seasons[saison];
-
 
   if(!currentSeason){
 
@@ -703,14 +505,8 @@ if(!currentSerie){
 
   }else{
 
-
-    /* =========================
-       ÉPISODE
-    ========================= */
-
     const currentEpisode =
       currentSeason[episode];
-
 
     if(!currentEpisode){
 
@@ -725,14 +521,8 @@ if(!currentSerie){
 
     }else{
 
-
-      /* =========================
-         AFFICHER LES INFORMATIONS
-      ========================= */
-
       episodeTitle.textContent =
         "Épisode " + episode;
-
 
       episodeInfo.textContent =
         "Saison " +
@@ -740,22 +530,15 @@ if(!currentSerie){
         " • Épisode " +
         episode;
 
-
       videoPlayer.src =
         currentEpisode.iframe;
-
 
       videoPlayer.title =
         currentEpisode.title;
 
 
-      /* =========================
-         SAUVEGARDER
-      ========================= */
-
       const storageKey =
         "monCinema_" + serie;
-
 
       const progress = {
 
@@ -764,7 +547,6 @@ if(!currentSerie){
         episode:episode
 
       };
-
 
       try{
 
@@ -789,10 +571,6 @@ if(!currentSerie){
         episode;
 
 
-      /* =========================
-         CHERCHER L'ÉPISODE SUIVANT
-      ========================= */
-
       let nextSeason =
         saison;
 
@@ -802,8 +580,6 @@ if(!currentSerie){
       let nextData = null;
 
 
-      /* Épisode suivant dans la même saison */
-
       if(currentSeason[nextEpisode]){
 
         nextData =
@@ -811,14 +587,8 @@ if(!currentSerie){
 
       }else{
 
-        /*
-          Si la saison suivante existe,
-          on prend son épisode 1.
-        */
-
         const followingSeason =
           currentSerie.seasons[saison + 1];
-
 
         if(
           followingSeason &&
@@ -839,14 +609,10 @@ if(!currentSerie){
       }
 
 
-      /* =========================
-         BOUTON ÉPISODE SUIVANT
-      ========================= */
-
       if(nextData){
 
         const nextUrl =
-          "lecteur-serie.html" +
+          "./lecteur-serie.html" +
           "?serie=" +
           encodeURIComponent(serie) +
           "&saison=" +
@@ -885,17 +651,12 @@ if(!currentSerie){
 }
 
 
-/* =========================
-   SAUVEGARDE AVANT DE QUITTER
-========================= */
-
 window.addEventListener(
   "beforeunload",
   function(){
 
     const storageKey =
       "monCinema_" + serie;
-
 
     const progress = {
 
@@ -904,7 +665,6 @@ window.addEventListener(
       episode:episode
 
     };
-
 
     try{
 
@@ -926,7 +686,6 @@ window.addEventListener(
 
 </script>
 
-
 </body>
 
-</html>
+  </html>
