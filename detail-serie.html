@@ -1,16 +1,4 @@
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Meurtres à Sandhamn - Mon Cinéma</title>
-
-
-<style>
+<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Meurtres à Sandhamn - Mon Cinéma</title><style>
 
 *{
   margin:0;
@@ -443,208 +431,137 @@ footer{
 
 }
 
-</style>
-
-</head>
-
-
-<body>
-
-
-<!-- =========================
+</style></head><body><!-- =========================
      MENU
-========================= -->
-
-<header>
-
-  <div class="logo">
+========================= --><header>  <div class="logo">
     🎬 MON CINÉMA
-  </div>
+  </div>  <nav><a href="index.html">
+  Accueil
+</a>
 
-  <nav>
+<a href="index.html#films">
+  Films
+</a>
 
-    <a href="index.html">
-      Accueil
-    </a>
+<a href="series.html">
+  Séries
+</a>
 
-    <a href="index.html#films">
-      Films
-    </a>
-
-    <a href="series.html">
-      Séries
-    </a>
-
-  </nav>
-
-</header>
-
-
-<!-- =========================
+  </nav></header><!-- =========================
      CONTENU
+========================= --><main class="page">  <!-- =========================
+       PRÉSENTATION
+  ========================= -->  <div class="series-top"><img
+  src="sandhamn.jpg"
+  alt="Meurtres à Sandhamn"
+  class="series-poster">
+
+
+<div class="series-info">
+
+  <small>
+    SÉRIE
+  </small>
+
+  <h1>
+    Meurtres à Sandhamn
+  </h1>
+
+  <p>
+    Retrouvez les saisons et les épisodes
+    de Meurtres à Sandhamn directement
+    dans Mon Cinéma.
+  </p>
+
+</div>
+
+  </div>  <!-- =========================
+       REPRENDRE
+  ========================= -->  <div
+    class="resume"
+    id="resume"><h2>
+  ▶ Reprendre
+</h2>
+
+<p id="resumeText">
+  Dernier épisode regardé
+</p>
+
+<a
+  id="resumeButton"
+  class="resume-button"
+  href="#">
+
+  ▶ Reprendre
+
+</a>
+
+  </div>  <!-- =========================
+       SAISONS
+  ========================= -->  <h2 class="section-title">
+    Saisons
+  </h2>  <div class="seasons"><button
+  type="button"
+  class="season-button active"
+  data-season="1">
+
+  Saison 1
+
+</button>
+
+  </div>  <!-- =========================
+       ÉPISODES
+  ========================= -->  <h2
+    class="section-title"
+    id="seasonTitle">Saison 1
+
+  </h2>  <div class="episodes"><!-- =========================
+     ÉPISODE 1
 ========================= -->
 
-<main class="page">
+<a
+  class="episode"
+  data-season="1"
+  data-episode="1"
+  href="./lecteur-serie.html?serie=meurtres-sandhamn&saison=1&episode=1">
 
 
-  <!-- =========================
-       PRÉSENTATION
-  ========================= -->
-
-  <div class="series-top">
-
-    <img
-      src="sandhamn.jpg"
-      alt="Meurtres à Sandhamn"
-      class="series-poster">
+  <div class="episode-left">
 
 
-    <div class="series-info">
+    <div class="episode-number">
+      1
+    </div>
 
-      <small>
-        SÉRIE
-      </small>
 
-      <h1>
-        Meurtres à Sandhamn
-      </h1>
+    <div class="episode-info">
+
+      <h3>
+        Épisode 1
+      </h3>
 
       <p>
-        Retrouvez les saisons et les épisodes
-        de Meurtres à Sandhamn directement
-        dans Mon Cinéma.
+        Meurtres à Sandhamn - Saison 1 (1/3)
       </p>
 
     </div>
 
-  </div>
-
-
-  <!-- =========================
-       REPRENDRE
-  ========================= -->
-
-  <div
-    class="resume"
-    id="resume">
-
-    <h2>
-      ▶ Reprendre
-    </h2>
-
-    <p id="resumeText">
-      Dernier épisode regardé
-    </p>
-
-    <a
-      id="resumeButton"
-      class="resume-button"
-      href="#">
-
-      ▶ Reprendre
-
-    </a>
 
   </div>
 
 
-  <!-- =========================
-       SAISONS
-  ========================= -->
-
-  <h2 class="section-title">
-    Saisons
-  </h2>
-
-
-  <div class="seasons">
-
-    <button
-      class="season-button active"
-      data-season="1">
-
-      Saison 1
-
-    </button>
-
+  <div class="episode-play">
+    ▶
   </div>
 
 
-  <!-- =========================
-       ÉPISODES
-  ========================= -->
+</a>
 
-  <h2
-    class="section-title"
-    id="seasonTitle">
-
-    Saison 1
-
-  </h2>
-
-
-  <div class="episodes">
-
-
-    <!-- =========================
-         ÉPISODE 1
-    ========================= -->
-
-    <a
-      class="episode"
-      data-season="1"
-      data-episode="1"
-      href="lecteur-serie.html?serie=meurtres-sandhamn&saison=1&episode=1">
-
-
-      <div class="episode-left">
-
-
-        <div class="episode-number">
-          1
-        </div>
-
-
-        <div class="episode-info">
-
-          <h3>
-            Épisode 1
-          </h3>
-
-          <p>
-            Meurtres à Sandhamn - Saison 1 (1/3)
-          </p>
-
-        </div>
-
-
-      </div>
-
-
-      <div class="episode-play">
-        ▶
-      </div>
-
-
-    </a>
-
-
-  </div>
-
-
-</main>
-
-
-<!-- =========================
+  </div></main><!-- =========================
      FOOTER
-========================= -->
-
-<footer>
+========================= --><footer>
 © 2026 Mon Cinéma
-</footer>
-
-
-<script>
+</footer><script>
 
 /* =========================
    IDENTIFIANT DE LA SÉRIE
@@ -733,7 +650,7 @@ function showResume(){
 
 
   resumeButton.href =
-    "lecteur-serie.html" +
+    "./lecteur-serie.html" +
     "?serie=" +
     encodeURIComponent(serieId) +
     "&saison=" +
@@ -791,6 +708,65 @@ function markCurrentEpisode(){
 
 
 /* =========================
+   BOUTONS SAISONS
+========================= */
+
+const seasonButtons =
+  document.querySelectorAll(".season-button");
+
+
+const episodes =
+  document.querySelectorAll(".episode");
+
+
+seasonButtons.forEach(function(button){
+
+  button.addEventListener("click", function(){
+
+    const selectedSeason =
+      Number(button.dataset.season);
+
+
+    seasonButtons.forEach(function(item){
+
+      item.classList.remove("active");
+
+    });
+
+
+    button.classList.add("active");
+
+
+    document.getElementById("seasonTitle").textContent =
+      "Saison " + selectedSeason;
+
+
+    episodes.forEach(function(episode){
+
+      const episodeSeason =
+        Number(episode.dataset.season);
+
+
+      if(episodeSeason === selectedSeason){
+
+        episode.style.display =
+          "flex";
+
+      }else{
+
+        episode.style.display =
+          "none";
+
+      }
+
+    });
+
+  });
+
+});
+
+
+/* =========================
    DÉMARRAGE
 ========================= */
 
@@ -798,9 +774,4 @@ showResume();
 
 markCurrentEpisode();
 
-</script>
-
-
-</body>
-
-  </html>
+</script></body></html>
