@@ -1,4 +1,15 @@
-<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Meurtres à Sandhamn - Mon Cinéma</title><style>
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Meurtres à Sandhamn - Mon Cinéma</title>
+
+<style>
 
 *{
   margin:0;
@@ -16,49 +27,31 @@ body{
   font-family:Arial,Helvetica,sans-serif;
 }
 
-
-/* =========================
-   MENU
-========================= */
-
 header{
   height:70px;
-
   background:#0d0d0d;
-
   display:flex;
   align-items:center;
   justify-content:space-between;
-
   padding:0 6%;
-
   border-bottom:1px solid #222;
-
   position:sticky;
   top:0;
-
   z-index:50;
 }
 
 .logo{
   color:#e50914;
-
   font-size:25px;
-
   font-weight:bold;
-
   letter-spacing:2px;
 }
 
 nav a{
   color:white;
-
   text-decoration:none;
-
   margin-left:25px;
-
   font-size:15px;
-
   transition:.3s;
 }
 
@@ -66,46 +59,26 @@ nav a:hover{
   color:#e50914;
 }
 
-
-/* =========================
-   PAGE
-========================= */
-
 .page{
   max-width:1200px;
-
   margin:auto;
-
   padding:45px 7% 60px;
 }
 
-
-/* =========================
-   PRÉSENTATION SÉRIE
-========================= */
-
 .series-top{
   display:flex;
-
   gap:30px;
-
   align-items:flex-start;
-
   margin-bottom:40px;
 }
 
 .series-poster{
   width:220px;
   height:310px;
-
   object-fit:cover;
-
   border-radius:9px;
-
   flex-shrink:0;
-
-  box-shadow:
-    0 10px 30px rgba(0,0,0,.7);
+  box-shadow:0 10px 30px rgba(0,0,0,.7);
 }
 
 .series-info{
@@ -114,70 +87,47 @@ nav a:hover{
 
 .series-info small{
   color:#aaa;
-
   font-size:12px;
-
   letter-spacing:3px;
 }
 
 .series-info h1{
   font-size:42px;
-
   margin:15px 0;
 }
 
 .series-info p{
   color:#aaa;
-
   line-height:1.6;
-
   max-width:650px;
 }
 
-
-/* =========================
-   REPRENDRE
-========================= */
-
 .resume{
   display:none;
-
   background:#151515;
-
   border-left:4px solid #e50914;
-
   padding:20px;
-
   border-radius:6px;
-
   margin-bottom:35px;
 }
 
 .resume h2{
   font-size:21px;
-
   margin-bottom:8px;
 }
 
 .resume p{
   color:#aaa;
-
   margin-bottom:15px;
 }
 
 .resume-button{
   display:inline-block;
-
   padding:11px 18px;
-
   background:#e50914;
-
   color:white;
-
   text-decoration:none;
-
   border-radius:5px;
-
   font-weight:bold;
 }
 
@@ -185,42 +135,26 @@ nav a:hover{
   background:#b20710;
 }
 
-
-/* =========================
-   SAISONS
-========================= */
-
 .section-title{
   font-size:26px;
-
   margin-bottom:18px;
 }
 
 .seasons{
   display:flex;
-
   gap:10px;
-
   flex-wrap:wrap;
-
   margin-bottom:35px;
 }
 
 .season-button{
   border:1px solid #333;
-
   background:#181818;
-
   color:white;
-
   padding:11px 18px;
-
   border-radius:5px;
-
   cursor:pointer;
-
   font-size:14px;
-
   transition:.3s;
 }
 
@@ -230,101 +164,66 @@ nav a:hover{
 
 .season-button.active{
   background:#e50914;
-
   border-color:#e50914;
 }
 
-
-/* =========================
-   ÉPISODES
-========================= */
-
 .episodes{
   display:flex;
-
   flex-direction:column;
-
   gap:12px;
 }
 
 .episode{
   display:flex;
-
   align-items:center;
-
   justify-content:space-between;
-
   background:#151515;
-
   border:1px solid #242424;
-
   border-radius:8px;
-
   padding:18px 20px;
-
   color:white;
-
   text-decoration:none;
-
   transition:.3s;
 }
 
 .episode:hover{
   background:#202020;
-
   border-color:#444;
-
   transform:translateX(4px);
 }
 
 .episode-left{
   display:flex;
-
   align-items:center;
-
   gap:18px;
 }
 
 .episode-number{
   width:45px;
   height:45px;
-
   display:flex;
-
   align-items:center;
   justify-content:center;
-
   background:#222;
-
   border-radius:50%;
-
   font-weight:bold;
-
   flex-shrink:0;
 }
 
 .episode-info h3{
   font-size:17px;
-
   margin-bottom:5px;
 }
 
 .episode-info p{
   color:#888;
-
   font-size:13px;
 }
 
 .episode-play{
   color:#e50914;
-
   font-size:22px;
 }
-
-
-/* =========================
-   DERNIER ÉPISODE
-========================= */
 
 .episode.current{
   border-left:4px solid #e50914;
@@ -332,31 +231,16 @@ nav a:hover{
 
 .episode.current .episode-number{
   background:#e50914;
-
   color:white;
 }
 
-
-/* =========================
-   FOOTER
-========================= */
-
 footer{
   text-align:center;
-
   color:#777;
-
   padding:40px;
-
   border-top:1px solid #222;
-
   margin-top:40px;
 }
-
-
-/* =========================
-   TABLETTE
-========================= */
 
 @media(max-width:750px){
 
@@ -366,7 +250,6 @@ footer{
 
   .series-poster{
     width:180px;
-
     height:255px;
   }
 
@@ -375,11 +258,6 @@ footer{
   }
 
 }
-
-
-/* =========================
-   TÉLÉPHONE
-========================= */
 
 @media(max-width:600px){
 
@@ -393,7 +271,6 @@ footer{
 
   nav a{
     margin-left:10px;
-
     font-size:13px;
   }
 
@@ -407,13 +284,9 @@ footer{
 
   .series-poster{
     width:100%;
-
     max-width:260px;
-
     height:360px;
-
     display:block;
-
     margin:0 auto 25px;
   }
 
@@ -431,153 +304,170 @@ footer{
 
 }
 
-</style></head><body><!-- =========================
-     MENU
-========================= --><header>  <div class="logo">
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+  <div class="logo">
     🎬 MON CINÉMA
-  </div>  <nav><a href="index.html">
-  Accueil
-</a>
+  </div>
 
-<a href="index.html#films">
-  Films
-</a>
+  <nav>
 
-<a href="series.html">
-  Séries
-</a>
+    <a href="./index.html">
+      Accueil
+    </a>
 
-  </nav></header><!-- =========================
-     CONTENU
-========================= --><main class="page">  <!-- =========================
-       PRÉSENTATION
-  ========================= -->  <div class="series-top"><img
-  src="sandhamn.jpg"
-  alt="Meurtres à Sandhamn"
-  class="series-poster">
+    <a href="./index.html#films">
+      Films
+    </a>
 
+    <a href="./series.html">
+      Séries
+    </a>
 
-<div class="series-info">
+  </nav>
 
-  <small>
-    SÉRIE
-  </small>
-
-  <h1>
-    Meurtres à Sandhamn
-  </h1>
-
-  <p>
-    Retrouvez les saisons et les épisodes
-    de Meurtres à Sandhamn directement
-    dans Mon Cinéma.
-  </p>
-
-</div>
-
-  </div>  <!-- =========================
-       REPRENDRE
-  ========================= -->  <div
-    class="resume"
-    id="resume"><h2>
-  ▶ Reprendre
-</h2>
-
-<p id="resumeText">
-  Dernier épisode regardé
-</p>
-
-<a
-  id="resumeButton"
-  class="resume-button"
-  href="#">
-
-  ▶ Reprendre
-
-</a>
-
-  </div>  <!-- =========================
-       SAISONS
-  ========================= -->  <h2 class="section-title">
-    Saisons
-  </h2>  <div class="seasons"><button
-  type="button"
-  class="season-button active"
-  data-season="1">
-
-  Saison 1
-
-</button>
-
-  </div>  <!-- =========================
-       ÉPISODES
-  ========================= -->  <h2
-    class="section-title"
-    id="seasonTitle">Saison 1
-
-  </h2>  <div class="episodes"><!-- =========================
-     ÉPISODE 1
-========================= -->
-
-<a
-  class="episode"
-  data-season="1"
-  data-episode="1"
-  href="./lecteur-serie.html?serie=meurtres-sandhamn&saison=1&episode=1">
+</header>
 
 
-  <div class="episode-left">
+<main class="page">
 
+  <div class="series-top">
 
-    <div class="episode-number">
-      1
-    </div>
+    <img
+      src="sandhamn.jpg"
+      alt="Meurtres à Sandhamn"
+      class="series-poster">
 
+    <div class="series-info">
 
-    <div class="episode-info">
+      <small>
+        SÉRIE
+      </small>
 
-      <h3>
-        Épisode 1
-      </h3>
+      <h1>
+        Meurtres à Sandhamn
+      </h1>
 
       <p>
-        Meurtres à Sandhamn - Saison 1 (1/3)
+        Retrouvez les saisons et les épisodes
+        de Meurtres à Sandhamn directement
+        dans Mon Cinéma.
       </p>
 
     </div>
 
+  </div>
+
+
+  <div
+    class="resume"
+    id="resume">
+
+    <h2>
+      ▶ Reprendre
+    </h2>
+
+    <p id="resumeText">
+      Dernier épisode regardé
+    </p>
+
+    <a
+      id="resumeButton"
+      class="resume-button"
+      href="#">
+
+      ▶ Reprendre
+
+    </a>
 
   </div>
 
 
-  <div class="episode-play">
-    ▶
+  <h2 class="section-title">
+    Saisons
+  </h2>
+
+  <div class="seasons">
+
+    <button
+      type="button"
+      class="season-button active"
+      data-season="1">
+
+      Saison 1
+
+    </button>
+
   </div>
 
 
-</a>
+  <h2
+    class="section-title"
+    id="seasonTitle">
 
-  </div></main><!-- =========================
-     FOOTER
-========================= --><footer>
+    Saison 1
+
+  </h2>
+
+
+  <div class="episodes">
+
+    <a
+      class="episode"
+      data-season="1"
+      data-episode="1"
+      href="./lecteur-serie.html?serie=meurtres-sandhamn&amp;saison=1&amp;episode=1">
+
+      <div class="episode-left">
+
+        <div class="episode-number">
+          1
+        </div>
+
+        <div class="episode-info">
+
+          <h3>
+            Épisode 1
+          </h3>
+
+          <p>
+            Meurtres à Sandhamn - Saison 1 (1/3)
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="episode-play">
+        ▶
+      </div>
+
+    </a>
+
+  </div>
+
+</main>
+
+
+<footer>
 © 2026 Mon Cinéma
-</footer><script>
+</footer>
 
-/* =========================
-   IDENTIFIANT DE LA SÉRIE
-========================= */
+
+<script>
 
 const serieId =
   "meurtres-sandhamn";
 
-
 const storageKey =
   "monCinema_" + serieId;
 
-
-/* =========================
-   RÉCUPÉRER LA PROGRESSION
-========================= */
 
 function getProgress(){
 
@@ -612,10 +502,6 @@ function getProgress(){
 }
 
 
-/* =========================
-   AFFICHER REPRENDRE
-========================= */
-
 function showResume(){
 
   const progress =
@@ -625,29 +511,23 @@ function showResume(){
     return;
   }
 
-
   const resume =
     document.getElementById("resume");
-
 
   const resumeText =
     document.getElementById("resumeText");
 
-
   const resumeButton =
     document.getElementById("resumeButton");
 
-
   resume.style.display =
     "block";
-
 
   resumeText.textContent =
     "Saison " +
     progress.saison +
     " • Épisode " +
     progress.episode;
-
 
   resumeButton.href =
     "./lecteur-serie.html" +
@@ -661,10 +541,6 @@ function showResume(){
 }
 
 
-/* =========================
-   MARQUER LE DERNIER ÉPISODE
-========================= */
-
 function markCurrentEpisode(){
 
   const progress =
@@ -674,24 +550,16 @@ function markCurrentEpisode(){
     return;
   }
 
-
   const episodes =
     document.querySelectorAll(".episode");
-
 
   episodes.forEach(function(episode){
 
     const season =
-      Number(
-        episode.dataset.season
-      );
-
+      Number(episode.dataset.season);
 
     const episodeNumber =
-      Number(
-        episode.dataset.episode
-      );
-
+      Number(episode.dataset.episode);
 
     if(
       season === Number(progress.saison) &&
@@ -707,13 +575,8 @@ function markCurrentEpisode(){
 }
 
 
-/* =========================
-   BOUTONS SAISONS
-========================= */
-
 const seasonButtons =
   document.querySelectorAll(".season-button");
-
 
 const episodes =
   document.querySelectorAll(".episode");
@@ -726,26 +589,21 @@ seasonButtons.forEach(function(button){
     const selectedSeason =
       Number(button.dataset.season);
 
-
     seasonButtons.forEach(function(item){
 
       item.classList.remove("active");
 
     });
 
-
     button.classList.add("active");
-
 
     document.getElementById("seasonTitle").textContent =
       "Saison " + selectedSeason;
-
 
     episodes.forEach(function(episode){
 
       const episodeSeason =
         Number(episode.dataset.season);
-
 
       if(episodeSeason === selectedSeason){
 
@@ -761,17 +619,23 @@ seasonButtons.forEach(function(button){
 
     });
 
+    document.getElementById("seasonTitle")
+      .scrollIntoView({
+        behavior:"smooth",
+        block:"start"
+      });
+
   });
 
 });
 
 
-/* =========================
-   DÉMARRAGE
-========================= */
-
 showResume();
 
 markCurrentEpisode();
 
-</script></body></html>
+</script>
+
+</body>
+
+</html>
